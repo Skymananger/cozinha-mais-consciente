@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CONTACT_INFO } from "@/lib/constants";
 
 export async function generateStaticParams() {
   return defaultArticles.map((article) => ({
@@ -105,7 +106,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
               }}>
                 <h3 style={{ marginBottom: "1rem" }}>Quer saber quais utensílios têm histórico de uso sem interferência comprovada?</h3>
                 <Link 
-                  href="https://wa.me/5500000000000?text=Olá!%20Estou%20lendo%20o%20artigo%20sobre%20curadoria%20e%20gostaria%20de%20uma%20indicação%20personalizada."
+                  href={`https://wa.me/${CONTACT_INFO.WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Estou lendo o artigo sobre curadoria e gostaria de uma indicação personalizada.")}`}
                   target="_blank"
                   className="btn btn-primary"
                   style={{ marginTop: "1rem" }}
@@ -152,7 +153,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
                 Quem pesquisa esse assunto com profundidade geralmente está pronto para uma escolha mais consciente. Se quiser orientação especializada sobre utensílios, nossa curadoria está disponível.
               </p>
               <Link 
-                href={`https://wa.me/5500000000000?text=Olá!%20Li%20o%20artigo%20"${article.title}"%20no%20Cozinha%20Mais%20Consciente%20e%20gostaria%20de%20uma%20indicação%20de%20utensílios.`}
+                href={`https://wa.me/${CONTACT_INFO.WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Li o artigo "${article.title}" no Cozinha Mais Consciente e gostaria de uma indicação de utensílios.`)}`}
                 target="_blank"
                 className="btn btn-primary"
                 style={{ background: "var(--sage-dark)", padding: "1.2rem 2.5rem" }}
