@@ -91,10 +91,10 @@ export const defaultArticles: Article[] = [
         <li><strong>Substitua as panelas riscadas:</strong> Uma panela de alumínio com o fundo gasto ou riscado é uma fonte direta de contaminação pesada.</li>
       </ul>
 
-      <h2>A Transição para uma Cozinha Inerte</h2>
-      <p>Escolher o que entra em contato com sua comida é uma das decisões de saúde mais potentes que você pode tomar. Materiais como o <strong>Aço Inox 316L (cirúrgico)</strong>, a <strong>Cerâmica Pura</strong> e o <strong>Vidro</strong> são os únicos que garantem a inércia química: o sabor e as propriedades do alimento permanecem puras, sem a "adição" invisível de metais industriais.</p>
+      <h2>A Transição para uma Cozinha Segura</h2>
+      <p>Escolher o que entra em contato com sua comida é uma das decisões de saúde mais potentes que você pode tomar. Embora existam opções no mercado, a ciência da inércia química é rigorosa: o <strong>Aço Inox 316L (cirúrgico)</strong> destaca-se como o padrão ouro de estabilidade, garantindo que o sabor e as propriedades do alimento permaneçam puras, sem a lixiviação de metais industriais.</p>
       
-      <p>No Cozinha Mais Consciente, nossa missão é prover essa clareza técnica. Se você busca longevidade e leva a nutrição a sério, o primeiro passo é olhar para baixo — para o que está segurando sua refeição no fogo.</p>
+      <p>Outras alternativas como o vidro e a cerâmica pura representam avanços significativos em relação ao alumínio, mas exigem atenção à procedência quanto a pigmentos e aditivos. No Cozinha Mais Consciente, nossa missão é prover essa clareza técnica. Se você busca longevidade e leva a nutrição a sério, o primeiro passo é olhar para baixo — para o que está segurando sua refeição no fogo.</p>
     `,
   },
   {
