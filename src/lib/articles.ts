@@ -8,12 +8,16 @@ export interface Article {
   title: string;
   subtitle: string;
   category: Category;
+  categoryLabel?: string;
   universe: Universe;
   type: ArticleType;
   publishedAt: string;
   readTime: number;
   excerpt: string;
   content: string;
+  coverImage: string;
+  coverAlt: string;
+  ogImage?: string;
   metaTitle: string;
   metaDescription: string;
   status: 'A Publicar' | 'Em Produção' | 'Em Revisão' | 'Publicado';
@@ -50,6 +54,8 @@ export const defaultArticles: Article[] = [
     status: 'Publicado',
     featured: true,
     excerpt: 'O alumínio é onipresente, mas o que a ciência diz sobre seu uso em altas temperaturas e contato com ácidos?',
+    coverImage: 'https://images.unsplash.com/photo-1584990379282-3590247513df?q=80&w=1200',
+    coverAlt: 'Panelas de alumínio em uma cozinha',
     metaTitle: 'Alumínio na Cozinha: Guia Completo de Riscos e Saúde',
     metaDescription: 'Entenda os riscos do alumínio na cozinha. Guia técnico sobre lixiviação e segurança alimentar.',
     content: `
@@ -109,6 +115,8 @@ export const defaultArticles: Article[] = [
     readTime: 8,
     status: 'Publicado',
     excerpt: 'Ácidos são catalisadores potentes para a migração de metais. Entenda como tomate, limão e vinagre corroem sua panela por dentro.',
+    coverImage: 'https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=1200',
+    coverAlt: 'Tomates frescos sendo cortados',
     metaTitle: 'Alumínio e Alimentos Ácidos: O Perigo Químico Invisível',
     metaDescription: 'Descubra por que alimentos ácidos aceleram a contaminação por alumínio e como proteger sua saúde na cozinha.',
     content: `
@@ -154,6 +162,8 @@ export const defaultArticles: Article[] = [
     readTime: 7,
     status: 'A Publicar',
     excerpt: 'Não é apenas a panela. Entenda a exposição cumulativa ao alumínio.',
+    coverImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200',
+    coverAlt: 'Produtos de higiene pessoal',
     metaTitle: 'Fontes de Alumínio no Dia a Dia: Exposição Tóxica',
     metaDescription: 'Além das panelas, onde o alumínio se esconde no seu cotidiano?',
     content: 'Conteúdo em produção...',
