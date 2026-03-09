@@ -1,10 +1,6 @@
 "use client";
 
-const WHATSAPP_NUMBER = "5500000000000"; // Replace with real number
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá! Vi o artigo no Cozinha Mais Consciente e quero saber mais sobre como proteger minha família."
-);
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function ArticleCTA() {
   return (

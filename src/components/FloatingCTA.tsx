@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function FloatingCTA() {
   return (
     <Link 
-      href="https://wa.me/5500000000000?text=Olá!%20Estou%20lendo%20o%20Cozinha%20Mais%20Consciente%20e%20gostaria%20de%20uma%20indicação%20personalizada."
+      href={WHATSAPP_URL}
       target="_blank"
       className="cta-floating"
     >

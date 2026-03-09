@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
+import { CONTACT_INFO } from "@/lib/constants";
+
 const WEBHOOK_URL = ""; // Will be filled later
-const WHATSAPP_NUMBER = "5500000000000";
+const WHATSAPP_NUMBER = CONTACT_INFO.WHATSAPP_NUMBER;
 const POPUP_DELAY_MS = 40000;
 
 interface LeadPopupProps {
