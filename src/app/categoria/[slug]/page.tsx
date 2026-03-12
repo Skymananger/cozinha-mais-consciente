@@ -20,7 +20,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 
   if (!label) notFound();
 
-  const articles = defaultArticles.filter(a => a.category === category);
+  const articles = defaultArticles.filter(a => a.category === category && a.status === 'Publicado');
 
   return (
     <>

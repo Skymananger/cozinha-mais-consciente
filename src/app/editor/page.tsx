@@ -1,141 +1,108 @@
-"use client";
-import { useState } from "react";
-import { defaultArticles, universeIcons, Article } from "@/lib/articles";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { defaultArticles } from "@/lib/articles";
 
-export default function EditorPanel() {
-  const [articles, setArticles] = useState<Article[]>(defaultArticles);
-  const [filterUniverse, setFilterUniverse] = useState<string | null>(null);
+export const metadata = {
+  title: 'Editor | Cozinha Mais Consciente',
+  robots: { index: false, follow: false }
+}
 
-  const columns = [
-    { id: 'A Publicar', label: '📋 A PUBLICAR' },
-    { id: 'Em Produção', label: '✍️ EM PRODUÇÃO' },
-    { id: 'Em Revisão', label: '🔍 EM REVISÃO' },
-    { id: 'Publicado', label: '✅ PUBLICADO' },
-  ];
+export default async function EditorDashboard() {
+  const cookieStore = await cookies();
+  const authCookie = cookieStore.get("editor_auth");
 
-  const filteredArticles = filterUniverse 
-    ? articles.filter(a => a.universe === filterUniverse)
-    : articles;
+  if (!authCookie || authCookie.value !== "authenticated") {
+    redirect("/editor/login");
+  }
 
-  const moveArticle = (id: string, newStatus: any) => {
-    setArticles(prev => prev.map(a => a.id === id ? { ...a, status: newStatus } : a));
-  };
+  // Sort articles by publishedAt date ascending
+  const sortedArticles = [...defaultArticles].sort((a, b) => 
+    new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime()
+  );
 
-  const stats = {
-    total: 25,
-    published: articles.filter(a => a.status === 'Publicado').length
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'Publicado': return { bg: '#DEF7EC', text: '#03543F' };
+      case 'A Publicar': return { bg: '#E1EFFE', text: '#1E429F' };
+      case 'Em Produção': return { bg: '#FEF3C7', text: '#92400E' };
+      case 'Em Revisão': return { bg: '#FDE8E8', text: '#9B1C1C' };
+      default: return { bg: '#F3F4F6', text: '#374151' };
+    }
   };
 
   return (
-    <>
-      <Header />
-      <main style={{ background: "#F4F7F4", minHeight: "100vh", padding: "2rem 0" }}>
-        <div className="container">
-          {/* Header Editor */}
-          <div style={{ 
-            display: "flex", 
-            justifyContent: "space-between", 
-            alignItems: "center", 
-            marginBottom: "2rem",
-            background: "white",
-            padding: "1.5rem 2rem",
-            borderRadius: "var(--radius)",
-            boxShadow: "var(--shadow-sm)"
-          }}>
-            <div>
-              <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>Painel Editorial</h1>
-              <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-                <span style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
-                  Progresso: <strong>{stats.published} de {stats.total}</strong> artigos publicados
-                </span>
-                <div style={{ width: "200px", height: "8px", background: "#E8E0D6", borderRadius: "4px", overflow: "hidden" }}>
-                  <div style={{ width: `${(stats.published / stats.total) * 100}%`, height: "100%", background: "var(--sage)", transition: "width 0.5s" }} />
-                </div>
-              </div>
-            </div>
-
-            <div style={{ display: "flex", gap: "0.5rem" }}>
-              {Object.keys(universeIcons).map(u => (
-                <button 
-                  key={u}
-                  onClick={() => setFilterUniverse(filterUniverse === u ? null : u)}
-                  style={{
-                    padding: "0.5rem 1rem",
-                    borderRadius: "var(--radius-pill)",
-                    border: "1px solid var(--border)",
-                    background: filterUniverse === u ? "var(--sage-pale)" : "white",
-                    cursor: "pointer",
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    borderColor: filterUniverse === u ? "var(--sage)" : "var(--border)"
-                  }}
-                >
-                  {universeIcons[u as keyof typeof universeIcons]} {u.toUpperCase()}
-                </button>
-              ))}
-            </div>
+    <div className="section" style={{ minHeight: "calc(100vh - 60px)" }}>
+      <div className="container">
+        <header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem" }}>
+          <div>
+            <h1 style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>Calendário Editorial</h1>
+            <p style={{ color: "var(--text-muted)", fontSize: "1.1rem" }}>
+              Total de {sortedArticles.length} artigos no planejamento.
+            </p>
           </div>
+        </header>
 
-          {/* Kanban Board */}
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(4, 1fr)", 
-            gap: "1.5rem", 
-            alignItems: "start" 
-          }}>
-            {columns.map(col => (
-              <div key={col.id} style={{ 
-                background: "#E8EBE8", 
-                borderRadius: "var(--radius-sm)", 
-                padding: "1rem", 
-                minHeight: "70vh" 
-              }}>
-                <h3 style={{ fontSize: "0.9rem", color: "#555", marginBottom: "1rem", padding: "0 0.5rem" }}>
-                  {col.label} ({filteredArticles.filter(a => a.status === col.id).length})
-                </h3>
-                
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                  {filteredArticles.filter(a => a.status === col.id).map(article => (
-                    <div 
-                      key={article.id}
-                      style={{
-                        background: "white",
-                        padding: "1rem",
-                        borderRadius: "var(--radius-xs)",
-                        boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-                        borderLeft: `4px solid ${article.type === 'PILLAR' ? 'var(--sage)' : '#B0A89E'}`,
-                        cursor: "grab"
-                      }}
-                    >
-                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-                        <span style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--text-light)" }}>
-                          {article.type}
+        <div style={{ background: "var(--white)", borderRadius: "var(--radius)", boxShadow: "0 4px 6px rgba(0,0,0,0.02)", overflow: "hidden" }}>
+          <div style={{ overflowX: "auto" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
+              <thead style={{ background: "var(--sage-pale)", color: "var(--sage-dark)", borderBottom: "1px solid var(--border-light)" }}>
+                <tr>
+                  <th style={{ padding: "1.5rem", fontWeight: 600 }}>Data Prevista</th>
+                  <th style={{ padding: "1.5rem", fontWeight: 600 }}>Artigo</th>
+                  <th style={{ padding: "1.5rem", fontWeight: 600 }}>Universo / Categoria</th>
+                  <th style={{ padding: "1.5rem", fontWeight: 600 }}>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {sortedArticles.map((article) => {
+                  const statusColors = getStatusColor(article.status);
+                  const isPast = new Date(article.publishedAt).getTime() < new Date().getTime() && article.status !== 'Publicado';
+
+                  return (
+                    <tr key={article.id} style={{ borderBottom: "1px solid var(--border-light)", transition: "background 0.2s" }}>
+                      <td style={{ padding: "1.5rem", whiteSpace: "nowrap", color: isPast ? "#9B1C1C" : "inherit" }}>
+                        {new Date(article.publishedAt).toLocaleDateString('pt-BR')}
+                        {isPast && <span style={{ display: "block", fontSize: "0.75rem", fontWeight: 600 }}>Atrasado</span>}
+                      </td>
+                      <td style={{ padding: "1.5rem" }}>
+                        <div style={{ fontWeight: 600, color: "var(--gray-800)", marginBottom: "0.25rem" }}>
+                          {article.title}
+                        </div>
+                        <div style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
+                          Slug: /{article.slug}
+                        </div>
+                      </td>
+                      <td style={{ padding: "1.5rem", whiteSpace: "nowrap" }}>
+                        <div style={{ marginBottom: "0.25rem" }}>
+                          <span style={{ textTransform: "uppercase", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.05em", color: "var(--text-light)" }}>
+                            {article.universe}
+                          </span>
+                        </div>
+                        <div style={{ fontSize: "0.9rem" }}>
+                          {article.categoryLabel}
+                        </div>
+                      </td>
+                      <td style={{ padding: "1.5rem", whiteSpace: "nowrap" }}>
+                        <span style={{ 
+                          display: "inline-block", 
+                          padding: "0.25rem 0.75rem", 
+                          borderRadius: "999px", 
+                          fontSize: "0.85rem", 
+                          fontWeight: 600,
+                          background: statusColors.bg,
+                          color: statusColors.text
+                        }}>
+                          {article.status}
                         </span>
-                        <span style={{ fontSize: "1rem" }}>{universeIcons[article.universe]}</span>
-                      </div>
-                      <h4 style={{ fontSize: "0.85rem", lineHeight: 1.4, marginBottom: "0.75rem" }}>{article.title}</h4>
-                      <div style={{ fontSize: "0.7rem", color: "var(--text-muted)", display: "flex", justifyContent: "space-between" }}>
-                        <span>📅 {new Date(article.publishedAt).toLocaleDateString('pt-BR')}</span>
-                        {/* Status Cycling (Simple for demo) */}
-                        <select 
-                          value={article.status} 
-                          onChange={(e) => moveArticle(article.id, e.target.value)}
-                          style={{ fontSize: "0.7rem", border: "none", background: "#f0f0f0", borderRadius: "4px", padding: "2px" }}
-                        >
-                          {columns.map(c => <option key={c.id} value={c.id}>{c.id}</option>)}
-                        </select>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
+    </div>
   );
 }

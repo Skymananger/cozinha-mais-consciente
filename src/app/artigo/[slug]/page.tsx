@@ -1,6 +1,7 @@
 import { Article, defaultArticles, categoryLabels, universeIcons } from "@/lib/articles";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ShareButtons from "@/components/ShareButtons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CONTACT_INFO } from "@/lib/constants";
@@ -15,10 +16,10 @@ export default async function ArticlePage({ params }: { params: { slug: string }
   const { slug } = await params;
   const article = defaultArticles.find((a) => a.slug === slug);
 
-  if (!article) notFound();
+  if (!article || article.status !== 'Publicado') notFound();
 
   const relatedArticles = defaultArticles
-    .filter((a) => a.universe === article.universe && a.id !== article.id)
+    .filter((a) => a.universe === article.universe && a.id !== article.id && a.status === 'Publicado')
     .slice(0, 3);
 
   return (
@@ -161,6 +162,9 @@ export default async function ArticlePage({ params }: { params: { slug: string }
                 Quero a indicação →
               </Link>
             </div>
+
+            {/* Share Buttons */}
+            <ShareButtons articleTitle={article.title} articleSlug={article.slug} />
 
             {/* Disclaimer no rodapé do artigo */}
             <p style={{ 

@@ -13,8 +13,8 @@ export default function CookieBanner() {
     }
   }, []);
 
-  const accept = () => {
-    localStorage.setItem("cozinha_cookie_consent", "true");
+  const handleConsent = (accepted: boolean) => {
+    localStorage.setItem("cozinha_cookie_consent", accepted ? "true" : "false");
     setShow(false);
   };
 
@@ -33,7 +33,7 @@ export default function CookieBanner() {
     }}>
       <div className="card scale-in" style={{
         pointerEvents: "auto",
-        maxWidth: "600px",
+        maxWidth: "640px",
         padding: "1rem 1.5rem",
         display: "flex",
         alignItems: "center",
@@ -44,15 +44,28 @@ export default function CookieBanner() {
         border: "1px solid var(--sage-muted)",
         boxShadow: "var(--shadow-lg)",
       }}>
-        <p style={{ flex: 1, fontSize: "0.85rem", margin: 0, color: "var(--text-muted)" }}>
-          🌿 Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa{" "}
+        <p style={{ flex: 1, fontSize: "0.85rem", margin: 0, color: "var(--text-muted)", minWidth: "200px" }}>
+          🌿 Usamos cookies para melhorar sua experiência. Saiba mais em nossa{" "}
           <Link href="/privacidade" style={{ textDecoration: "underline", color: "var(--sage-dark)" }}>
             Política de Privacidade
           </Link>.
         </p>
-        <button onClick={accept} className="btn btn-primary" style={{ padding: "0.5rem 1.25rem", fontSize: "0.85rem" }}>
-          Aceitar
-        </button>
+        <div style={{ display: "flex", gap: "0.5rem", flexShrink: 0 }}>
+          <button
+            onClick={() => handleConsent(false)}
+            className="btn btn-outline"
+            style={{ padding: "0.5rem 1rem", fontSize: "0.8rem" }}
+          >
+            Recusar
+          </button>
+          <button
+            onClick={() => handleConsent(true)}
+            className="btn btn-primary"
+            style={{ padding: "0.5rem 1.25rem", fontSize: "0.85rem" }}
+          >
+            Aceitar
+          </button>
+        </div>
       </div>
     </div>
   );

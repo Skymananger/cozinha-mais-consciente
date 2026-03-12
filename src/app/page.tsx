@@ -4,9 +4,10 @@ import ArticleCard from "@/components/ArticleCard";
 import CategoryGrid from "@/components/CategoryGrid";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
 
 export default function Home() {
-  const articles = defaultArticles.filter(a => a.status === 'Publicado' || a.status === 'A Publicar').slice(0, 6);
+  const articles = defaultArticles.filter(a => a.status === 'Publicado').slice(0, 6);
   const featured = defaultArticles.find(a => a.featured) || articles[0];
 
   return (
@@ -45,7 +46,7 @@ export default function Home() {
             margin: "0 auto 1.5rem",
             lineHeight: 1.1
           }}>
-            Você controla o que compra. Mas controla o que sua panela <em style={{ fontStyle: "italic", opacity: 0.9 }}>adiciona à comida?</em>
+            Você controla o que compra, mas controla o que sua panela <em style={{ fontStyle: "italic", opacity: 0.9 }}>adiciona à comida?</em>
           </h1>
 
           <p style={{
@@ -126,6 +127,19 @@ export default function Home() {
           }}>
             "O Cozinha Mais Consciente é um portal de curadoria independente sobre saúde, alimentação e utensílios de cozinha. Reunimos informação técnica e indicamos profissionais especializados para quem leva saúde a sério."
           </p>
+        </div>
+      </section>
+
+      {/* Newsletter / Lead Capture */}
+      <section className="section" style={{ background: "white", padding: "4rem 0" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+            <h2 style={{ fontSize: "2rem" }}>Faça parte da nossa comunidade</h2>
+            <p style={{ color: "var(--text-light)", marginTop: "0.5rem" }}>
+              Receba dicas sobre alimentação saudável, escolha de utensílios e muito mais.
+            </p>
+          </div>
+          <LeadCaptureForm />
         </div>
       </section>
 

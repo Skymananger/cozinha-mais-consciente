@@ -164,7 +164,7 @@ export const defaultArticles: Article[] = [
     type: 'CLUSTER',
     publishedAt: '2026-04-27',
     readTime: 7,
-    status: 'A Publicar',
+    status: 'Publicado',
     excerpt: 'Não é apenas a panela. Entenda a exposição cumulativa ao alumínio.',
     coverImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200',
     coverAlt: 'Produtos de higiene pessoal',
@@ -172,7 +172,74 @@ export const defaultArticles: Article[] = [
     ogImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200',
     metaTitle: 'Fontes de Alumínio no Dia a Dia: Exposição Tóxica',
     metaDescription: 'Além das panelas, onde o alumínio se esconde no seu cotidiano?',
-    content: 'Conteúdo em produção...',
+    content: `
+      <p>Quando falamos de alumínio na cozinha, o primeiro pensamento vai direto para a panela. E com razão: ela é o vetor mais direto e frequente. Mas o que poucos percebem é que a panela é apenas <strong>uma peça em um mosaico muito maior</strong> de exposição diária. O alumínio está presente em dezenas de produtos que você usa, consome ou aplica no corpo — e é a <strong>soma total dessa carga</strong> que determina o risco real para a sua saúde.</p>
+
+      <h2>O Conceito de Carga Total: Por Que Cada Fonte Importa</h2>
+      <p>O organismo humano possui uma capacidade limitada de eliminar alumínio. Os rins fazem esse trabalho, mas de forma lenta e parcial. Quando a carga de entrada supera a capacidade de saída, o excedente se deposita nos tecidos — ossos, cérebro, fígado. É o que os toxicologistas chamam de <strong>bioacumulação por exposição crônica</strong>.</p>
+      
+      <p>Nesse cenário, cada fonte importa. Não porque uma única aplicação de desodorante ou uma colherada de fermento vá causar um problema imediato, mas porque <strong>todas juntas, ao longo de anos, formam uma carga que o corpo não consegue processar</strong>. A panela, por ser usada diariamente e frequentemente com calor e ácidos, pode ser justamente o "ponto de transbordo" que leva a carga total além do limiar seguro.</p>
+
+      <div class="sabia-que">
+        <h4>Sabia que?</h4>
+        <p>A Organização Mundial da Saúde (OMS) estima que a ingestão tolerável de alumínio é de aproximadamente <strong>2mg por kg de peso corporal por semana</strong>. Estudos indicam que muitas pessoas ultrapassam esse limite apenas com a alimentação, sem contabilizar fontes como cosméticos e medicamentos.</p>
+      </div>
+
+      <h2>Fonte 1: Fermento em Pó e Aditivos Alimentares</h2>
+      <p>A maioria dos fermentos em pó comercializados no Brasil contém <strong>sulfato de alumínio e sódio</strong> (também chamado de "alúmen") como agente de fermentação. Esse composto libera gás carbônico quando aquecido, fazendo massas crescerem. O problema? O alumínio permanece no alimento finalizado.</p>
+      
+      <p>Bolos, pães, biscoitos caseiros e industrializados frequentemente contêm doses significativas de alumínio proveniente desse aditivo. Alguns estudos estimam que um único pedaço de bolo feito com fermento convencional pode conter entre <strong>5 a 15mg de alumínio</strong> — uma fração expressiva do limite semanal recomendado.</p>
+      
+      <p><strong>Alternativa:</strong> Opte por fermentos rotulados como "livres de alumínio" (<em>aluminum-free baking powder</em>). Eles existem no mercado brasileiro e utilizam fosfato de cálcio como substituto.</p>
+
+      <h2>Fonte 2: Desodorantes e Antitranspirantes</h2>
+      <p>A maioria dos antitranspirantes funciona porque contém <strong>cloreto de alumínio</strong> ou <strong>cloridrato de alumínio</strong>. Esses compostos bloqueiam temporariamente os ductos das glândulas sudoríparas, reduzindo a transpiração. O alumínio é absorvido pela pele, especialmente se ela estiver recém-depilada ou com microcortes.</p>
+      
+      <p>A região axilar é particularmente preocupante por sua proximidade com o tecido mamário e com linfonodos do sistema linfático. Embora a comunidade científica ainda debata a relação direta entre alumínio em antitranspirantes e câncer de mama, o princípio da precaução sugere minimizar essa exposição quando possível.</p>
+      
+      <p><strong>Alternativa:</strong> Desodorantes naturais à base de bicarbonato de sódio, óxido de zinco ou leite de magnésia não contêm alumínio e são eficazes para controle de odor (embora não bloqueiem a transpiração).</p>
+
+      <h2>Fonte 3: Medicamentos Comuns</h2>
+      <p>Alguns dos medicamentos mais consumidos no Brasil contêm alumínio em sua formulação:</p>
+      <ul>
+        <li><strong>Antiácidos:</strong> Hidróxido de alumínio é o princípio ativo de muitos antiácidos populares. Uma única dose pode conter entre <strong>100 a 600mg de alumínio</strong> — centenas de vezes mais do que uma refeição cozida em panela de alumínio.</li>
+        <li><strong>Aspirina tamponada:</strong> Algumas formulações utilizam compostos de alumínio para proteger o estômago.</li>
+        <li><strong>Vacinas:</strong> O hidróxido de alumínio é usado como adjuvante em diversas vacinas para potencializar a resposta imune. As doses são mínimas e controladas, mas entram na conta total.</li>
+      </ul>
+      
+      <p>Se você faz uso frequente de antiácidos, essa pode ser, isoladamente, sua <strong>maior fonte de exposição ao alumínio</strong>. Converse com seu médico sobre alternativas sem alumínio.</p>
+
+      <h2>Fonte 4: Embalagens e Papel Alumínio</h2>
+      <p>O papel alumínio é um dos utensílios mais versáteis e menos questionados da cozinha. Mas ele é, essencialmente, uma folha extremamente fina de alumínio puro, o que significa que a lixiviação é <strong>proporcionalmente muito maior</strong> do que em uma panela grossa.</p>
+
+      <p>Embalar alimentos quentes, cobrir assadeiras no forno ou fazer "papillote" (pacotinhos de alumínio com ingredientes temperados) cria um ambiente de alta temperatura, contato direto e, frequentemente, presença de ácidos (limão, tomate, vinagre) — o trio perfeito para transferência máxima de metal.</p>
+      
+      <p>Latas de bebida e alimentos enlatados também merecem atenção. Embora as latas modernas possuam um revestimento interno (geralmente BPA ou substitutos), esse revestimento pode se degradar com o tempo, expondo o alumínio da estrutura ao conteúdo.</p>
+      
+      <p><strong>Alternativa:</strong> Substitua o papel alumínio por papel manteiga (vegetal) no forno. Para armazenamento, use recipientes de vidro com tampa.</p>
+
+      <h2>Fonte 5: Água Tratada</h2>
+      <p>Aqui está uma fonte que quase ninguém considera: <strong>sulfato de alumínio</strong> é amplamente utilizado no tratamento de água no Brasil como agente de floculação (ele agrega as impurezas para que possam ser filtradas). Embora a maior parte do alumínio seja removida no processo, níveis residuais permanecem na água que chega à sua torneira.</p>
+      
+      <p>Esses níveis são regulamentados e geralmente ficam abaixo dos limites internacionais, mas, novamente, entram na equação da carga total diária.</p>
+      
+      <p><strong>Alternativa:</strong> Filtros de carvão ativado de boa qualidade reduzem significativamente os níveis residuais de alumínio na água.</p>
+
+      <h2>O Efeito Cumulativo: A Panela como "Gota D'Água"</h2>
+      <p>Imagine seu organismo como um copo. Cada fonte de alumínio adiciona um pouco de líquido: o fermento do bolo do café da manhã, o desodorante aplicado pela manhã, o antiácido depois do almoço, a água filtrada durante o dia. Quando você cozinha o jantar em uma panela de alumínio — especialmente com ingredientes ácidos — essa pode ser a dose que faz o copo transbordar.</p>
+
+      <p>É por isso que, do ponto de vista de saúde integrativa, <strong>reduzir a fonte que você controla com mais facilidade é a estratégia mais inteligente</strong>. E a panela é, de longe, a troca mais simples e de maior impacto. Substituí-la por um material inerte como o aço inox 316L, o vidro ou a cerâmica pura elimina uma das maiores e mais frequentes fontes de exposição alimentar.</p>
+
+      <h2>Checklist: Reduza Sua Carga Total Hoje</h2>
+      <ul>
+        <li>✅ Troque o fermento convencional por um sem alumínio</li>
+        <li>✅ Substitua o antitranspirante por um desodorante sem sais de alumínio</li>
+        <li>✅ Converse com seu médico sobre antiácidos sem alumínio</li>
+        <li>✅ Elimine o papel alumínio do forno — use papel manteiga</li>
+        <li>✅ Invista em um bom filtro de água</li>
+        <li>✅ <strong>Substitua suas panelas de alumínio</strong> — a mudança com maior impacto diário</li>
+      </ul>
+    `,
   },
   {
     id: 'c1.3',
