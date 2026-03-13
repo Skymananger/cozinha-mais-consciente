@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  verification: {
+    google: "Gta_5tOi01rPBFGLDdauW6J8678NuwIo7vFYjWzHJMA",
+  },
 };
 
 import CookieBanner from "@/components/CookieBanner";
