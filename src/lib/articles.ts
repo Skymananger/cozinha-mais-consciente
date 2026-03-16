@@ -318,33 +318,32 @@ export const defaultArticles: Article[] = [
       <h3>Material Necessário:</h3>
       <ul>
         <li>1 recipiente de vidro transparente incolor (um copo limpo);</li>
-        <li>Sua panela de alumínio, Inox comum ou panelas com antiaderentes riscados de teste;</li>
-        <li>1 a 2 colheres de sopa de Bicarbonato de Sódio de mercado;</li>
-        <li>Água potável mineral comum (Cuidado com água da torneira já amarelada).</li>
+        <li>Sua panela de alumínio, Inox comum, vidro, cerâmica ou panelas com antiaderentes riscados de teste;</li>
+        <li>1 copo de água (400 ml) mineral comum;</li>
+        <li>1 colher de sobremesa de Bicarbonato de Sódio;</li>
       </ul>
 
       <h2>O Passo a Passo do Teste Prático</h2>
 
       <ol>
-        <li><strong>Fervura Padrão:</strong> Coloque cerca de dois a três copos de água potável no interior da sua panela e adicione as 2 colheres generosas do bicarbonato de sódio. Misture levemente até dissolver na água.</li>
-        <li><strong>Aceleração Térmica:</strong> Leve a panela limpa ao fogo alto e ferva a mistura de forma contínua e forte por no mínimo 10 minutos.</li>
-        <li><strong>Coleta dos Resultados:</strong> Desligue o fogo e aguarde a mistura esfriar para não quebrar o recipiente. Com cuidado, verta um pouco do líquido fervido direto para o seu copo incolor de vidro lado-a-lado com um copo na mesma medida de água da torneira natural como "controle".</li>
+        <li><strong>Fervura Padrão:</strong> Coloque 1 copo de água (400 ml) no interior da sua panela e adicione 1 colher de sobremesa de bicarbonato de sódio. Misture levemente até dissolver.</li>
+        <li><strong>Aceleração Térmica:</strong> Leve a panela limpa ao fogo alto e ferva a mistura de forma contínua por cerca de 10 minutos. <strong>Atenção:</strong> esse teste é como uma simulação extrema do que acontece todos os dias na sua cozinha: corrosão acelerada e dispersão de restos de alimentos presos nos poros do material da panela.</li>
+        <li><strong>Coleta dos Resultados:</strong> Desligue o fogo e aguarde a mistura esfriar para não quebrar o recipiente de vidro que usará a seguir. Com cuidado, verta o líquido fervido direto para o seu copo incolor de vidro. Reserve um copo idêntico apenas com água da torneira e bicarbonato não fervido como "controle".</li>
       </ol>
 
       <div class="sabia-que">
-        <h4>O Veredito do Sabor (Opcional, mas Impactante)</h4>
-        <p>Se você tem bravura, após a mistura contendo bicarbonato + água da panela esfriar (e se não estiver amarronzada escurecida pela sujeira), encoste <strong>1 dedinho minúsculo do líquido na ponta da língua.</strong> O sabor deixado não é o gosto de sal do bicarbonato. É um retrogosto amargo, aveludado, puramente metálico e artificial: o <strong>Sabor e a Textura Real do Alúminio Oxidado</strong>. Não engula, apenas sinta e lave a boca.</p>
+        <h4>A Prova do Paladar</h4>
+        <p>Após a mistura esfriar, prove um pouquinho da água fervida na panela e compare com o copo de controle. Ao provar e ver a diferença de uma panela para outra, dá para evidenciar de forma inegável que <strong>os resíduos que se soltam da panela estão alterando negativamente o sabor dos alimentos</strong> e, consequentemente, colocando em risco a sua saúde diariamente.</p>
       </div>
 
       <h2>Verificando o Resultado no Copo de Vidro</h2>
-      <p>Coloque os copos em cima de uma toalha de papel branco sobre uma mesa bem iluminada. Avalie:</p>
+      <p>Coloque os copos em cima de uma toalha de papel branco sobre uma mesa bem iluminada. O que você vai notar:</p>
 
       <ul>
-        <li><strong>Resultado Positivo para Segurança (Inércia Verdadeira):</strong> Em panelas de Cerâmica 100% Pura ou no famoso Aço Inox 316L (Cirúrgico), a água pós-teste permanecerá idêntica à água original: absolutamente translúcida, sem resíduos e cheiro nenhum de metalaria. Nada de novo foi agregado.</li>
-        <li><strong>Resultado Previsível do Alumínio (e Aços Baratos):</strong> Se a panela testada foi de alumínio — ou panelas manchadas cuja proteção foi embora — a água no copo apresentará um forte aspecto esbranquiçado, nebuloso (não perfeitamente transparente) ou até incrivelmente acinzentado/nublado. Esse turvamento é literalmente a suspensão de partículas de metal soltos que seriam incorporados no macarrão da sua família.</li>
+        <li><strong>A Maioria das Panelas Falha:</strong> Quase todas as panelas, com exceção do aço de grau cirúrgico, sofrerão interferência. <strong>Inclusive panelas de vidro e cerâmica</strong> não escapam 100%, pois muitas vezes possuem em sua composição compostos suscetíveis à corrosão ou liberam substâncias usadas em sua coloração/pigmento. Você notará a água mais turva ou com resíduos.</li>
+        <li><strong>Resultado Positivo para Segurança:</strong> Apenas em panelas de altíssima inércia química, como o Aço Inox Cirúrgico autêntico (316L), a água permanecerá praticamente inalterada em cor e sabor, sem o gosto metálico ou terroso que outras liberam.</li>
+        <li><strong>O Pior Cenário (Alumínio e Antiaderentes Gastos):</strong> A água apresentará um forte aspecto esbranquiçado, nebuloso (não transparente) ou acinzentado. Esse turvamento é literalmente a suspensão de partículas de metal soltos e restos alojados nas porosidades.</li>
       </ul>
-
-      <p>Para quem ainda acredita que a lixiviação é algo microscópico ou de menor impacto, o teste da nebulosidade por bicarbonato em 10 minutos é uma dose fria, nítida e irrevogável da realidade tóxica da qual passamos a fugir quando adotamos o conceito de uma Cozinha Mais Consciente.</p>
     `,
   },
 
