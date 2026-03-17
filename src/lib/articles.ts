@@ -308,7 +308,7 @@ export const defaultArticles: Article[] = [
     metaTitle: 'Teste do Bicarbonato em Panelas: Como Fazer',
     metaDescription: 'Guia prático para testar a qualidade e reatividade de suas panelas em casa.',
     content: `
-      <p>O conceito de que as panelas onde preparamos nossas refeições liberam toxinas pode parecer abstrato ou exagerado para alguns até ser comprovado diante dos próprios olhos. E é exatamente por isso que elaboramos este guia simples para o <strong>Teste do Bicarbonato</strong>. Esse é um experimento que você pode reproduzir agora mesmo na sua cozinha em menos de dez minutos e ele irá validar se a sua panela atual de alumínio está lixiviando compostos prejudiciais para os seus alimentos.</p>
+      <p>O conceito de que as panelas onde preparamos nossas refeições liberam toxinas pode parecer abstrato ou exagerado para alguns até ser comprovado diante dos próprios olhos. E é exatamente por isso que elaboramos este guia simples para o <strong>Teste do Bicarbonato</strong>. Esse é um experimento que você pode reproduzir agora mesmo na sua cozinha em menos de dez minutos e ele irá validar se sua panela atual está lixiviando compostos prejudiciais para os seus alimentos.</p>
 
       <h2>O Objetivo do Experimento e a Química Envolvida</h2>
       <p>Muitos fabricantes defendem que panelas formam uma camada de "óxido inerte" após múltiplos usos, que em tese selaria o alumínio puro agindo como uma película impenetrável. Mas será que ela sobrevive ao uso real? O bicarbonato de sódio (NaHCO3) é um composto levemente alcalino e, como explicamos em artigos anteriores do "Universo Alumínio", o alumínio é anfótero: ele sofre corrosão veloz tanto em ambientes altamente ácidos quanto na presença de solutos básicos (alcalinos).</p>
