@@ -32,6 +32,7 @@ export const metadata: Metadata = {
 
 import CookieBanner from "@/components/CookieBanner";
 import FloatingCTA from "@/components/FloatingCTA";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export default function RootLayout({
   children,
@@ -49,6 +50,7 @@ export default function RootLayout({
         {children}
         <FloatingCTA />
         <CookieBanner />
+        <GoogleAnalytics gaId="G-KCQR7VCSK8" />
       </body>
     </html>
   );
