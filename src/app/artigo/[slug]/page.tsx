@@ -138,8 +138,25 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           </div>
         </header>
 
+        {/* Cover Image */}
+        <div className="container" style={{ maxWidth: "1000px", marginTop: "-2rem", marginBottom: "3rem", position: "relative", zIndex: 10 }}>
+          <img 
+            src={article.coverImage} 
+            alt={article.coverAlt || article.title} 
+            style={{ 
+              width: "100%", 
+              aspectRatio: "16/9", 
+              objectFit: "cover", 
+              borderRadius: "var(--radius)", 
+              boxShadow: "0 15px 35px rgba(0,0,0,0.1)",
+              display: "block",
+              backgroundColor: "var(--cream)"
+            }} 
+          />
+        </div>
+
         {/* Article Body */}
-        <article className="section">
+        <article className="section" style={{ paddingTop: 0 }}>
           <div className="container" style={{ maxWidth: "800px" }}>
             <div className="article-content">
               {/* This is a placeholder for the actual content rendering */}
