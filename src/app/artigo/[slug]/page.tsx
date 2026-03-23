@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Article, defaultArticles, categoryLabels, universeIcons } from "@/lib/articles";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +13,40 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = defaultArticles.find((a) => a.slug === slug);
+
+  if (!article || article.status !== 'Publicado') {
+    return { title: 'Página Não Encontrada | Cozinha Mais Consciente' };
+  }
+
+  const articleUrl = `https://cozinhamaisconsciente.com.br/artigo/${article.slug}`;
+
+  return {
+    title: article.metaTitle || article.title,
+    description: article.metaDescription || article.excerpt,
+    alternates: {
+      canonical: articleUrl,
+    },
+    openGraph: {
+      title: article.metaTitle || article.title,
+      description: article.metaDescription || article.excerpt,
+      url: articleUrl,
+      type: "article",
+      publishedTime: article.publishedAt,
+      images: [
+        {
+          url: article.ogImage || article.coverImage,
+          width: 1200,
+          height: 630,
+          alt: article.coverAlt || article.title,
+        },
+      ],
+    },
+  };
+}
+
 export default async function ArticlePage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const article = defaultArticles.find((a) => a.slug === slug);
@@ -22,8 +57,36 @@ export default async function ArticlePage({ params }: { params: { slug: string }
     .filter((a) => a.universe === article.universe && a.id !== article.id && a.status === 'Publicado')
     .slice(0, 3);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.metaTitle || article.title,
+    description: article.metaDescription || article.excerpt,
+    image: [
+      `https://cozinhamaisconsciente.com.br${article.ogImage || article.coverImage}`
+    ],
+    datePublished: article.publishedAt,
+    author: [{
+      "@type": "Organization",
+      name: "Cozinha Mais Consciente",
+      url: "https://cozinhamaisconsciente.com.br"
+    }],
+    publisher: {
+      "@type": "Organization",
+      name: "Cozinha Mais Consciente",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://cozinhamaisconsciente.com.br/favicon.ico"
+      }
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main style={{ minHeight: "100vh", background: "var(--white)" }}>
         {/* Article Header */}

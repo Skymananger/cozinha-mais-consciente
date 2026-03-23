@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { defaultArticles, categoryLabels, Category } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
 import Header from "@/components/Header";
@@ -11,6 +12,32 @@ export async function generateStaticParams() {
     { slug: 'alimentacao-consciente' },
     { slug: 'dicas-da-cozinha' }
   ];
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = await params;
+  const category = slug as Category;
+  const label = categoryLabels[category];
+
+  if (!label) {
+    return { title: 'Categoria Não Encontrada | Cozinha Mais Consciente' };
+  }
+
+  const categoryUrl = `https://cozinhamaisconsciente.com.br/categoria/${slug}`;
+
+  return {
+    title: `Artigos sobre ${label} | Cozinha Mais Consciente`,
+    description: `Navegue pela nossa curadoria independente de estudos, guias em ${label} para blindar sua saúde na cozinha.`,
+    alternates: {
+      canonical: categoryUrl,
+    },
+    openGraph: {
+      title: `${label} - Cozinha Mais Consciente`,
+      description: `Navegue pela nossa curadoria independente e guias completos de ${label}.`,
+      url: categoryUrl,
+      type: "website",
+    },
+  };
 }
 
 export default async function CategoryPage({ params }: { params: { slug: string } }) {
