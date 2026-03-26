@@ -22,6 +22,10 @@ export interface Article {
   metaDescription: string;
   status: 'A Publicar' | 'Em Produção' | 'Em Revisão' | 'Publicado';
   featured?: boolean;
+  didYouKnow?: {
+    text: string;
+    linkSlug: string;
+  };
 }
 
 export const categoryLabels: Record<Category, string> = {
@@ -60,6 +64,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/aluminio-cozinha-guia.png',
     metaTitle: 'Alumínio na Cozinha: Guia Completo de Riscos e Saúde',
     metaDescription: 'Entenda os riscos do alumínio na cozinha. Guia técnico sobre lixiviação e segurança alimentar.',
+    didYouKnow: {
+      text: 'O alumínio é um metal neurotóxico que pode se acumular no cérebro ao longo de décadas.',
+      linkSlug: 'aluminio-reacao-alimentos-acidos'
+    },
     content: `
       <p>O alumínio é o terceiro elemento mais abundante na crosta terrestre e, nas últimas décadas, tornou-se o rei incontestável das cozinhas brasileiras. Leve, barato e excelente condutor de calor, ele parece o material perfeito. Mas o que acontece quando esse metal — um elemento neurotóxico conhecido — é submetido a altas temperaturas e entra em contato direto com o que você come?</p>
 
@@ -102,7 +110,7 @@ export const defaultArticles: Article[] = [
       <h2>A Transição para uma Cozinha Segura</h2>
       <p>Escolher o que entra em contato com sua comida é uma das decisões de saúde mais potentes que você pode tomar. Embora existam opções no mercado, a ciência da inércia química é rigorosa: o <strong>Aço Inox 316L (cirúrgico)</strong> destaca-se como o padrão ouro de estabilidade, garantindo que o sabor e as propriedades do alimento permaneçam puras, sem a lixiviação de metais industriais.</p>
       
-      <p>Outras alternativas como o vidro e a cerâmica pura representam avanços significativos em relação ao alumínio, mas exigem atenção à procedência quanto a pigmentos e aditivos. No Cozinha Mais Consciente, nossa missão é prover essa clareza técnica. Se você busca longevidade e leva a nutrição a sério, o primeiro passo é olhar para baixo — para o que está segurando sua refeição no fogo.</p>
+      <p>Outras alternativas como o vidro (apesar de ter menos risco, não é isento de resíduos e possui baixa praticidade no preparo diário, com o risco de quebra e cacos na cozinha) e a cerâmica pura representam avanços significativos em relação ao alumínio, mas exigem atenção à procedência quanto a pigmentos e aditivos. No Cozinha Mais Consciente, nossa missão é prover essa clareza técnica. Se você busca longevidade e leva a nutrição a sério, o primeiro passo é olhar para baixo — para o que está segurando sua refeição no fogo.</p>
     `,
   },
   {
@@ -123,6 +131,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/aluminio-alimentos-acidos.png',
     metaTitle: 'Alumínio e Alimentos Ácidos: O Perigo Químico Invisível',
     metaDescription: 'Descubra por que alimentos ácidos aceleram a contaminação por alumínio e como proteger sua saúde na cozinha.',
+    didYouKnow: {
+      text: 'Alimentos ácidos como tomate e limão podem triplicar a lixiviação de alumínio em apenas 15 minutos.',
+      linkSlug: 'fontes-de-aluminio-no-dia-a-dia'
+    },
     content: `
       <p>Se você já notou que sua panela de alumínio fica "mais clara" ou brilhante depois de cozinhar um molho de tomate, você presenciou uma reação química em tempo real. Infelizmente, esse brilho não é sinal de limpeza, mas sim de <strong>corrosão metálica</strong>.</p>
 
@@ -147,7 +159,7 @@ export const defaultArticles: Article[] = [
       <h2>Alternativas Estratégicas</h2>
       <p>Para não abrir mão dos seus pratos favoritos, a solução é trocar o **meio de contato**: </p>
       <ul>
-        <li><strong>Cerámica Inerte ou Vidro:</strong> São os únicos 100% à prova de ácidos.</li>
+        <li><strong>Cerámica Inerte ou Vidro:</strong> São os únicos 100% à prova de ácidos. <i>(Disclaimer: o vidro, apesar de menos reativo, possui baixa praticidade e risco de quebra com estilhaços).</i></li>
         <li><strong>Aço Inox 316L (Cirúrgico):</strong> Desenvolvido justamente para resistir à corrosão em ambientes severos, é o substituto ideal para molhos de longa duração.</li>
       </ul>
       
@@ -172,6 +184,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/fontes-aluminio-diario.png',
     metaTitle: 'Fontes de Alumínio no Dia a Dia: Exposição Tóxica',
     metaDescription: 'Além das panelas, onde o alumínio se esconde no seu cotidiano?',
+    didYouKnow: {
+      text: 'Muitos desodorantes comuns utilizam sais de alumínio que são absorvidos diretamente pela pele.',
+      linkSlug: 'aluminio-na-cozinha-guia-completo'
+    },
     content: `
       <p>Quando falamos de alumínio na cozinha, o primeiro pensamento vai direto para a panela. E com razão: ela é o vetor mais direto e frequente. Mas o que poucos percebem é que a panela é apenas <strong>uma peça em um mosaico muito maior</strong> de exposição diária. O alumínio está presente em dezenas de produtos que você usa, consome ou aplica no corpo — e é a <strong>soma total dessa carga</strong> que determina o risco real para a sua saúde.</p>
 
@@ -228,7 +244,7 @@ export const defaultArticles: Article[] = [
       <h2>O Efeito Cumulativo: A Panela como "Gota D'Água"</h2>
       <p>Imagine seu organismo como um copo. Cada fonte de alumínio adiciona um pouco de líquido: o fermento do bolo do café da manhã, o desodorante aplicado pela manhã, o antiácido depois do almoço, a água filtrada durante o dia. Quando você cozinha o jantar em uma panela de alumínio — especialmente com ingredientes ácidos — essa pode ser a dose que faz o copo transbordar.</p>
 
-      <p>É por isso que, do ponto de vista de saúde integrativa, <strong>reduzir a fonte que você controla com mais facilidade é a estratégia mais inteligente</strong>. E a panela é, de longe, a troca mais simples e de maior impacto. Substituí-la por um material inerte como o aço inox 316L, o vidro ou a cerâmica pura elimina uma das maiores e mais frequentes fontes de exposição alimentar.</p>
+      <p>É por isso que, do ponto de vista de saúde integrativa, <strong>reduzir a fonte que você controla com mais facilidade é a estratégia mais inteligente</strong>. E a panela é, de longe, a troca mais simples e de maior impacto. Substituí-la por um material inerte como o aço inox 316L, o vidro (com as devidas cautelas de manuseio e consciência de que não é 100% isento de resíduos) ou a cerâmica pura elimina uma das maiores e mais frequentes fontes de exposição alimentar.</p>
 
       <h2>Checklist: Reduza Sua Carga Total Hoje</h2>
       <ul>
@@ -259,6 +275,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/panela-pressao-aluminio.png',
     metaTitle: 'Risco da Panela de Pressão de Alumínio | Cozinha Consciente',
     metaDescription: 'Por que a pressão aumenta a lixiviação de alumínio nos alimentos.',
+    didYouKnow: {
+      text: 'A pressão interna eleva a temperatura da água para 120°C, acelerando a corrosão do alumínio.',
+      linkSlug: 'aluminio-na-cozinha-guia-completo'
+    },
     content: `
       <p>A panela de pressão é, sem dúvida, um dos utilitários mais práticos da culinária brasileira. Ela economiza tempo, energia elétrica ou gás, e amacia os cortes mais duros de carne ou grãos em questão de minutos. No entanto, quando essa panela é feita de alumínio — o que representa a grande maioria dos lares no Brasil —, <strong>a praticidade esconde uma verdadeira bomba-relógio para a sua saúde e a da sua família.</strong></p>
 
@@ -307,6 +327,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/teste-bicarbonato-panela.png',
     metaTitle: 'Teste do Bicarbonato em Panelas: Como Fazer',
     metaDescription: 'Guia prático para testar a qualidade e reatividade de suas panelas em casa.',
+    didYouKnow: {
+      text: 'O teste do bicarbonato revela se a sua panela está liberando resíduos que alteram o sabor e a saúde.',
+      linkSlug: 'inox-comum-vs-316l-niquel'
+    },
     content: `
       <p>O conceito de que as panelas onde preparamos nossas refeições liberam toxinas pode parecer abstrato ou exagerado para alguns até ser comprovado diante dos próprios olhos. E é exatamente por isso que elaboramos este guia simples para o <strong>Teste do Bicarbonato</strong>. Esse é um experimento que você pode reproduzir agora mesmo na sua cozinha em menos de dez minutos e ele irá validar se sua panela atual está lixiviando compostos prejudiciais para os seus alimentos.</p>
 
@@ -351,42 +375,46 @@ export const defaultArticles: Article[] = [
   {
     id: 'p2',
     slug: 'revestimentos-antiaderentes-guia-completo',
-    title: 'Revestimentos Antiaderentes: 50 Anos de Omissão e o que Isso Significa para a Sua Cozinha Hoje',
-    subtitle: 'Do PFOA ao GenX: o ciclo de substituições da indústria química.',
+    title: 'Revestimentos Antiaderentes: Entenda os Riscos e as Alternativas',
+    subtitle: 'Do PFOA aos novos compostos: o que a ciência diz sobre a segurança das panelas que não grudam.',
     category: 'contaminacao',
     universe: 'pfas',
     type: 'PILLAR',
     publishedAt: '2026-03-23',
-    readTime: 18,
+    readTime: 12,
     status: 'Publicado',
-    excerpt: 'Tudo sobre PFAS, PTFE e o histórico de segurança dos antiaderentes.',
+    excerpt: 'Tudo sobre PFAS, PTFE e o histórico de segurança dos revestimentos antiaderentes na cozinha moderna.',
     coverImage: '/images/antiaderente-guia-pfas.png',
-    coverAlt: 'Panela antiaderente arranhada mostrando revestimento danificado e alumínio exposto',
+    coverAlt: 'Panela antiaderente com revestimento e metal base',
     categoryLabel: 'Contaminação',
     ogImage: '/images/antiaderente-guia-pfas.png',
-    metaTitle: 'Antiaderentes: O Guia sobre PFAS e Saúde Capilar',
-    metaDescription: 'Histórico e riscos dos revestimentos antiaderentes e compostos perfluorados.',
+    metaTitle: 'Antiaderentes e PFAS: Guia de Saúde e Segurança',
+    metaDescription: 'Conheça os riscos dos revestimentos antiaderentes, o que são os PFAS e como escolher opções mais seguras para sua família.',
+    didYouKnow: {
+      text: 'Os compostos PFAS são conhecidos como "produtos químicos eternos" por não se degradarem na natureza.',
+      linkSlug: 'compostos-perfluorados-panela-nova'
+    },
     content: `
-      <p>A promessa da frigideira que "não gruda nada" e a facilidade de limpar apenas passando um papel toalha encantaram consumidores ao redor do mundo por décadas. O revestimento sintético (uma variedade de polímero à base de PFAS) tornou-se sinônimo de modernidade. No entanto, o custo em saúde de revestir o seu alimento com a mesma química usada para impermeabilidade de estofados e tecidos industriais está, finalmente, vindo à tona de maneira inequívoca.</p>
+      <p>A promessa da frigideira que "não gruda nada" transformou a rotina na cozinha, tornando o preparo e a limpeza muito mais simples. No entanto, por trás dessa praticidade, existe uma classe de compostos químicos que tem levantado sérias preocupações na comunidade científica e em órgãos de saúde ao redor do mundo.</p>
 
-      <h2>O Que São Elementos PFAS? Os "Forever Chemicals"</h2>
-      <p>A sigla PFAS descreve Substâncias Per- e Polifluoroalquílicas, um grupo de mais de 4.000 compostos químicos sintéticos. Estes produtos são conhecidos no mundo acadêmico como <em>"Forever Chemicals"</em> (Produtos Químicos Eternos), pois a ligação química que mantêm (carbono-flúor) é uma das mais fortes conhecidas na química orgânica, o que significa que <strong>essas substâncias simplesmente não se degradam facilmente na natureza ou no corpo humano.</strong></p>
+      <h2>O Que São Elementos PFAS?</h2>
+      <p>A sigla PFAS refere-se às substâncias per- e polifluoroalquílicas, um grupo de milhares de compostos químicos sintéticos. No mundo acadêmico, eles são conhecidos como "produtos químicos eternos" (<em>Forever Chemicals</em>), porque suas ligações de carbono e flúor são extremamente fortes e não se degradam facilmente no meio ambiente ou no corpo humano.</p>
 
-      <h2>A Falsa Segurança do PFOA-Free</h2>
-      <p>Em virtude de inúmeras pressões de órgãos de saúde ambiental motivadas por litígios judiciais severos e estudos conectando o consumo do ácido perfluorooctanóico (PFOA) a diferentes tipos de tumor, a indústria das panelas foi "proibida" de utilizar os químicos da classe conhecida nos seus antiaderentes antigos.</p>
+      <h2>A Evolução dos Revestimentos: O Selo "PFOA-Free"</h2>
+      <p>Até alguns anos atrás, o PFOA era o principal componente usado na fabricação de antiaderentes. Após estudos associarem essa substância a problemas de saúde, ela foi banida e substituída. Hoje, é comum ver selos de "PFOA-Free" (Livre de PFOA).</p>
       
-      <p>Ao se retirar o PFOA das embalagens surgiram selos brilhantes orgulhosos de <em>“Superfície 100% PFOA Free”</em>. O problema real e omitido pelo marketing industrial é que a indústria substituiu o antigo tóxico de cadeia longa por <strong>compostos primos análogos de cadeia mais curta como o GenX ou o PFBS</strong>, cujos efeitos colaterais biológicos e de acúmulo no sangue e nas cordas umbilicais de recém nascidos continuam sendo exaustivamente alarmantes nos periódicos médicos.</p>
+      <p>Entretanto, é importante saber que a indústria frequentemente substitui o PFOA por outros compostos da mesma família (como o GenX ou o PFBS). Embora sejam tecnicamente differentes, esses substitutos ainda pertencem à classe dos PFAS e seu comportamento de bioacumulação continua sendo estudado por pesquisadores.</p>
 
-      <h2>A Febre do Polímero: A Prova Física</h2>
-      <p>Um dos sinais imediatos mais absurdos de uso destes compostos químicos ocorrem quando superaquecemos panelas vazias em fogo muito forte. Quando o polímero atinge temperaturas além dos 260°C – os revestimentos antiaderentes puros sofrem colapso micro-estrutural, liberando <strong>gases invisíveis absurdamente letais para mamíferos menores</strong> (aves e pássaros morrem em segundos se a gaiola estiver na cozinha) e que causam na fisiologia humana algo clinicamente reconhecido como a "Febre dos Vapores de Polímeros".</p>
+      <h2>O Risco do Superaquecimento</h2>
+      <p>O maior cuidado com os revestimentos antiaderentes tradicionais é em relação à temperatura. Quando uma panela desse tipo atinge temperaturas muito elevadas (acima de 260°C), o polímero começa a sofrer degradação térmica. Isso pode liberar gases e micropartículas imperceptíveis no ar da cozinha.</p>
 
       <div class="sabia-que">
-        <h4>A Questão do Colesterol e Sistema Imune</h4>
-        <p>A grande massa dos debates médicos recentes focam hoje não só na possibilidade de alterações genéticas induzidas por certos PFAS, mas como esses agentes invisíveis estão intimamente ligados a impactos sistêmicos. A bioacumulação de pequenas doses nos tecidos humanos demonstra associações clínicas com disfunção da tireoide, enfraquecimento imunológico e níveis preocupantes de colesterol desregulado.</p>
+        <h4>Saúde e Imunidade</h4>
+        <p>A preocupação central dos debates médicos atuais não é apenas com intoxicações agudas, mas com a exposição crônica. A bioacumulação de pequenas doses de PFAS no organismo tem sido associada, em diversos estudos, a impactos no sistema imunológico, disfunção da tireoide e alterações nos níveis de colesterol.</p>
       </div>
 
-      <h2>A Única Alternativa Racional</h2>
-      <p>Troque frigideiras poliméricas e sintéticas escuras de todas as marcas (ainda que gritem PFOA Free) pelo aprendizado na cocção e na regulação inteligente da fricção de calor em uma <strong>Panela de Aço Inox (cirúrgico 316L, 304, entre outros) ou Vidro Cerâmico Atóxico Puro.</strong></p>
+      <h2>Como Escolher Alternativas Seguras</h2>
+      <p>Para quem deseja eliminar o contato com polímeros sintéticos, a recomendação é migrar para materiais de alta inércia química. O <strong>Aço Inox Cirúrgico (316L)</strong>, o vidro (atentando para o disclaimer de fragilidade e praticidade) e a cerâmica pura são as opções mais estáveis, pois não dependem de películas químicas para funcionar e não liberam substâncias no alimento, independentemente da temperatura.</p>
     `,
   },
   {
@@ -407,6 +435,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/compostos-perfluorados-panela.png',
     metaTitle: 'Emissão de PFAS em Panelas Novas: O Que Você Precisa Saber',
     metaDescription: 'Saiba por que o calor, mesmo sem riscos, libera toxinas em antiaderentes.',
+    didYouKnow: {
+      text: 'O fenômeno "off-gassing" ocorre mesmo em panelas antiaderentes novas ao atingirem 260°C.',
+      linkSlug: 'revestimentos-antiaderentes-guia-completo'
+    },
     content: `
       <p>Existe um perigoso mito sobre as panelas antiaderentes escuras baseadas em polímeros de carbono (tipo revestimentos sintéticos e equivalentes que imitam pedras pretas escorregadias). O mito soa mais ou menos assim:</p>
       
@@ -429,229 +461,246 @@ export const defaultArticles: Article[] = [
   {
     id: 'c2.2',
     slug: 'air-fryer-revestimento-antiaderente-risco',
-    title: 'Fritadeira a Ar com Revestimento Antiaderente: O Risco Que Ninguém Leu na Caixa',
-    subtitle: 'Circulação forçada de ar quente e a exposição a micropartículas.',
+    title: 'Air Fryer: Como Usar com Segurança e o que Cuidar nos Revestimentos',
+    subtitle: 'Circulação de ar quente e o impacto na durabilidade dos materiais.',
     category: 'contaminacao',
     universe: 'pfas',
     type: 'CLUSTER',
     publishedAt: '2026-05-04',
-    readTime: 9,
+    readTime: 8,
     status: 'Publicado',
-    excerpt: 'O perigo invisível do ar quente circulando sobre polímeros aquecidos.',
+    excerpt: 'Saiba como a circulação de ar quente interage com os revestimentos das fritadeiras de ar.',
     coverImage: '/images/air-fryer-antiaderente.png',
-    coverAlt: 'Cesta de air fryer com revestimento antiaderente riscado e desgastado',
+    coverAlt: 'Cesta de air fryer detalhada',
     categoryLabel: 'Contaminação',
     ogImage: '/images/air-fryer-antiaderente.png',
-    metaTitle: 'Riscos da Air Fryer Antiaderente | Cozinha Consciente',
-    metaDescription: 'O impacto do revestimento de air fryers na pureza do ar e do alimento.',
+    metaTitle: 'Segurança na Air Fryer: Revestimentos e Saúde',
+    metaDescription: 'Entenda como escolher e manter sua air fryer de forma segura, evitando a contaminação por revestimentos desgastados.',
+    didYouKnow: {
+      text: 'Air fryers com revestimentos brilhantes ou envernizados podem liberar resíduos de tintas e pigmentos.',
+      linkSlug: 'revestimentos-antiaderentes-guia-completo'
+    },
     content: `
-      <p>A revolução das <strong>Fritadeiras Elétricas sem Óleo (conhecidas globalmente como Air Fryers)</strong> virou pilar da culinária pós-moderna, sob o apelo de frituras secas super saudáveis. Contudo um segredo letal repousa nas estruturas removíveis da esmagadora maioria delas.</p>
+      <p>A air fryer tornou-se um item indispensável em muitas cozinhas pela praticidade e pela promessa de preparos com menos óleo. No entanto, para garantir que essa praticidade seja aliada da sua saúde, é preciso olhar atentamente não apenas para o estado da <strong>cesta</strong>, mas para a natureza do seu revestimento desde o primeiro dia de uso.</p>
 
-      <h2>O Princípio Físico da Air Fryer (e a Tempestade Perfeita)</h2>
-      <p>Diferente de fornos convencionais de aquecimento indireto passivo, o núcleo da magia das fritadeiras de ar comprimido provém de um sistema dinâmico fortíssimo composto de: <strong>Reator/Resistência Radiante Descomunal + Circulação de Vento Direcional Intensa</strong>. Esse ventilador minúsculo e poderoso arremessa correntes torrenciais de ar a gigantescos 200°C diretos no berço onde repousa nossa adorada batatinha palito em menos de um minuto.</p>
-      
-      <p>O perigo? Quase todas as cestas perfuradas populares oferecidas aos milhões no mercado possuem as paredes internas fortemente encharcadas com grossas membranas de polímeros classificados como compostos químicos de base sintética fluorada.</p>
+      <h2>O Risco Silencioso: Gases Tóxicos em Utensílios Novos</h2>
+      <p>Muitas pessoas acreditam que o risco de uma air fryer está apenas quando o cesto risca ou descasca. <strong>Este é um erro comum e perigoso.</strong> O revestimento antiaderente (PTFE/PFAS), quando aquecido a altas temperaturas — o que ocorre em segundos dentro de uma fritadeira de ar —, libera gases tóxicos e micropartículas (off-gassing) mesmo quando o aparelho é novo e está impecável. A circulação ultraveloz do ar quente potencializa a dispersão desses resíduos para o alimento que você vai consumir.</p>
 
-      <h2>Círculo de Degradação Exponencial no Alimento</h2>
-      <ol>
-        <li>Um reservatório polimerizado plástico de antiaderentes de uso prolongado.</li>
-        <li>Choque de até ou mais de duzentos graus Celsius (temperado na força motriz da turbina em curtos períodos temporais).</li>
-        <li>O jorro incessante do vento espalhando as degradações térmicas microscópicas do polímero sintético, não de volta pelo exaustor, <strong>mas atirando os vapores químicos voláteis de encontro às porosidades do frango assado por vinte e cinco minutos.</strong></li>
-      </ol>
+      <h2>A Armadilha da Cerâmica "Brilhosa"</h2>
+      <p>Recentemente, muitos modelos passaram a oferecer cestos "cerâmicos". Aqui, o cuidado deve ser redobrado: se a sua cesta apresentar uma cor vibrante ou um revestimento muito brilhoso, com aspecto "envernizado", <strong>provavelmente há a liberação de resíduos ligados a tintas, pigmentos e vernizes industriais</strong> que contêm metais pesados como chumbo e cádmio. A cerâmica segura deve ser fosca ou de procedência mineral certificada, sem aditivos estéticos que se degradam no calor.</p>
 
       <div class="sabia-que">
-        <h4>E as Cestas Riscadas e Gastas?</h4>
-        <p>Air fryers também possuem limpeza extremamente chata, precisando de muito esforço manual contínuo nas dobras da grelha de fundo. Elas invariavelmente perdem, riscam e descascam o teto escuro de contenção química precoce, descortinando logo na base o amargo choque extra: o fundo primário, um alumínio barato super reativo jorrando as suas próprias partículas.</p>
+        <h4>A Escolha Inteligente</h4>
+        <p>Ao contrário dos revestimentos químicos ou cerâmicas pintadas, o aço cirúrgico é um material maciço e inerte. Ele não libera gases, não possui películas que descascam e resiste a décadas de uso sem contaminar sua comida. Se não for possível mudar todos os utensílios de uma vez, comece pelos que atingem maiores temperaturas, como a sua fritadeira, e utilize o mínimo possível as opções revestidas.</p>
       </div>
 
-      <h2>Qual a Opção Construtiva Certa</h2>
-      <p>A solução não é, de modo algum expurgar essas máquinas da civilização, pois agilizam bastante a nutrição com vegetais. Recomenda-se procurar os raros <strong>modelos premium cujas cestas redondas sejam exclusivamente esculpidas em aço inoxidável brilhante clássico, ou frascos fundidos em vidro temperado térmico e/ou cerâmicas atóxicas sem plásticos pretos sobrepostos.</strong></p>
+      <h2>Qual a Opção Mais Segura?</h2>
+      <p>Dê prioridade absoluta a cestas feitas integralmente de <strong>Aço Inox (preferencialmente 316L)</strong>. Eles são os únicos que garantem que o ar circulando sobre a sua comida seja 100% livre de interferências químicas, preservando o sabor e a pureza do alimento. Se a saúde é sua prioridade, desconfie de soluções baratas que prometem "não grudar" à custa da sua segurança biológica. (Sempre lembrando que o vidro, embora menos arriscado quimicamente, não é isento de resíduos e exige cuidado extremo no manuseio pela fragilidade e risco de cacos).</p>
     `,
   },
   {
     id: 'c2.3',
     slug: 'historia-real-compostos-perfluorados',
-    title: 'A História Real por Trás dos Compostos Perfluorados: Documentos Internos e o Caso que Virou Filme',
-    subtitle: 'O dossiê jurídico que expôs décadas de omissão industrial.',
+    title: 'A História dos PFAS: O Que Aprendemos com as Omissões do Passado',
+    subtitle: 'Como o conhecimento sobre os riscos químicos mudou a percepção do consumidor.',
     category: 'contaminacao',
     universe: 'pfas',
     type: 'CLUSTER',
     publishedAt: '2026-05-11',
-    readTime: 12,
+    readTime: 10,
     status: 'Publicado',
-    excerpt: 'A história de Robert Bilott vs. DuPont - fatos que moldaram a consciência atual.',
+    excerpt: 'Um olhar sobre o histórico jurídico e científico que revelou os perigos dos compostos perfluorados.',
     coverImage: '/images/dark-waters-pfas.png',
-    coverAlt: 'Documentos jurídicos e estrutura química representando caso DuPont e compostos PFAS',
+    coverAlt: 'Contexto histórico dos PFAS',
     categoryLabel: 'Contaminação',
     ogImage: '/images/dark-waters-pfas.png',
-    metaTitle: 'PFAS: A História Real de Omissão Industrial',
-    metaDescription: 'O caso jurídico real por trás do filme Dark Waters e os perigos do PFOA.',
+    metaTitle: 'História dos PFAS e Segurança Alimentar',
+    metaDescription: 'Conheça o histórico por trás da descoberta dos riscos dos antiaderentes e como se proteger hoje.',
+    didYouKnow: {
+      text: 'Documentos internos de indústrias revelaram riscos de PFAS décadas antes de serem banidos.',
+      linkSlug: 'compostos-perfluorados-panela-nova'
+    },
     content: `
-      <p>Para entender de onde viemos com os polímeros sintéticos (antiaderentes escorregadios) não é preciso acessar o submundo das conspirações digitais. Basta olhar para <strong>documentos judiciais revelados pela Suprema Corte estadual nas ações movidas ao longo de 20 anos pelo tenaz advogado Robert Bilott</strong> contra a colossal indústria química global DuPont, responsável pelo lançamento dos revestimentos sintéticos nas cozinhas estadunidenses na década de 1950.</p>
+      <p>Para entender por que hoje existe tanta cautela com os revestimentos antiaderentes químicos, é preciso olhar para a história recente da indústria química. O que antes era considerado um milagre da modernidade passou a ser visto com outros olhos após importantes batalhas jurídicas e científicas.</p>
 
-      <h2>O Princípio Ativo e o C-8</h2>
-      <p>O químico C-8 (ácido perfluorooctanoico ou PFOA) foi uma molécula absurdamente lucrativa. Era um tensoativo potente criado inicialmente não para panelas, e sim para fabricar canos sintéticos invulneráveis na era das guerras e que mais tarde foi passado em carpetes, roupas de bombeiros, papel impermeável e, infelizmente, o berço raso das frigideiras modernas.</p>
+      <h2>O Surgimento do C-8 (PFOA)</h2>
+      <p>O ácido perfluorooctanoico (PFOA), também conhecido como C-8, foi uma das moléculas mais utilizadas no século XX. Sua capacidade de repelir água e gordura fez com que fosse aplicado em tudo: desde revestimentos de tecidos e carpetes até as icônicas panelas que não grudam.</p>
 
-      <h2>O Escândalo Sanitário (Filme: Dark Waters - O Preço da Verdade)</h2>
-      <p>Bilott descobriu que executivos da época sabiam dos efeitos devastadores do químico sobre primatas cobaias já nos anos 70. Mas, mais crítico ainda, a planta fabril da empresa nas fazendas ocidentais americanas descartara volumes incontáveis do C-8 nas bacias hidrográficas locais e em lixões não isolados, envenenando fatalmente gados de criações locais e, por gravidade irrefutável, infiltrando o suprimento hídrico potável de dezenas de milhares de moradores humanos ao longo da bacia do rio Ohio.</p>
+      <h2>A Revelação dos Riscos</h2>
+      <p>Ao longo de décadas, documentos internos de grandes indústrias e estudos independentes revelaram que esses compostos tinham uma característica preocupante: eles não desapareciam. Uma vez no meio ambiente ou no corpo, eles se acumulavam.</p>
 
-      <p>As pesquisas médico-independentes geradas a partir das punições impostas pelo tribunal ligaram, definitivamente, a exposição a esse produto específico à indução laboratorial agressiva aos temidos cânceres nos rins, testículos e a drásticas colites ulcerativas severas. E este é o produto que revestia a base culinária global das panquecas do século 20.</p>
+      <p>Casos jurídicos famosos (que até inspiraram filmes como <em>"O Preço da Verdade"</em>) expuseram como a exposição prolongada a essas substâncias estava associada a problemas de saúde graves, como disfunções hormonais e sobrecarga do sistema imunológico em comunidades que viviam próximas às fábricas.</p>
 
-      <h2>Por Que a História Importa Hoje?</h2>
-      <p>Você pode argumentar: <i>"Ok. Mas a indústria foi processada e baniram o uso do PFOA clássico. As panelas modernas estão resolvidas?"</i> Não. Quando o PFOA foi extirpado sob severa liminar jurídica por volta de 2013-2015, essas mesmas corporações não substituíram a membrana plástica por materiais tradicionalistas seguros inorgânicos (Ex: Quartzo ou Aço).</p>
+      <h2>O Legado na Cozinha de Hoje</h2>
+      <p>Embora o PFOA original tenha sido banido, a indústria passou a usar substitutos da mesma família. Para o consumidor consciente, a lição dessa história é o <strong>princípio da precaução</strong>.</p>
       
-      <p>Eles mudaram a cadeia da molécula de C8 (8 carbonos) para o tal C6 (tecnologia GenX), comercializando-o amplamente enquanto as novas defesas jurídicas e agências lutam por dezenas de novos anos lentos arrastados para provar seus análogos efeitos acumulativos, os quais já estão pipocando assustadoramente nos mais inovadores institutos em relatórios sobre toxicidade reprodutiva materna.</p>
-      
-      <p>Esta não é uma teoria; é história legislativa pura e prova de que seu alimento <strong>nunca deve, por cautela secular básica, ser tocado por compostos químicos experimentais termodinâmicos.</strong></p>
+      <p>Hoje, não precisamos mais aceitar materiais experimentais para cozinhar. Podemos escolher materiais que a ciência já conhece há séculos como estáveis e seguros, como o aço cirúrgico (padrão ouro), o ferro (com moderação), o vidro (ciente de suas limitações práticas e riscos físicos) e a cerâmica pura. Estar informado é a melhor forma de proteger sua família de exposições que só serão totalmente compreendidas daqui a décadas.</p>
     `,
   },
   {
     id: 'c2.4',
     slug: 'panela-arranhada-dupla-contaminacao',
-    title: 'Panela Arranhada: Dupla Contaminação — Revestimento e Base',
-    subtitle: 'Quando a barreira química falha e o metal base (alumínio) é exposto.',
+    title: 'Panela Arranhada: Por Que Você Deve Descartá-la Agora Mesmo',
+    subtitle: 'Entenda a dupla contaminação que ocorre quando o revestimento falha.',
     category: 'contaminacao',
     universe: 'pfas',
     type: 'CLUSTER',
     publishedAt: '2026-06-01',
     readTime: 7,
     status: 'Publicado',
-    excerpt: 'O risco exponencial de cozinhar em utensílios com revestimento danificado.',
+    excerpt: 'O risco de cozinhar em utensílios com revestimento danificado vai além da estética.',
     coverImage: '/images/panela-arranhada-dupla.png',
-    coverAlt: 'Panela antiaderente com riscos profundos expondo alumínio abaixo do revestimento',
+    coverAlt: 'Panela riscada mostrando alumínio base',
     categoryLabel: 'Contaminação',
     ogImage: '/images/panela-arranhada-dupla.png',
-    metaTitle: 'Perigos da Panela Antiaderente Arranhada',
-    metaDescription: 'Entenda a dupla contaminação que ocorre quando o antiaderente risca.',
+    metaTitle: 'Riscos da Panela Antiaderente Riscada',
+    metaDescription: 'Descubra por que as panelas riscadas representam um risco duplo para sua saúde e por que o descarte é necessário.',
+    didYouKnow: {
+      text: 'A panela riscada expõe o metal base e solta micropartículas de polímeros simultaneamente.',
+      linkSlug: 'revestimentos-antiaderentes-guia-completo'
+    },
     content: `
-      <p>É a imagem clássica que vemos em nove de cada dez cozinhas não especializadas modernas: No fundo de uma velha panela com revestimento escuro brilhoso há dezenas de "ciscos" brancos riscados por escumadeiras de alumínio, faqueiros ou palha de aço lavadora, expondo as cicatrizes e manchas sob o polímero solto em "lasquinhas". <strong>Essa configuração culinária gera, literalmente, um evento duplo de transferência tóxica cruzada de enorme intensidade biológica.</strong></p>
+      <p>É comum encontrar em muitas cozinhas aquela panela favorita que, com o tempo, começou a apresentar riscos e descascados no fundo. O que muitas vezes ignoramos é que esse desgaste não afeta apenas a facilidade de cozinhar, mas cria um cenário de <strong>dupla contaminação</strong> para os alimentos.</p>
 
-      <h2>O Que Significa a Dupla Contaminação?</h2>
+      <h2>O Que Acontece Quando a Panela Risca?</h2>
       
-      <h3>1ª Fase — A Lasca e Ingestão Direta Funcional</h3>
-      <p>O filme antiaderente, como explicamos antes, exala gases tóxicos quando muito superaquecido, mas não é feito do que nutricionistas chamam de algo organicamente digerível. Quando esse composto arranha e a camada começa a esfolar e soltar partículas invisíveis, resíduos plastificados carbonizados fluorados são raspados ativamente pela sua espátula rumo ao ovo frito e são engolidos pelos sistemas gastrointestinais de seus filhos e convidados.</p>
-      
-      <p>Enquanto o polímero macro for indigerível e ejetado mais tarde nos dejetos, compostos derivados minúsculos gerados pelo extremo calor e trituração podem vagar internamente como micro e nanoplásticos indesejados reativos ao sangue e rins, o que os órgãos protetores mundiais ainda tentam quantificar os efeitos reais desequilibrantes a longuíssimo prazo endócrino.</p>
+      <h3>1. Desprendimento de Micropartículas</h3>
+      <p>Quando o filme antiaderente começa a esfolar, pequenas partículas do material sintético (polímeros fluorados) se soltam. Durante o preparo da comida, essas partículas invisíveis podem se misturar aos alimentos e serem ingeridas pela família.</p>
 
-      <h3>2ª Fase — A Corrosão do Miolo: O Alumínio Primário</h3>
-      <p>Talvez a pior parte do pacote. Nenhum polímero segura a temperatura sozinho sem derreter de modo grotesco. Panelas baratas e leves <em>com revestimento antiaderente frouxo</em> são formadas estruturalmente num recheio espesso 100% constituído por ligas de alumínio bem barato fundido.</p>
-      
-      <p>No momento em que o risco cinzento metálico da colher na sua panela transpassa a escuridão do arranhado, <strong>a barreira final inútil é rompida</strong> e os sucos alimentares, as gorduras ou cítricos do preparo das carnes despencam como cachoeiras ácidas por dentro das fissuras capilares de metal do fundo arranhado.</p>
+      <h3>2. Exposição ao Metal Base</h3>
+      <p>A maioria das panelas antiaderentes populares é feita de alumínio sob a camada preta. No momento em que um risco profundo expõe o brilho metálico no fundo, a barreira protetora foi rompida. A partir daí, os alimentos passam a ter contato direto com o alumínio reativo, que pode lixiviar para a comida, especialmente em receitas que levam molhos ou limão.</p>
 
       <div class="sabia-que">
-        <h4>Efeito Aceleração Fissural</h4>
-        <p>A reação metálica lixiviante do alumínio em si através das falhas em ranhuras (esfolados do revestimento sintético) será ainda <strong>mais violenta estruturalmente do que a da própria panela de alumínio lixada redondinha de avó.</strong> O desgaste criará bolsões agressivos onde íons se dissolvem velozmente a cada refeição suculenta cheia de tomates que esbarra nesse machucado. Se há falhas na membrana preta da panela, jogue-a fora imediatamente ou doe-a de imediato pelo bem global nutricional do seu próprio organismo.</p>
+        <h4>Efeito Aceleração</h4>
+        <p>A reação metálica em uma panela com o revestimento danificado pode ser ainda mais intensa do que em uma panela de alumínio comum, pois os alimentos ficam "presos" nas ranhuras e porosidades do desgaste, facilitando a migração de íons metálicos.</p>
       </div>
+
+      <p><strong>A regra é clara:</strong> Se a superfície da sua panela apresenta riscos, "pelinhos" soltando ou manchas onde o metal base aparece, o material não é mais seguro para o uso. A melhor decisão para a saúde da sua família é descartar o utensílio e substituí-lo por uma opção inerte que não dependa de películas, como o aço inox cirúrgico.</p>
     `,
   },
   // --- UNIVERSO 🟠 METAIS PESADOS ---
   {
     id: 'p3',
     slug: 'metais-pesados-comida-guia-completo',
-    title: 'Metais Pesados na Sua Comida: Como Entram, Onde se Acumulam e Por Que Isso É Diferente',
-    subtitle: 'Bioacumulação e os riscos da exposição crônica de baixa intensidade.',
+    title: 'Metais Pesados na Alimentação: Entenda os Riscos e Saiba Como se Proteger',
+    subtitle: 'O perigo da exposição crônica e como os utensílios podem ser uma fonte silenciosa.',
     category: 'contaminacao',
     universe: 'metais-pesados',
     type: 'PILLAR',
     publishedAt: '2026-03-30',
-    readTime: 16,
+    readTime: 12,
     status: 'Publicado',
-    excerpt: 'Chumbo, cádmio e níquel: o que você precisa saber sobre metais tóxicos.',
+    excerpt: 'Chumbo, cádmio e níquel: saiba como esses metais podem entrar na sua rotina e o que fazer para reduzir a carga tóxica.',
     coverImage: '/images/metais-pesados-comida.png',
-    coverAlt: 'Tabela periódica e tubos de ensaio ao lado de alimentos representando contaminação por metais pesados',
+    coverAlt: 'Representação de contaminação por metais',
     categoryLabel: 'Contaminação',
     ogImage: '/images/metais-pesados-comida.png',
-    metaTitle: 'Metais Pesados na Alimentação: Guia Completo',
-    metaDescription: 'Como evitar o acúmulo de metais pesados através dos seus utensílios.',
+    metaTitle: 'Metais Pesados na Comida: Guia de Segurança e Saúde',
+    metaDescription: 'Descubra como os metais pesados entram na alimentação e como escolher utensílios que protegem sua saúde no longo prazo.',
+    didYouKnow: {
+      text: 'Metais pesados como o cádmio podem "imitar" minerais essenciais, dificultando a excreção pelo corpo.',
+      linkSlug: 'chumbo-cadmio-ceramica-esmaltada'
+    },
     content: `
-      <p>Nos universos anteriores, abordamos como elementos baseados em compostos sintéticos e alumínio desestruturam o seu corpo humano. O universo 3, todavia, entra mais a fundo no campo toxicológico: o sorrateiro depósito geológico e celular dos Metais Pesados.</p>
+      <p>Nos universos anteriores, vimos como o alumínio e os antiaderentes sintéticos impactam a saúde. Agora, entramos em um campo ainda mais sensível da toxicologia: o depósito silencioso de metais pesados no organismo.</p>
 
-      <h2>Por que os Metais Pesados são Diferentes?</h2>
-      <p>Metais como chumbo, cádmio, mercúrio e níquel têm pesos atômicos extraordinariamente grandes. Eles possuem forte similaridade eletromagnética molecular com minerais essenciais biológicos (como o cálcio, ferro, zinco). Contudo, quando absorvidos no sistema biológico em baixíssimas dosagens constantes, o nosso sistema orgânico os engana, abrigando essas "pedras mortas inertes industriais" nos ossos e órgãos filtradores por anos e anos infindáveis porque os assemelhou com o próprio alimento magnésio vitamínico.</p>
+      <h2>O Que Torna os Metais Pesados Diferentes?</h2>
+      <p>Metais como chumbo, cádmio, mercúrio e níquel possuem características químicas que os tornam perigosos para a biologia humana. O corpo muitas vezes os "confunde" com minerais essenciais (como cálcio ou ferro). Por esse motivo, em vez de eliminá-los, o organismo acaba abrigando esses metais em tecidos como ossos, fígado e sistema nervoso por anos a fio.</p>
 
-      <h2>Fontes Diárias Inesperadas</h2>
+      <h2>Fontes Inesperadas na Cozinha</h2>
+      <p>Embora a poluição ambiental seja uma fonte conhecida, a sua cozinha pode esconder vetores diretos:</p>
       <ul>
-        <li><strong>Cerâmicas Antigas (Com Esmaltes Chumbados):</strong> Esmaltados avermelhados de terracota usam, no passado, tintas com altos limites de chumbo ou cádmio estabilizadores.</li>
-        <li><strong>Ligas de "Inox Barato" de Ferragens:</strong> As piores ligas de panelas baratas Inox série 200 utilizam muito Manganês tóxico não blindado ou altos limiares de Níquel mal equilibrado, causando até alergias extremas por quem os consome na sopa.</li>
+        <li><strong>Cerâmicas de Procedência Duvidosa:</strong> Algumas peças artesanais utilizam esmaltes com chumbo e cádmio para dar cor e brilho.</li>
+        <li><strong>Ligas Metálicas de Baixa Qualidade:</strong> Panelas de aço inox inferior (como as séries 400 ou 304 comuns) podem liberar níquel e manganês em excesso quando submetidas a calor e alimentos ácidos.</li>
       </ul>
 
       <div class="sabia-que">
-        <h4>A Regra da Bioacumulação Efetiva</h4>
-        <p>A bioacumulação acontece numa curva sináptica silenciosa e imperceptível. Seus pés não incham de imediato e seu estômago sequer sofre azias notáveis. Você bioacumula chumbo, cádmio e excesso de niqueis diariamente durante vinte anos em pitadas invisíveis soltas pela sua adorada velha panela de ferro não virgem fundido até que ocorra finalmente, lá no limiar dos sessenta anos, o gatilho da quebra auto-imune degenerativa dos nervos.</p>
+        <h4>A Bioacumulação</h4>
+        <p>Diferente de uma intoxicação aguda, que causa sintomas imediatos, o perigo dos metais pesados reside na exposição crônica de baixa intensidade. São pequenas exposições diárias que, ao longo de décadas, podem sobrecarregar o sistema imunológico e contribuir para processos de saúde mais complexos no futuro.</p>
       </div>
 
-      <h2>Defesa Contundente</h2>
-      <p>Não há caminho fácil, rápido ou cápsula mágica médica suplementar desintoxicante "milagrosa". A única chave validada preventiva toxicológica absoluta do Século XXI é reter, o mais severamente e rigorosamente possível na vida de adulto, <strong>todas as fendas na armadura por onde entram sorrateiramente esses metais nas suas três principais vias. A da ingestão alimentar pelo utensílio culinário seguro de ponta (Inox 316L, Titânio Genuíno ou Vidro) é um forte começo diário.</strong></p>
+      <h2>Como Criar uma Barreira de Proteção</h2>
+      <p>A estratégia mais eficaz para reduzir a carga tóxica é controlar as fontes de entrada. Como não podemos controlar 100% da poluição do ar ou da água, devemos focar no que está em nossas mãos: os utensílios de preparo.</p>
+      
+      <p>Investir em materiais com <strong>inércia química comprovada</strong> — como o Aço Inox Cirúrgico (316L), o vidro (apesar de menos prático e não totalmente isento) e a cerâmica pura certificada — é a forma mais segura de garantir que sua comida seja preparada de forma pura e saudável.</p>
     `,
   },
   {
     id: 'c3.1',
     slug: 'chumbo-cadmio-ceramica-esmaltada',
-    title: 'Chumbo e Cádmio em Cerâmicas Esmaltadas: o Perigo Escondido na Panela Colorida',
-    subtitle: 'A toxicidade dos pigmentos e esmaltes industriais.',
+    title: 'Cerâmicas e Esmaltados: Beleza que Pode Esconder Metais Pesados',
+    subtitle: 'Entenda os riscos dos pigmentos e esmaltes de baixa qualidade.',
     category: 'contaminacao',
     universe: 'metais-pesados',
     type: 'CLUSTER',
     publishedAt: '2027-04-27',
     readTime: 8,
     status: 'Publicado',
-    excerpt: 'Panelas de barro e cerâmica podem esconder tinturas com metais pesados.',
+    excerpt: 'Panelas de barro e cerâmica podem conter pigmentos com chumbo e cádmio se não forem devidamente certificadas.',
     coverImage: '/images/ceramica-chumbo-esmaltada.png',
-    coverAlt: 'Cerâmicas esmaltadas coloridas em vermelho laranja e amarelo com esmaltes contendo chumbo e cádmio',
+    coverAlt: 'Peças de cerâmica coloridas',
     categoryLabel: 'Contaminação',
     ogImage: '/images/ceramica-chumbo-esmaltada.png',
-    metaTitle: 'Chumbo e Cádmio em Panelas de Cerâmica',
-    metaDescription: 'O risco dos esmaltes e pigmentos em utensílios de cerâmica coloridos.',
+    metaTitle: 'Riscos de Chumbo em Panelas de Cerâmica',
+    metaDescription: 'Saiba como identificar se suas panelas de cerâmica ou barro são seguras e quais metais podem estar presentes nos esmaltes coloridos.',
+    didYouKnow: {
+      text: 'Esmaltes cerâmicos artesanais coloridos muitas vezes contêm chumbo para conferir brilho.',
+      linkSlug: 'metais-pesados-comida-guia-completo'
+    },
     content: `
-      <p>Se as panelas de ferro enferrujam e as de alumínio sofrem com ofuscantes reações lixiviantes, o apelo romântico histórico recai logo sob o colo acolhedor do barro rústico ou da velha panela colorida esmaltada. No entando uma tragédia tóxica assombrosa recai justamente aí.</p>
+      <p>O apelo rústico e natural das panelas de barro ou a beleza das peças esmaltadas coloridas conquista muitos consumidores. No entanto, é preciso atenção redobrada à procedência desses materiais, pois a estética pode esconder riscos invisíveis.</p>
 
-      <h2>Tinta Brilhante: Os Sais Baseados em Cádmio e Chumbo</h2>
-      <p>Durante muito tempo e, infelizmente ainda hoje por produtores autônomos locais informais ignorantes que produzem panelas de barro belíssimas turísticas, empregam vernizes primitivos, tinturas industriais ou óxidos de "vidrado brilhante" nas bacias de lodo na busca de impermeabilizar aquela areia. O grande propulsor químico desses esmaltes para derreterem com facilidade e conferir os tão lindos e desejados tons avermelhados rústicos e aquele brilho cintilante sedutor provém dos metais incrivelmente sujos (Chumbo Vermelho em pó e óxidos de Cádmio amarelo).</p>
+      <h2>O Problema dos Esmaltes de Baixa Qualidade</h2>
+      <p>Muitas peças artesanais ou de fabricantes que não seguem normas rígidas utilizam vernizes e esmaltes para impermeabilizar o barro ou dar brilho à cerâmica. Em processos não certificados, esses esmaltes podem conter sais de <strong>chumbo</strong> e de <strong>cádmio</strong>, metais usados para conferir brilho e cores vibrantes.</p>
 
-      <p>No Brasil, até a vigilância intervir em linhas imensas de travessas e potes importados, laudos criminais laboratoriais apreenderam em portos toneladas de recipientes para a comida que liberavam (em cada bife cozido neles na chama comum dos lares de donas de casa brasileiras dezenas de vezes a margem letal cumulativa máxima gringa tolerada pela biologia dos humanos saudáveis.</p>
+      <p>O perigo ocorre quando esses recipientes entram em contato com o calor e alimentos ácidos. Nessas condições, os metais pesados presentes no esmalte podem se dissolver e migrar diretamente para a comida.</p>
 
-      <h2>A Pior Combinatória Ácida de Todas</h2>
-      <p>E quando unimos essa "Tinta com Chumbo Barata" com o Fogo da Cozinha e o Limão e Tomate da tradicional culinária Moqueca Brasileira? Criamos um ensopado venenoso altamente reativo de metais puros e severamente tóxico até nas nuvens do vapor aromático cheiroso que permeia a casa, cujas partículas se assentam neurologicamente muito além meramente de cólicas agudas em adultos fortes, atacando a construção frontal do cérebro maduro sem chance da reversão por quelação.</p>
+      <h2>Atenção aos Alimentos Ácidos</h2>
+      <p>Receitas que utilizam limão, vinagre ou tomate aceleram essa reação química. Quando cozinhamos nessas condições em utensílios com esmalte inseguro, os metais pesados podem alcançar níveis de exposição preocupantes no longo prazo.</p>
 
-      <h2>O Investimento Sustentável e Limpo: A Cerâmica Pura</h1>
-      <p>Use travessas rústicas pitorescas com ressalvas gigantes se forem antigas. Se você adora profundamente o conceito primitivo natural da inércia purificadora e saborizada do barro incolor; busque fornecedores artesanais de ponta cujas argilas são isentas (comprovados atestados químicos por nota fiscal) de argamassa plombífera, ou compre tecnologias contemporâneas avançadas de panelas inteiras brancas em cermet sem esmaltação colorida berrante tóxica externa ou interna, blindadas puras incolor como porcelanato verdadeiro cirúrgico.</p>
+      <div class="sabia-que">
+        <h4>Como Identificar Peças Seguras</h4>
+        <p>Sempre prefira cerâmicas com selos de certificação "Livres de Chumbo e Cádmio". Evite utilizar peças puramente artesanais ou decorativas de origem incerta para o cozimento diário. Se você busca a máxima segurança, opte pela chamada "Cerâmica Pura" certificada, que não utiliza pigmentos na superfície de contato.</p>
+      </div>
+
+      <p>A segurança na cozinha passa pela escolha consciente de materiais testados e aprovados, garantindo que a nutrição da sua família seja livre de interferências metálicas indesejadas.</p>
     `,
   },
   {
     id: 'c3.2',
     slug: 'inox-comum-vs-316l-niquel',
-    title: 'Inox Comum vs. 316L: A Diferença que o Vendedor Não Explica — e que o Níquel Deixa no seu Prato',
-    subtitle: 'Pureza cirúrgica vs. ligas comerciais: a importância do molibdênio.',
+    title: 'Inox Comum vs. 316L: A Diferença Técnica e a Segurança do Aço Cirúrgico',
+    subtitle: 'Pureza técnica e resistência à corrosão: por que a liga faz a diferença.',
     category: 'panelas-e-saude',
     universe: 'metais-pesados',
     type: 'CLUSTER',
     publishedAt: '2026-05-11',
     readTime: 10,
     status: 'Publicado',
-    excerpt: 'Entenda por que o Inox 316L é o padrão ouro de inércia e segurança.',
+    excerpt: 'Entenda por que o Inox 316L é o padrão ouro de inércia e segurança na cozinha.',
     coverImage: '/images/inox-316l-vs-comum.png',
-    coverAlt: 'Comparação entre panela de inox comum com corrosão e inox cirúrgico 316L premium',
+    coverAlt: 'Comparação entre panela de inox comum e inox cirúrgico 316L',
     categoryLabel: 'Panelas e Saúde',
     ogImage: '/images/inox-316l-vs-comum.png',
     metaTitle: 'Inox 316L vs Inox 304/430: Guia Comparativo',
-    metaDescription: 'A diferença técnica entre o aço cirúrgico e o inox comum na sua cozinha.',
+    metaDescription: 'Saiba por que o aço Cirúrgico 316L é mais seguro e resistente para o preparo de alimentos.',
+    didYouKnow: {
+      text: 'O Molibdênio presente no Inox 316L cria uma barreira contra corrosão que o inox comum não possui.',
+      linkSlug: 'metais-pesados-comida-guia-completo'
+    },
     content: `
-      <p>Uma vez que o público começa a expurgar o plástico flutuante das air fryers, os fundos de papelotes de metal arranhados nas chapas das churrasqueiras velhas, inevitavelmente se deparam com a resposta unânime das agências reguladoras e chefs estrelados: "Use Inox."</p>
+      <h2>O Que Realmente é o Aço Inoxidável?</h2>
+      <p>O aço comum enferruja em contato com o oxigênio por ser composto basicamente de ferro. O inox torna-se resistente à oxidação graças à adição de Cromo, que forma uma camada protetora invisível na superfície do metal.</p>
 
-      <p>Até aqui tudo muito certo. Mas logo na página popular dos lojistas, há Inox custando ridículos vinte Reais enquanto outras joias chegam nos trezentos a quatrocentos contos da moeda brasileira. A diferença é apenas status de design polido gringo ou existe vida micro-química por detrás do cifrão da tabela da conta corrente do consumidor final? <strong>Trata-se do Níquel e do milagroso do Molibdênio. O Inox de Cirurgião.</strong></p>
+      <h2>O Papel do Níquel e as Ligas Comerciais</h2>
+      <p>Para tornar o aço mais brilhante e maleável, a indústria utiliza o Níquel. Ligas mais simples (como a série 400 ou 304 comum) podem ser vulneráveis a ataques de alimentos ácidos e altas temperaturas, facilitando a liberação de traços desses metais na comida ao longo do tempo.</p>
 
-      <h2>O Código Industrial Misterioso das Ligas</h2>
-      <p>O aço por definição pura enferruja com oxigênio, por ser composto primordial de Ferro (Ferrítico) em aglomerado atômico comum de fundição de Carvões/Carbono. O termo "inoxidável" se consagra historicamente quando adicionaram fortíssimas quantias protetivas de "Cromo" na mistura, algo na faixa gigante superior até 20%. O Cromo formata uma camada (passiva de cromo) tão absurda e microscopicamente incrustada como muralhas que a água molhada na panela escorrega não podendo relar um único dedo oxidante no bendito velho e frágil Ferro puro interior, estancando a mancha ferruginosa avermelhada.</p>
-
-      <h2>Os Subprodutos (E o Limite de Tolerância Genético)</h2>
-      <p>Para deixar o cromo maleável brilhante nas prensas das bobinas sem ele virar vidro puro estilhaçável nas soldas laterais baratas (criando panelões profundos belíssimos pro povo comprar de monte), os fabricantes baratos empurram elevadas cotas fortíssimas maciças colossais industriais do metal Níquel na liga série mais "pobre" de todas de mercado padrão (geralmente as panelas estampadas nas etiquetas do balcão de promoção série comercial mais batida). Esse Níquel barato é o grande causador tóxico violento da alergia de contato por milhões nas orelhas perfuradas que sangram (brincos baratinhos pesados). Em temperaturas quentes longas com pratos cozidos muito temperados e ácidos, essas ligas rasas transferem também volumes traços nocivos consideráveis e imperdoáveis destas impurezas da mistura nas refeições da sua panela Inox comum velha super-oxidável batizada como tal só no adesivo barato de fundo negro que já desbotado descolou dali.</p>
-
-      <h2>O Ponto Ótimo Superior e Nobreza Definitiva (Aço 316)</h2>
-      <p>Painéis hospitalares e indústrias farmacológicas também deparam-se com essa terrível oxidação frágil tóxica quando batem com desinfetantes químicos monstruosos de esterilizar na base e nas bisturis. Como sanaram isto para salvar vidas nas mesas puras médicas? <strong>Eles fundiram a Liga Suprema (conhecida por ASTM Inox Tipo 316 / ou 316L, onde o 'L' significa o extra de 'Low Carbon'/Baixo Carbono blindado).</strong></p>
+      <h2>A Superioridade do Aço 316L (Inox Cirúrgico)</h2>
+      <p>Utilizado em ambientes críticos como hospitais e indústrias farmacêuticas, o <strong>Aço Inox 316L</strong> possui em sua composição um elemento nobre: o <strong>Molibdênio</strong>.</p>
       
-      <p>A magia atômica principal do inox medicinal frente aos restos comerciais baratos? Cerca de mais dois ou belíssimos e caros três puríssimos percentuais mágicos do Elemento Atômico Nobre denominado Molibdênio. O <strong>MOLIBDÊNIO atua cristalizando radicalmente ainda absurdamente muito mais resistente a película cromada invulnerável.</strong></p>
+      <p>Este componente cristaliza a proteção do metal, conferindo uma resistência excepcional à corrosão galvânica e por pites (pequenos furos invisíveis). Na prática, isso significa que a panela se mantém quimicamente inerte, não reagindo com os alimentos e mantendo o sabor original da sua receita sem qualquer interferência metálica.</p>
       
-      <p>Isto transforma por completo a chapa. Ele não lixa mais fácil; ele neutraliza violentos ataques de ácidos com facilidade hercúlea espasmódica. Ele estagna zero contaminações em infusões químicas severas. <strong>Este precisa, imperiosamente para o zelo da salvação celular nutritiva, ser o Inox supremo da base pesada culinária ideal da casa civilizatória onde deita ali tranquilamente sua couve fatiadinha cortada, sem o gosto horripilante férrico estragado no bife amadeirado.</strong></p>
+      <p>Investir em utensílios de Inox 316L é garantir que sua cozinha tenha a mesma precisão e segurança exigida pelos padrões médicos mais rigorosos do mundo.</p>
     `,
   },
   {
@@ -672,23 +721,25 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/bioacumulacao-metais-corpo.png',
     metaTitle: 'Bioacumulação de Metais Pesados no Organismo',
     metaDescription: 'Os efeitos a longo prazo da exposição a metais através da culinária.',
+    didYouKnow: {
+      text: 'O corpo frequentemente confunde metais pesados com minerais essenciais, facilitando sua absorção.',
+      linkSlug: 'metais-pesados-comida-guia-completo'
+    },
     content: `
-      <p>Frequentemente desconsideramos o ritmo microscópico compassado com o qual construímos nossas próprias falhas nas estruturas moleculares dos nossos ossos e artérias ao decorrer irremediavelmente irreversível das estações mundanas pelas quais vagamos. O pavor primário moderno centra muito da força num repentino surto fulminante tóxico exógeno grave imediato – o que nós chamamos no popular na linguagem técnica toxicologista de "intoxicação aguda emergencial instantânea sintomática".</p>
+      <p>Muitas vezes desconsideramos a forma como pequenas exposições diárias podem impactar nossa saúde no longo prazo. Diferente de uma intoxicação aguda, que apresenta sintomas imediatos, o perigo dos metais pesados reside no fenômeno da bioacumulação.</p>
 
-      <p>Mas no cerne das complexas falhas neurológicas geriátricas modernas assustadoras (alzheimer's acelerados, demências inexplicáveis silenciosas degenerativas), repousa uma fantasma sorrateira invisível da intoxicação exógena pesada dos compostos lixiviados das cozinhas acumulada lentamente a perder completamente o rastro num nefasto fenômeno oculto biológico das décadas perdidas da vida. Essa faceta é a verdadeira <strong>Intoxicação Lenta e Bioacumulativa Intensa.</strong></p>
+      <h2>O Que é Bioacumulação?</h2>
+      <p>A bioacumulação ocorre quando o organismo absorve substâncias (como chumbo, cádmio ou mercúrio) em uma velocidade maior do que consegue excretar. Como o corpo muitas vezes confunde esses metais com minerais essenciais, eles acabam sendo depositados em tecidos como ossos, rins e fígado.</p>
 
-      <h2>O Armazém Silencioso dos Rins</h2>
-      <p>As enzimas humanas de filtragens fisiológicas primárias foram elaboradas divinamente adaptadas para processar montantes diários contínuos constantes infindáveis do elemento natural nutricional limpo na natureza purificada e das águas selvagens, entre o zinco mineral orgânico solto num grão de terra folicular e selênio numa castanha colhida nos pés.</p>
+      <h2>O Papel dos Utensílios de Cozinha</h2>
+      <p>Utensílios de baixa qualidade que sofrem corrosão ou lixiviação são fontes constantes de traços metálicos. Ao usar panelas que reagem com a comida, estamos adicionando pequenas doses de metais pesados a cada refeição. Ao longo de décadas, esse acúmulo silencioso pode sobrecarregar os sistemas de desintoxicação do corpo.</p>
 
-      <p>Não há sistema de filtro programado pelas mitocôndrias humanas de varrer pra fora do xixi sujo diário massas colossais volumosas de nanovolumes atômicos fracionados industriais metálicos químicos não processáveis sintéticos industriosos como alumínio cozidos todos almoço do mundo há vinte exatos anos pelas panadas esmagadoras e rudes lixiviadas pelas velhas garfadas de chumbo no alumínio frágil e gasto da vovó na comida caipira barata do Brasil antigo no interior.</p>
+      <div class="sabia-que">
+        <h4>Prevenção é o Melhor Caminho</h4>
+        <p>A melhor forma de lidar com a bioacumulação é interromper a fonte de exposição. Ao substituir utensílios reativos por materiais inertes — como o Aço Inox 316L e a cerâmica pura — você elimina um dos principais vetores de contaminação metálica do seu ambiente doméstico.</p>
+      </div>
 
-      <h2>Metabolismo Invasor dos Elementos Fantasmas</h2>
-      <ul>
-        <li>Como uma esponja desidratada que cede sem perguntar as naturezas minerais das poças das suas chamas, os depósitos gotejantes ósseos das meninas adultas recém gestantes repuxam atrevidamente do leitoso sague limpo toda reserva coloidal de cálcio para os dentes do novo neném humano embrionário ali formando o chassi inicial da vida sadia e nobre; E na falta orgânica mineral sadia limpa das alimentações fracas pobres americanizadas em estufas envenenadas da humanidade veloz de latão: <strong>Os ossos abocanham todo e completo alumínio circulando estritamente descontroladamente ali nas frestinha sujas circulando no sistema circulatório e substitui erradamente (usando-o como andaime pavoroso no lugar do mineral duro cálcio biológico sadio). Isso não dói na mãe na hora da comida frita; dói na velhice da senhora prostrada esvaziada de firmeza osteoporótica trágica nos quadros severos tardios esfarelante da quebra de pelve no leito, repletas de cristais tóxicos atômicos impuros fixados pela panela boba, inocente baratinha que lá nos exatos vinte anos se foi e nem foto a senhora de 80 tem mais ou lembra mais dela na velha foto das gavetas tristes antigas.</strong></li>
-      </ul>
-
-      <h2>A Prevenção Pessoal é Individual - Somente Você Muda Ele</h2>
-      <p>Consciencializar sobre bioacumulações graves tóxicas em tempos longínquos não significa, contundentemente e imperiosamente, paralisarmos e chorarmos tristezas amarguradas no canto sombrio da cozinha perante o chassi queimado velho polímero soltinho feixe podre de poças estragadas no metal preto sujo da frigideira velhota amparada pela miséria social ou cultura desinformada dos mais pobres do rincão rural ignorado ou das repúblicas universitárias da periferia esdrúxula no fim de festa mundana com a pia abarrotada dos jovens suarentos alcoolizados. Simplesmente atirar no lixo velho esse assassino fantasma fétido e <strong>Comprar de Forma Conscientizada Tecnologias Nobres de Blindadores Cerâmicos puros 100% Inertes e Seguros do Inox Puro Inoxidável cirúrgico, interrompe definitivamente O Excesso Abusivo e criminoso imposto das Sobrecargas e Fardos que se jogavam massivamente atrolhados pro pobre cansado do Rim varrer caladinho pra bexiga dia noitamente até desistir inflamado inchado lá para o fim de vida triste renal dependente de máquinas artificiosas. O Começo dessa revolução vital limpa do renascimento orgânico sempre começa com você substituindo pacificamente amanhã o vasilhame estúpido feio arranhado velho do canto daquela lenha do bujão e fogos abertos nos rincões felizes da vida pela sabedoria das literaturas acadêmicas químicas médicas mais altas do topo humano universal atual do ano mágico vigente no tempo em corremos!</strong></p>
+      <p>Entender a ciência por trás dos materiais que usamos para cozinhar é o primeiro passo para uma vida mais saudável e equilibrada.</p>
     `,
   },
   {
@@ -709,24 +760,28 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/criancas-metais-pesados.png',
     metaTitle: 'Proteja seus Filhos de Metais Pesados na Cozinha',
     metaDescription: 'Guia para pais sobre como reduzir a carga tóxica na alimentação infantil.',
+    didYouKnow: {
+      text: 'O cérebro das crianças é especialmente vulnerável a neurotoxinas metálicas durante sua formação.',
+      linkSlug: 'acumulo-metais-pesados-corpo'
+    },
     content: `
-      <p>O conceito de toxicidade metálica atinge o seu ápice de preocupação quando focamos no público infantil. Enquanto um adulto possui uma barreira hematoencefálica (o "filtro" do cérebro) plenamente desenvolvida e sistemas de desintoxicação operantes, bebês e crianças pequenas estão em um <strong>estado de absorção e construção constante</strong>. O que entra no corpo deles não é apenas processado; é utilizado para construir o cérebro e os órgãos que usarão pelo resto da vida.</p>
+      <p>A toxicidade metálica é uma preocupação central quando falamos de saúde infantil. Enquanto adultos possuem sistemas de desintoxicação maduros e uma barreira hematoencefálica consolidada, bebês e crianças pequenas estão em uma fase crítica de desenvolvimento biológico.</p>
 
-      <h2>Por Que Crianças Absorvem Mais Metais?</h2>
-      <p>A fisiologia infantil é desenhada para sugar tudo o que pode do trato gastrointestinal para suportar o crescimento explosivo. Se o cálcio ou o ferro estiverem presentes no espinafre, o intestino da criança os absorverá ferozmente. O problema? Se a papinha foi cozida em uma panela lixiviante com traços de chumbo e alumínio, o corpo da criança <strong>também absorverá esses toxinas com a mesma avidez</strong>, pois frequentemente os confunde com minerais essenciais.</p>
+      <h2>Por Que Crianças São Mais Suscetíveis?</h2>
+      <p>O organismo infantil possui uma taxa de absorção intestinal de nutrientes muito alta para sustentar o crescimento rápido. Infelizmente, o corpo muitas vezes não distingue minerais essenciais de metais pesados tóxicos.</p>
 
       <ul>
-        <li><strong>Proporção Corpo-Dose:</strong> Uma micrograma de metal lixiviado de uma panela tem um impacto sistêmico muito maior em um corpo de 15 kg do que em um de 80 kg.</li>
-        <li><strong>Filtros Imaturos:</strong> Os rins e o fígado das crianças ainda estão em desenvolvimento e não conseguem excretar toxinas sintéticas e metais pesados com a mesma eficiência que um adulto saudável.</li>
+        <li><strong>Proporção Dose-Peso:</strong> Uma pequena quantidade de metal lixiviado de um utensílio tem um impacto sistêmico muito maior em um corpo de 10-15 kg do que em um adulto.</li>
+        <li><strong>Filtros Biológicos em Formação:</strong> Os rins e o fígado das crianças ainda estão desenvolvendo sua capacidade total de processar e excretar toxinas ambientais.</li>
       </ul>
 
       <div class="sabia-que">
-        <h4>A Janela de Desenvolvimento Neural</h4>
-        <p>A exposição a neurotoxinas (como o alumínio e o chumbo) durante os primeiros mil dias de vida pode causar danos irreversíveis na arquitetura cerebral, afetando o QI, a capacidade de atenção e o desenvolvimento cognitivo. A panela em que você prepara a introdução alimentar do seu bebê é, sem exageros, um dos fatores ambientais mais controláveis e importantes para o cérebro dele.</p>
+        <h4>Desenvolvimento Neural</h4>
+        <p>A exposição a neurotoxinas como o chumbo e o alumínio durante os primeiros anos pode interferir na arquitetura cerebral em formação. Garantir que os utensílios usados na preparação das primeiras papinhas sejam quimicamente inertes é uma das formas mais eficazes de proteção ambiental ao alcance dos pais.</p>
       </div>
 
-      <h2>Ação Imediata para Pais</h2>
-      <p>A fase de introdução alimentar (papinhas, sopas, cozidos de legumes) é tipicamente feita com muita água, calor prolongado e vegetais (que muitas vezes já vêm com seus agrotóxicos da terra). Não adicione metais pesados na equação. Use estritamente <strong>panelinhas pequenas de Aço Inox 316L Cirúrgico, Vidro Temperado ou Cerâmica 100% atóxica branca e certificada</strong> para preparar a base alimentar das suas crianças. A inércia química aqui não é luxo, é proteção estrutural biológica de base.</p>
+      <h2>Ação Prática para os Pais</h2>
+      <p>Na fase de introdução alimentar, evite usar panelas de alumínio ou antiaderentes riscados. Priorize materiais como o <strong>Aço Inox 316L (Cirúrgico)</strong>, o vidro e a cerâmica pura certificada. Esses materiais garantem que o esforço em oferecer alimentos saudáveis e orgânicos não seja comprometido pela migração de substâncias indesejadas do utensílio para o prato.</p>
     `,
   },
 
@@ -743,31 +798,39 @@ export const defaultArticles: Article[] = [
     readTime: 15,
     status: 'Publicado',
     excerpt: 'Mantenha as vitaminas e minerais no prato, não na panela.',
-    coverImage: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200',
-    coverAlt: 'Vegetais frescos e coloridos',
+    coverImage: '/images/nutrientes.png',
+    coverAlt: 'Vegetais frescos e coloridos preservando nutrientes',
     categoryLabel: 'Alimentação Consciente',
-    ogImage: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200',
+    ogImage: '/images/nutrientes.png',
     metaTitle: 'Como Preservar Nutrientes ao Cozinhar: Guia Completo',
     metaDescription: 'Dicas técnicas sobre temperatura e métodos para manter o valor nutricional.',
+    didYouKnow: {
+      text: 'Temperaturas excessivas podem destruir até 70% de vitaminas sensíveis como o Ácido Fólico.',
+      linkSlug: 'vitaminas-que-morrem-no-fogao'
+    },
     content: `
-      <p>Quando decidimos investir tempo, dinheiro e esforço em ingredientes de qualidade – os orgânicos, as feiras verdes, os cortes nobres limpos –, estamos comprando o "potencial de saúde" que aquele alimento oferece. No entanto, o trajeto entre a bancada fresca da cozinha e o seu estômago possui um campo minado brutal: O Fogão. <strong>Cozinhar não é apenas aquecer; é uma alquimia que pode multiplicar nutrientes ou, na maioria massiva das vezes das casas, incinerá-los.</strong></p>
+      <p>Investir em ingredientes de qualidade — como orgânicos e alimentos frescos — é o primeiro passo para uma nutrição saudável. No entanto, o método de preparo e os utensílios utilizados determinam quanto desse potencial nutricional chegará efetivamente ao seu organismo.</p>
 
-      <h2>O Assalto Nutricional do Fogo Incorreto</h2>
-      <p>Vitaminas e antioxidantes são estruturas atômicas frágeis. A natureza os desenhou perfeitamente encapsulados nas células das plantas, mas você, com o fogo bruto e as águas borbulhantes velozes, rompe essa cápsula vegetal. Se o calor for insano, exagerado, contínuo, ou pior, sem um método regrado, o que você jantará não é mais uma fonte de folato e vitamina C forte, mas tão somente o espectro exausto daquele vegetal inicial.</p>
+      <h2>O Impacto do Calor sobre os Nutrientes</h2>
+      <p>Vitaminas e antioxidantes são estruturas sensíveis. Temperaturas excessivas e tempos de cozimento prolongados podem degradar componentes vitais, como a Vitamina C e o complexo B. Cozinhar não deve ser um processo de "agressão" ao alimento, mas sim uma técnica de preservação de suas propriedades.</p>
 
-      <h2>O Componente Utensílio e a Condução Suave</h2>
-      <p>Panelas finas como papel (como as genéricas promocionais de supermercado) recebem o jato de calor da boca do gás focado e o jorram hiper-concentrado em um único ponto no fundo e debaixo da comida. Isso inevitavelmente queima o bife de um lado enquanto o topo ainda está cru, destruindo a carcaça de base protéica (queimando as quinas) numa cacofonia culinária estressante e oxidativa.</p>
+      <h2>A Importância da Estabilidade Térmica do Utensílio</h2>
+      <p>Utensílios de espessura fina ou materiais de baixa condutividade térmica criam "pontos quentes", queimando partes do alimento enquanto outras permanecem cruas. Isso gera oxidação e perda nutricional.</p>
 
-      <p>Panos de Inox Cirúrgicos ou Ferros pesados de alta costura, diferentemente, possuem fundos sanduíches difusores nobres grossíssimos maciços termodinâmicos, que espalham o calor violentíssimo da pequena boca de fogão uniformemente e brandamente por toda a redoma de metal de sua base até subirem nas paredes em perfeita e doce valsa harmoniosa. Esse controle "envelopa" gentilmente a sua preciosa refeição, cozinhando sem brutalizar a macroestrutura vital do vegetal nem romper em destruições de queima excessivas, permitindo cocção suculenta vital em seu próprio caldo base com fogos baixíssimos ou desligados usando tão somente a inércia retida térmica de puro metal de alta densidade.</p>
+      <p>Já o <strong>sistema de cozinha inteligente</strong>, fabricado em aço inox cirúrgico com 5 camadas distribuídas por toda a peça, homogeniza o calor de forma perfeitamente uniforme. Isso permite cozinhar em temperaturas mais baixas e de forma muito mais estável, "envelopando" o alimento e mantendo sua integridade estrutural e vitamínica.</p>
 
-      <h2>A Arte da Umidade Pura</h2>
-      <p>Mude o prisma na cabeça moderna de quem cozinha na correria diária violenta do século: Ferver velozmente tudo com água afundando a comida é jogar na pia a vitamina rala do vegetal solta no líquido caldo. Fritar em secos violentos é tostar as proteínas criando carbonos reativos toxinas puras; Cozinhar brandamente envelopado no vapor d'água dos próprios ricos sucos naturais preservando e estancando e trancafiando a saúde natural toda em tampas que vedam pesadamente selando maravilhosamente seu jantar. <strong>A alquimia máxima vitalícia na mesa!</strong></p>
+      <h2>Dicas para uma Cozinha mais Nutritiva</h2>
+      <ul>
+        <li><strong>Reduza a água:</strong> Cozinhar vegetais imersos em muita água faz com que os nutrientes hidrossolúveis fiquem retidos no líquido que costuma ser descartado.</li>
+        <li><strong>Use tampas vedadas:</strong> O cozimento em sistema fechado aproveita o próprio vapor do alimento (umidade natural), preservando o sabor e a densidade nutricional.</li>
+        <li><strong>Controle o fogo:</strong> O fogo baixo é muitas vezes suficiente quando se utiliza utensílios de alta retenção térmica, evitando a degradação acelerada dos nutrientes.</li>
+      </ul>
     `,
   },
   {
     id: 'c4.1',
-    slug: 'vitaminas-que-morrem-no-fogão',
-    title: 'Vitaminas que Morrem no Fogão: Quais São, em Qual Temperatura e Como Preservar',
+    slug: 'vitaminas-que-morrem-no-fogao',
+    title: 'Vitaminas e Temperatura: Quais se Perdem no Preparo e Como Protegê-las',
     subtitle: 'O guia de termossensibilidade das vitaminas essenciais.',
     category: 'alimentacao-consciente',
     universe: 'nutricao',
@@ -776,34 +839,41 @@ export const defaultArticles: Article[] = [
     readTime: 8,
     status: 'Publicado',
     excerpt: 'C, B12, Ácido Fólico: saiba quais você está perdendo no preparo.',
-    coverImage: 'https://images.unsplash.com/photo-1523456762243-241076f707f5?q=80&w=1200',
-    coverAlt: 'Cápsulas de vitaminas e vegetais',
+    coverImage: '/images/vitaminas.png',
+    coverAlt: 'Vitaminas e minerais em alimentos frescos',
     categoryLabel: 'Alimentação Consciente',
-    ogImage: 'https://images.unsplash.com/photo-1523456762243-241076f707f5?q=80&w=1200',
+    ogImage: '/images/vitaminas.png',
     metaTitle: 'Vitaminas e Temperatura: Como Não Perder Nutrientes',
     metaDescription: 'O impacto do calor nas principais vitaminas e como cozinhá-las certo.',
+    didYouKnow: {
+      text: 'A Vitamina C começa a se degradar significativamente em temperaturas acima de 70°C.',
+      linkSlug: 'cozinhar-sem-destruir-nutrientes-guia'
+    },
     content: `
-      <p>Ouvir que a "vitamina se perdeu na água do feijão" parece conversa folclórica antiga de avó, mas as bases mais exatas da ciência alimentar contemporânea confirmam plenamente que é ali que as perdas e deficiências invisíveis ocultas de milhões começam de fato.</p>
+      <p>A perda de nutrientes durante o cozimento é um processo físico-químico bem documentado. Entender quais vitaminas são mais sensíveis nos ajuda a ajustar nossos hábitos para uma nutrição mais eficiente.</p>
 
-      <h2>As Termossensíveis Clássicas</h2>
-      <p>O complexo das Vitaminas C (o majestoso escudo imunológico) e a gigantesca família do Complexo B (B1, B2, B6, B9-Folato - pilares energéticos nervosos) lideram com uma folga absurda e trágica o topo da tabela nutricionista mundial dos "Nutrientes Fujões Hipersensíveis". Eles possuem uma fragilidade química dupla fortíssima e vulnerabilidade letal: <strong>São tanto hidrossolúveis (derretem e escapam ferozmente dissolvidos rapidamente pra fora para dentro de toda água) quanto excessivamente Termolábeis severas (O limite de calor que destroça totalmente a estrutura molecular base da Vitamina C inteira pura natural inicia-se ali próximo da curva morna branda dos meros 70 graus celsius constantes contínuos de panela em simples exposição de luz aberta).</strong></p>
+      <h2>As Vitaminas Mais Sensíveis (Termolábeis)</h2>
+      <p>As vitaminas do <strong>Complexo B</strong> e a <strong>Vitamina C</strong> são conhecidas como termolábeis e hidrossolúveis. Isso significa que elas são sensíveis ao calor e se dissolvem facilmente na água.</p>
 
-      <h2>O Extermínio na Prática</h2>
       <ul>
-        <li>O hábito fatal mais clássico das pressas: Picar o belo ramo verde de Brócolis caríssimo orgânico flor e atirar de qualquer modo rudes na panela transbordante com quatro imensos litros transbordantes da água fervendo desgovernada lá pros 100°C borbulhante e ruidosos durante vintes pesados longos e desnecessários eternos minutos de fervor louco panela toda arregaçada pra cima esfumaçante soltando o cheiro bom do vegetal pela sala e evaporando junto toda sua riqueza vital no teto para alimentar morcegos; Para enfim peneirar depois amaciado pálido aquela polenta verde inútil no prato. Cerca de 70% ou a 80% absolutos totais e plenos do folato vivo útil da comida escorreram ralos impiedosos da pia suja no balcão escuro junto daquela coloração esverdeada da água escaldante rala inútil descartada ali na rotina cega brutal.</li>
+        <li><strong>Vitamina C:</strong> Começa a se degradar significativamente em temperaturas contínuas acima de 70°C.</li>
+        <li><strong>Ácido Fólico (B9):</strong> Essencial para o desenvolvimento celular, pode sofrer perdas de até 70% quando os vegetais são fervidos por longos períodos em muita água.</li>
       </ul>
 
+      <h2>A Falha do Cozimento por Imersão</h2>
+      <p>Mergulhar vegetais em água fervente e descartar o líquido depois é um dos métodos que mais desperdiça nutrientes. O "caldo" esverdeado ou amarelado que sobra é, na verdade, onde foram parar boa parte das vitaminas solúveis do alimento.</p>
+
       <div class="sabia-que">
-        <h4>A Inteligência da Tampa Selada</h4>
-        <p>A solução e salvação química culinária de um mestre consciente se esconde simplesmente no peso inerte do bloco da tampa pesada encaixadinha das panelas premiums da linha altíssima e do Inverno. Você mergulha os legumes e reduz as águas do mar pra quase secas e parcas três de colherzinhas molhadas básicas da sua torneira mineral pra vaporizar, estancando tudo violentamente em "vácuo úmido selador vedador natural perfeito" dentro, bloqueando com força total as nuvens soltas ricas cheirosas escapadas do buracão da fumaça, criando casulo chuvoso vital. Você desdobra a genialidade termodinâmica pra reter brutalmente noventa massivos puros cento das ricas forças vitamínicas originais natas da sua flor! Um ato simplista e nobilíssimo.</p>
+        <h4>A Solução: Vapor em Sistema Fechado</h4>
+        <p>A forma mais inteligente de preservar essas vitaminas é usar o mínimo de água possível em um utensílio com tampa de vedação precisa. Isso cria um ambiente de vapor que cozinha o alimento sem "lavar" os nutrientes para fora das fibras vegetais, mantendo as cores vibrantes e os benefícios para a saúde.</p>
       </div>
     `,
   },
   {
     id: 'c4.2',
     slug: 'fogo-alto-reacao-quimica-alimentos',
-    title: 'Fogo Alto: O que Acontece com Proteínas, Gorduras e Carboidratos Quando a Temperatura Passa do Limite',
-    subtitle: 'Glicação, oxidação lipídica e toxicidade por superaquecimento.',
+    title: 'Fogo Alto e Nutrição: O que Acontece com Alimentos em Temperaturas Extremas',
+    subtitle: 'Glicação, oxidação lipídica e subprodutos do superaquecimento.',
     category: 'dicas-da-cozinha',
     universe: 'nutricao',
     type: 'CLUSTER',
@@ -811,31 +881,35 @@ export const defaultArticles: Article[] = [
     readTime: 9,
     status: 'Publicado',
     excerpt: 'O risco de queimar os alimentos e os subprodutos tóxicos gerados.',
-    coverImage: 'https://images.unsplash.com/photo-1528605248644-14dd04cb2201?q=80&w=1200',
-    coverAlt: 'Chamas de fogão a gás',
+    coverImage: '/images/fogo_alto.png',
+    coverAlt: 'Fogo alto no fogão afetando nutrientes dos alimentos',
     categoryLabel: 'Dicas da Cozinha',
-    ogImage: 'https://images.unsplash.com/photo-1528605248644-14dd04cb2201?q=80&w=1200',
-    metaTitle: 'O Surgimento de Toxinas pelo Fogo Alto | Cozinha Consciente',
-    metaDescription: 'Entenda os perigos de cozinhar em temperaturas excessivas.',
+    ogImage: '/images/fogo_alto.png',
+    metaTitle: 'Os Riscos do Fogo Alto na Cozinha | Cozinha Consciente',
+    metaDescription: 'Entenda como o calor excessivo pode transformar alimentos saudáveis em fontes de toxinas.',
+    didYouKnow: {
+      text: 'O fogo alto pode oxidar óleos saudáveis, transformando-os em compostos inflamatórios.',
+      linkSlug: 'cozinhar-sem-destruir-nutrientes-guia'
+    },
     content: `
-      <p>O cheiro irresistível daquela crostinha deliciosamente tostadinha negra e firme escurecida no cantinho crocante suculento tenro das carnes vermelhas das chapas fumegantes tem nas altas tabelas moleculares reativas o sabor das suas complicações celulares inflamatórias perigosíssimas mais ocultas a longuíssimo prazos, escondidas de todo mero mortal faminto dos churrascos.</p>
+      <p>Cozinhar em fogo alto pode parecer uma forma de ganhar tempo, mas as transformações químicas que ocorrem em temperaturas extremas podem comprometer a qualidade da sua refeição.</p>
 
-      <h2>A Reação de Maillard em Excesso</h2>
-      <p>Quando encostamos proteínas duras biológicas das carnes nativas frente a calor absurdamente estrondoso impiedoso altíssimo rápido veloz nas lâminas fritas puras do metal pelando, criamos a amada caramelização gostosa marrom conhecida tecnicamente. O problema é esquecê-la virando quase queima seca total rudes (aquela parte preta endurecida crosta forte seca das pizzas do churrasco passado de raspão); Este choque gigante extremo forçoso induz reações celulares químicas drásticas e severas as transformações proteicas chamadas formadoras de <strong>Aminas Heterocíclicas (AHs) violentas puras e também de potentes tóxicos assustadores e agressivos dos HPAs mortais biológicos inaláveis puros voláteis e impregnantes das crostas nas chapas pretas.</strong> Ambos tem íntimas agressões confirmadas pela vasta total literatura acadêmica laboratorial mundial moderna oncológica severíssima.</p>
+      <h2>A Reação de Maillard e o Limite da Segurança</h2>
+      <p>A caramelização que traz sabor aos grelhados é conhecida como Reação de Maillard. No entanto, quando passamos do ponto e o alimento começa a queimar (formando aquelas crostas pretas e secas), surgem compostos indesejados como as <strong>Aminas Heterocíclicas</strong>.</p>
+      
+      <p>Estes subprodutos do superaquecimento de proteínas são classificados em estudos de toxicologia alimentar como substâncias que podem causar estresse oxidativo no organismo se consumidas com frequência.</p>
 
-      <h2>Lipídios Assustados (O Ponto da Fumaça Negra)</h2>
-      <p>Além da degradação forte da gordura e tecidos animais firmes tostados esturricados ao fogo; Os puros maravilhosos nobres fluídos dourados do excelente nutritivíssimo abençoado extra puro divino dos Azeites ou as finas Manteigas ricas Gheen perdem violentamente e instantaneamente sua santidade total pura orgânica celular nobel quando fritados e submetidos acima das temperaturas infernais e barulhentas da fumaça forte branca na cozinha. Quando o fio de óleo vegetal de azeite ferve bruscamente seco a ponto da névoa cinza esfumaçar forte ali o ar do seu teto do bife seco; ali nascem montanhas radicais desequilibrantes agudos severas de radicais livres destrutivos inflamatórios oxidados puramente entupidores arteriais e das correntes vivas límpidas.</p>
+      <h2>A Oxidação de Óleos e Gorduras</h2>
+      <p>Cada gordura possui um "ponto de fumaça". Quando aquecemos um azeite de oliva extravirgem ou gorduras sadias acima desse limite, elas sofrem oxidação, perdendo seus benefícios antioxidantes e se transformando em compostos inflamatórios.</p>
 
-      <ul>
-        <li><strong>Frito Mortal Raso Rápido Violento Quente:</strong> Fumaça tóxica, Reação da proteína queimando em cistos tóxicos mortais pesados, Óleos puros essenciais sadios derretidos transmutados amargos saturados plenos de oxidações radicais livres tóxicos celulares puras da quebra veloz drástica do cozido bruto.</li>
-        <li><strong>Cocção Embebida Lenta Morna Amiga e Amada Gentil Certa:</strong> As maravilhas vitais plenas inteiras de sua caça. Calor da liga pesada envelopando o frango rosado. Suavidade perfeita suculência pura retida nos líquidos soltos sem tostas.</li>
-      </ul>
+      <h2>A Vantagem do Fogo Baixo e Materiais Nobres</h2>
+      <p>O <strong>sistema de cozinha inteligente</strong>, que possui 5 camadas na panela inteira, homogeniza o calor e permite que ele se espalhe de forma tão eficiente que o "fogo alto" torna-se totalmente desnecessário. Cozinhar com menos temperatura evita a oxidação, preserva a estrutura das proteínas e as propriedades lipídicas dos alimentos, entregando uma refeição verdadeiramente nutritiva e livre de toxinas geradas pelo calor excessivo.</p>
     `,
   },
   {
     id: 'c4.3',
     slug: 'metodos-cozimento-comparativo-nutrientes',
-    title: 'Vapor, Pressão ou Forno: Qual Método Preserva Mais Nutrientes — Comparativo Honesto',
+    title: 'Vapor, Pressão ou Forno: Qual Método Preserva Mais Nutrientes? (Comparativo)',
     subtitle: 'Avaliando o impacto de cada técnica na densidade nutricional.',
     category: 'alimentacao-consciente',
     universe: 'nutricao',
@@ -844,57 +918,27 @@ export const defaultArticles: Article[] = [
     readTime: 9,
     status: 'Publicado',
     excerpt: 'Qual a melhor forma de preparar seus vegetais e carnes?',
-    coverImage: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200',
-    coverAlt: 'Alimento cozido no vapor',
+    coverImage: '/images/metodos_vapor.png',
+    coverAlt: 'Alimentos cozidos no vapor preservando nutrientes',
     categoryLabel: 'Alimentação Consciente',
-    ogImage: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200',
+    ogImage: '/images/metodos_vapor.png',
     metaTitle: 'Comparativo de Métodos de Cozimento e Nutrientes',
     metaDescription: 'Vapor vs Pressão vs Forno: Qual preserva melhor as vitaminas?',
+    didYouKnow: {
+      text: 'O cozimento a vapor em sistema fechado preserva até 93% da Vitamina C dos vegetais.',
+      linkSlug: 'cozinhar-sem-destruir-nutrientes-guia'
+    },
     content: `
-      <p>Ao mergulharmos nos três modelos gigantes culinários dos preparos massivos quentes do Brasil diário das casas: A pressa das "Velhas Panelas da Pressão Escuras", o banho "D'água Total Transbordante do Macarrão e Legume ralo" ou os eficientes maravilhosos dos úmidos "Casulos Fechados da panela de Banho de Vapor Focado" — nos indagamos de fato final em busca do Veredito da Morte da Nutrição Vitamínica Orgânica.</p>
+      <p>Escolher o método de cozimento correto é tão importante quanto escolher a qualidade dos ingredientes. Cada técnica utiliza o calor e a água de formas differentes, impactando diretamente a densidade nutricional final do prato.</p>
 
-      <h2>O Mergulho Submarino (Fervura Profunda Submerso Larga D'água)</h2>
-      <p>O pior e absoluto erro de método e escolha falha perdedor total nutricional completo global da vida civilizatória apressada. Escaldar inteiramente tomates, brócolis finos inteiros debaixo plenos alagados d'água fervendo descontrolados no fundo ali da velha panela arranhada leve afogando sem tampa livre no teto por exagerados dezenas minutos inteiros exaustos velozes é puro jogar do dinheiro pro saco rasgado. Os ríquissimos potássios solúveis preciosos das batatas e laranjas escoam livre ralo pro lixo sem força com sabor sem vida inútil fibroso que sobra na massa engolida murcha fraca da textura pobre.</p>
+      <h2>1. Fervura por Imersão (Mergulho em Água)</h2>
+      <p>É o método mais comum, mas também o menos eficiente para a retenção de vitaminas. Ao mergulhar vegetais em água fervente, ocorre a lixiviação: os nutrientes saem das células vegetais e se dissolvem na água. Se o líquido for descartado, grande parte do valor nutricional se perde.</p>
 
-      <h2>O Acelerador Agressivo Violento Lixiviador do Fervor Físico (A Pressão Comum Velha Padrão de Pressa Brasil Afora)</h2>
-      <p>O segundo lugar obscuro amargo mas eficiente da física e salvação útil pro nosso querido tradicional sagrado tempo amado diário quebra-galho brasileiro popular amado com louvor merecido — A Pressão. Ponto positivo gigante genial maravilhoso e veloz formidável forte pra quem rala do dia noite fora trabalhando nas lutas nas capitais longes cansadas? Sim. Ganha gloriosos absolutos valiosíssimos eternos sagrados tempos puros de espera com rapidez fulminantes eficientes de 10 longos contínuos pra os mero dez curtíssimos feijões grossos amolecendo gostoso num só golpe na boca mágica borbulhante abafada da tecnologia pura panela velha tampada. Negativo brutal assombroso pavoroso na visão puritana estrita clínica médica do ferro vital orgânico e químico da biologia molecular pura limpa: a temperaturas brutas imensas agressivas incontroláveis absurdas colossais dos mais duzentos acima somados do arraste violento raspante violento feroz contínuo nos arranhados pavorosos da velha liga interna panela chata liberadores agressiva pura mortífera pro organismo adulto ao longo da década pura.</p>
+      <h2>2. Cozimento sob Pressão</h2>
+      <p>A panela de pressão é uma aliada da praticidade, reduzindo o tempo de preparo. No entanto, as altas temperaturas envolvidas e o contato com materiais reativos em panelas convencionais de alumínio podem acelerar a degradação de algumas vitaminas sensíveis. Para minimizar perdas, use a pressão apenas pelo tempo estritamente necessário.</p>
 
-      <h2>A Medalha Sagrada (O Casulo Selado Gentil Úmido Protetor – Vapor Inox Cirúrgico Premium Puro)</h2>
-      <p>Onde mora a pura vitória máxima imaculada formidável sublime divina no pódio final puro inerte do Olimpo das panelas nutritivas? Você amortece pingo molhado da água limpa purificada mineral no pesado aço denso do berço inox 316. Deposita delicadinho cru lá todos pedaços finos belos das artes vegetais ali colhidos orgânicos rincões fortes roxos e verdes da serra úmida viva. Abaixa gentilíssima carinhosa baixa mínima minúscula da chama azul quente do fogo contido ali pra amornar o metal; tranca e tampa fechando absoluto sem frestas num lacre isolante pesado inerte formidável maciço brilhante gigante do ar limpo nobre ali da tampa perfeita cirúrgica brilhante e caladinha da base de aço supremo! O próprio molhado vapor amornado rico gentil da própria base densa interior macia da panela sobe nuvens mansas limpas orgânicas ricas doces acariciando delicadamente ali no escuro puro preservativo inócuo abençoado blindado trancado seguro a batata grossa sem arrancar dela nada sujo. Dez minutinhos limpos sem fumaças fedorentas nem sujeiras esbaforidas barulhentas, abriu: Está ali sublime radiante linda verde brilhosa crocante coloridíssimo perfeita sem pálidas, toda vitamina lá intacta no seu pedaço crocante firme do alho poró vivo.</p>
-    `,
-  },
-  {
-    id: 'c4.4',
-    slug: 'experimento-bicarbonato-qualidade-panela',
-    title: 'Experimento Caseiro: O que o Bicarbonato Revela Sobre a Qualidade do Utensílio',
-    subtitle: 'Por que o sódio expõe as falhas de inércia do material.',
-    category: 'dicas-da-cozinha',
-    universe: 'nutricao',
-    type: 'CLUSTER',
-    publishedAt: '2026-06-15',
-    readTime: 7,
-    status: 'Publicado',
-    excerpt: 'O teste definitivo que você pode fazer hoje na sua cozinha.',
-    coverImage: 'https://images.unsplash.com/photo-1544333346-646870020165?q=80&w=1200',
-    coverAlt: 'Bicarbonato de sódio em pó',
-    categoryLabel: 'Dicas da Cozinha',
-    ogImage: 'https://images.unsplash.com/photo-1544333346-646870020165?q=80&w=1200',
-    metaTitle: 'A Ciência do Teste do Bicarbonato em Panelas',
-    metaDescription: 'Por que o bicarbonato é a ferramenta ideal para testar migração metálica.',
-    content: `
-      <p>A prova suprema infalível simples barata incontestável química laboratorial e doméstica definitiva soberana pura da reatividade venenosa oculta escondida silenciada ignorada nas propagandas limpas plásticas imaculadas baratinhas fáceis famosas coloridas e chiques pretinhas moderníssimas lisinhas polímeros felizes fakes – A Prova das Donas Amadas Domésticas Vingadoras Fortes e Resilientes: O Bicarbonato Fermentudo da Morte Revelador Puro da Água Cinza Triste Amarga Culpada Suja Manchada Tenebrosa.</p>
-
-      <h2>O Rito Magno Cego Experimental Fatal (A Força e o Sentido Desse Revelador Limpo e Sencillo do Carbonato do Fundo de Escada)</h2>
-      <p>Já o expusemos grandiosamente antes nas minúcias puras atômicas científicas das tabelas químicas abertas dos grandes estudos clássicos universais mundiais universitário lá nos inícios profundos ricos de detalhados nas alas das "Consciências e Alumínios Pesados da Casa Brasileira Moderna dos Metais Lixiviantes Amados Ocultos no Omelete", mas vale reforçar incisiva a lembrança vital simples genial dessa mágica pura divina caseira barateza infalível na revelação das impurezas plenas dos seus fogões: A lixiviação absurda extrema corrosiva oculta violenta dos utensílios que perdem suas frágeis carcaças baratas coloridinhas no atrito abrasivo nobre e ácido e abrasivo calor extremo da física da boca ardente do calor doméstico.</p>
-
-      <div class="sabia-que">
-        <h4>O Ácido vs o Alcalino: Você não Entendeu isso ainda? Simples Agora.</h4>
-        <p>A imigração da perda do íon puro do vilão alumínio ou revestimento sintético pra lá voando derretendo na água pavoroso em venenos e caindo no sangue suculento lá na sopa vermelha gostosa forte do tomate cozido é potencializado incrivelmente massivo no mundo nos molhos super extremos severos ácidos limões puros esvaziadores. MAS a contrapartida da lixiviação pesada e frágil dos compostos do metal porco pobre fino frouxo se repete e se arregaça abertamente assustadoramente igual nos potenciais solutos fortemente contrários do mundo básico pesado e alcalinamente forte e ardilosos (Ex: Nossa velha massinha fofa pura amada e querida e abençoada Branca Purinha Caseiríssima Baratinha Leve chamada Fermento Químico Brancão ou o seu priminho amado: Bicarbonato Químico Puro em Pó).</p>
-      </div>
-
-      <p>Se colocar duas míseras belas rasas colherezinhas de pó desse ali no copo e ferver puro isso aí da panela na fé e na vontade de dez cravados minutos forte puros borbulhas grandes na boca fogaréu alta e destampar... Você estará reproduzindo perante seu rosto humano mortal de carne olhos limpos o envelhecimento natural do caldinho caipira grosso batizado das corrosões fortes das bases em apenas um mês inteiro do jantar simulado num tubo envenenado microscpicamente no micro laboratorial quente puro e rápido de casa! Ali vai chuchar o pó na liga ruim gasta do revestimento sintético escuro, vai invadir com força extrema violenta ali abrindo a ranhura do fininho esmalte branco picotado coloridinha coreana carinha, vai esvaziar soltando o cinza pavoroso manchante amargo de gosto ferroso infernal oxidante e nebuloso turvo podre das vasilhas antigonas batidas cheias d’água choca.</p>
-
-      <p>O Gosto é horripilantemente puro chumbo azedo oxidante; O cheiro é puramente prego enferrujado rançoso da morte limpa. <strong>Nunca engula a prova da água do mal, a jorre feliz inteira grossa espumante esbranquiçada e horrorosa pelo esgoto longe na pia brilhante e corra atrás livre, solto liberto para comprar livre hoje limpo puro inox verdadeiro espesso grosso 316L sem cheiro cor cinza inerte divino amado salvador curativo eterno ali das panelinhas maravilhosas limpas pra suas lindas formosas novas hortaliças santas. A salvação celular agradece alvoroçada na alma feliz limpinha do corpo inteiro salvo longevas noites pacíficas longínquas livres da vida centenária bela de paz forte abençoada rica longa feliz inteira na cozinha santa da família farta reunida sadia feliz e forte eternamente nas saúdes inteiras curadas das inflamações tóxicas velhas dos infernais materiais antiaderentes com substâncias nocivas pretinhos encardidos esbodegados jogados todos na lixeiras fora das janelas escuras jogados dos passados.</strong></p>
+      <h2>3. Cozimento a Vapor em Sistema Fechado</h2>
+      <p>Este é o padrão ouro para a preservação de nutrientes. Ao usar utensílios de <strong>aço inox cirúrgico com tampa de vedação precisa</strong>, você cozinha o alimento com o mínimo de água e em temperaturas controladas. O vapor envelopa o alimento suavemente, mantendo as cores, texturas e, principalmente, as vitaminas e minerais dentro do vegetal. O resultado é um alimento muito mais rico em vitalidade e sabor orgânico.</p>
     `,
   },
 
@@ -911,31 +955,35 @@ export const defaultArticles: Article[] = [
     readTime: 20,
     status: 'Publicado',
     excerpt: 'O manual definitivo para montar uma cozinha focada em saúde e longevidade.',
-    coverImage: 'https://images.unsplash.com/photo-1466633364843-559bb3607951?q=80&w=1200',
+    coverImage: '/images/cozinha_consciente.png',
     coverAlt: 'Preparando comida de forma consciente',
     categoryLabel: 'Alimentação Consciente',
-    ogImage: 'https://images.unsplash.com/photo-1466633364843-559bb3607951?q=80&w=1200',
+    ogImage: '/images/mudancas_cozinha.png',
     metaTitle: 'Guia da Cozinha Consciente: Saúde e Utensílios',
     metaDescription: 'Aprenda a escolher utensílios que não interferem na sua saúde. Guia completo.',
+    didYouKnow: {
+      text: 'A saúde começa no utensílio: ele é o último filtro entre o ingrediente puro e o seu prato.',
+      linkSlug: 'comparativo-materiais-panela-honesto'
+    },
     content: `
-      <p>A "Consciência" em uma cozinha transcende amplamente a escolha isolada do orgânico mais vibrante da quitanda ou a dieta do momento das redes sociais. Ela é a união da biologia com a mecânica dos materiais; a harmonização de saber não só o <em>que</em> se come, mas <em>como</em> o veículo do preparo age estruturalmente perante o seu alimento. Neste universo final que nomeamos livre de "Consciência", conectaremos todos os estigmas industriais ensinados das lixiviações reativas e o armaremos, definitivamente, com <strong>A Escolha Inerte e Inabalável da Cozinha Ativa Consciente.</strong></p>
+      <p>Uma cozinha consciente não é sobre seguir a dieta da moda ou comprar o ingrediente mais caro. É sobre entender como o utensílio que você usa afeta diretamente o que chega ao prato da sua família. Ao longo dos outros universos deste blog, exploramos os riscos do alumínio, dos revestimentos antiaderentes e dos metais pesados. Agora chegou o momento de transformar tudo isso em decisões práticas e acessíveis.</p>
 
-      <h2>O Ponto de Virada Psicológico</h2>
-      <p>Existe um confortável distanciamento em nós quando fatiamos cebolas numa frigideira velha arranhada preta escorregadia soltando materiais antiaderentes com substâncias nocivas, fingindo não ver a falha que contamina o corpo. "Ah, mas todo mundo usa". Este comportamento é quebrado radicalmente apenas pela ciência da comprovação em exames. No instante em que os usuários do Portal observaram de fato com os testes químicos ácidos em casa o que boia no espaguete quente deles, nasce a "virada", a decisão irrevogável e instantânea onde o cobiçado jogo utilitário das belas velhas frigideiras desce imediatamente para a lata do lixão ou centro de ferro-velho pesado de reciclagens para sempre e por bem das gerações limpas familiares.</p>
+      <h2>O Momento da Virada</h2>
+      <p>A maioria de nós usa determinadas panelas simplesmente porque "sempre foi assim". A virada começa quando você percebe — muitas vezes fazendo um teste simples em casa — que o que sai da sua panela não é apenas comida. É comida mais os resíduos do material que a preparou. Essa percepção muda tudo, e não precisa de laboratório: o teste do bicarbonato, descrito em outro artigo aqui do blog, já é suficiente para abrir os olhos.</p>
 
-      <h2>A Curva do Retorno (Por que Inertes?)</h2>
+      <h2>Dois Ganhos Reais ao Trocar Seus Utensílios</h2>
       <ul>
-        <li><strong>Saúde e Tônus Celular:</strong> A abolição completa da neurotoxicidade externa advinda das piores panelas frouxas devolve, muitas vezes de modo palpável já nos primeiros raros bimestres da nova pureza culinária, uma digestibilidade sã fantástica nas refeições cotidianas puras dos legumes (uma vez que os figados abandonam as lutas inglórias das filtradas extras artificiais diárias massacrantes que os adoeciam sutilmente).</li>
-        <li><strong>Durabilidade Secular Financeira:</strong> A matemática que a televisão esconde na grande publicidade fácil massiva vendida é o famoso e brutal "ciclo da panela podre mensal". A cada mero seis raros curtos felizes novinhos meses brilhantes que duraram muito o novo kit de R$ 300 Reais preto fosco de "plástico fluorado que nem agarra ovos soltos", ele se desgasta, arranha e vai para o esquecimento ralo encardido de doenças exógenas perigosíssimas, forçando nova compra compulsória cega do marketing da indústria bilionária das vendas viciadas contínuas. </li>
+        <li><strong>Saúde a longo prazo:</strong> Eliminar fontes diárias de contaminação por metais e compostos químicos é um dos gestos preventivos mais impactantes que você pode fazer pela saúde da sua família — especialmente de crianças pequenas, cujos órgãos ainda estão se formando.</li>
+        <li><strong>Economia real:</strong> Uma boa panela de alumínio ou antiaderente costuma durar entre 6 meses e 2 anos antes de precisar ser trocada. Uma panela de aço inox cirúrgico de qualidade dura décadas, sem degradação. A longo prazo, o custo por uso é muito menor.</li>
       </ul>
 
       <div class="sabia-que">
-        <h4>O Conceito da "Panela de Geração" </h4>
-        <p>Ao decidir pelo único e certeiro investimento sólido do material blindado verdadeiro das indústrias puritanas médicas cirúrgicas superiores Inox pesado autêntico (316L), Vidro temperado alemão incolor sólido extremo forte ou pedras de Cerâmicas puras minerais originais isentas formidáveis fundidas naturais brancas maciças sem esmaltes vagabundos chumbados tóxicos pesados coloridos na feira, você não compra uma vasilha da moda; As blindagens destas forças superiores brutas extremas absolutas eternas não desgastam em trinta e infinitos infindáveis duradouros longos anos fortes da jornada biológica madura feliz terrena do cozinheiro limpo! Ela entra pra casa no dote do jovem noivo alegre hoje, envelhecendo intocada pura forte bonita linda reluzindo espelhada amada nas jantas finas e vai ser herdada intacta pelos bisnetos sadios puros fortes dele.</p>
+        <h4>A "Panela de Geração"</h4>
+        <p>Existe um conceito interessante entre famílias que optam por utensílios de alta qualidade: a "panela de geração". Um conjunto de aço inox cirúrgico (316L) ou vidro temperado de qualidade pode ser usado por 30 anos ou mais sem perder desempenho. Em muitas famílias, essas peças são passadas de pais para filhos — algo impossível com panelas de alumínio ou antiaderente, que se degradam com o uso.</p>
       </div>
 
-      <h2>Seu Manual de Triagem Hoje em Casa</h2>
-      <p>Amanhã à noite ao lavar todas a sua pia das panelas frias, seque-as e passe devagarzinho a unha inteira com toda calma e amor firmeça em todo maldito minúsculo pontinho fosco manchado ou todo risco pretinho minúsculo escondido fosco rústico do escuro alumínio gasto, e pergunte sincerona fria lógica ali sozinha calada na cozinha silênciosa limpa com você mesma para a sua mente sábia superior racional: "Estou, exatamente agora limpa calma sadia aqui, disposta ativamente consciente em paz e conformada a jogar todo o meu rico investimento nutricional caro abençoado suado dos ovos limpos da feira orgânica rural ou da couvezinha do vizinho limpo rural caipira amigo nas lixeiras radioativas químicas lixiviantes reativas descontrolados assustadores letais no sangue do prato dos brócolis que dou alegre pra o filhinho neném no berçário comer e lamber saudável rindo?". Se o não for firme contundente assustador poderoso, forte libertador grito alto seco e inabalado de salvação divina abençoada orgânica, comece pacificamente a mudar sua cozinha e sua biologia feliz da mesa farta santa do jantar agora por utensílios purificados maravilhosos definitivos. Seja a cura ativada e limpa pura orgânica brilhante feliz plena verdadeira do seu doce próspero querido forte lar abençoado iluminado e seguro sagrado!</p>
+      <h2>Como Fazer a Triagem da Sua Cozinha</h2>
+      <p>O processo não precisa ser radical nem imediato. Comece identificando os piores ofensores: panelas antiaderentes riscadas ou com o revestimento descascando, panelas de alumínio usadas para alimentos ácidos (molho de tomate, limão), e cerâmicas coloridas artesanais sem certificação. Esses são os itens que causam o maior impacto e devem ser os primeiros a ser substituídos. Após isso, vá avançando no seu tempo e orçamento. A consciência não exige perfeição imediata — exige um começo.</p>
     `,
   },
   {
@@ -950,20 +998,31 @@ export const defaultArticles: Article[] = [
     readTime: 12,
     status: 'Publicado',
     excerpt: 'Pesquisas sobre metais pesados e doenças neurodegenerativas.',
-    coverImage: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1200',
-    coverAlt: 'Ilustração do cérebro humano',
+    coverImage: '/images/cerebro_saudavel.png',
+    coverAlt: 'Saúde cerebral e neurotoxicidade',
     categoryLabel: 'Panelas e Saúde',
-    ogImage: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1200',
+    ogImage: '/images/cerebro_saudavel.png',
     metaTitle: 'Neurotoxicidade na Cozinha: Alumínio e Metais',
     metaDescription: 'O que as pesquisas dizem sobre a relação entre utensílios e saúde cerebral.',
+    didYouKnow: {
+      text: 'As nanopartículas de alumínio conseguem atravessar a barreira hematoencefálica.',
+      linkSlug: 'aluminio-na-cozinha-guia-completo'
+    },
     content: `
-      <p>As enfermidades neurodegenerativas (Parkinson, Alzheimer, Esclerose Múltipla) crescem de modo escalar pelo mundo na população ocidental e não apenas baseadas pelo famoso mero "envelhecimento humano demográfico amplo", o cérebro contemporâneo é duramente, implacavelmente e constantemente violado.</p>
+      <p>O crescimento dos casos de doenças como Alzheimer, Parkinson e outras condições neurodegenerativas é uma preocupação crescente no mundo moderno. Pesquisadores de diversas universidades têm investigado a relação entre a exposição crônica a metais tóxicos — incluindo o alumínio — e o aumento do risco dessas condições. Não estamos falando de causa e efeito comprovado, mas de associações importantes que vale entender para tomar decisões mais conscientes no dia a dia.</p>
 
-      <h2>O Metal e a Barreira Hematoencefálica</h2>
-      <p>A fortíssima ligação de correlação científica dos alumínios puros acumulados com depósitos e placas pesadas coladas senis cerebrais do alzheimer é antiga, vastamente polêmica e robusta. A barreira hematoencefálica do crânio deveria frear lixos externos, protegens do invasor pesado sujo nas veias; no entanto as nanopartículas menores constantes bio-disponíveis diárias da panela caipira lixada na água com sal abrem microfissuras e atalham os nervos. Eles adoram gordura; E nosso cérebro humano magno abençoado complexo é formado magnificamente puro riquíssimo inteiro numa densa bela imensa abençoada divina imensa gigante pura espetacular e riquíssima abençoada "pasta inteira nobilíssima gorda lipídica maravilhosa elétrica" de ômegas neurais divinos formidáveis complexos supremos. É o depósito de banquete favorito absoluto fixador do metal venenoso estragado inorgânico reativo cravando morte dura e trágica cruel contínuo amnésica apática na bela terceira idade prateada douradas do idoso sorridente da foto amada perdida triste da sala da família da fazenda velha das memórias idas felizes apagas em cinzas sombrias amnésias pesadas.</p>
+      <h2>Como o Alumínio Chega ao Cérebro?</h2>
+      <p>O cérebro humano possui uma barreira protetora chamada barreira hematoencefálica. Ela age como um filtro, bloqueando substâncias prejudiciais de entrar no tecido cerebral. O problema é que partículas muito pequenas (como as nanopartículas de alumínio liberadas por panelas em alta temperatura) conseguem atravessar essa barreira.</p>
 
-      <h2>A Inflamação por PFAS (Forever Chemicals)</h2>
-      <p>E a modernidade triste fácil antiaderente frouxa polimerizada e plástica na air-fryer não fica longe trágica também. A exposição inalatória gasosa pesada das fumaçinhas (off-gassing dos PFAS) e os microplásticos esfolados pretos rasgados colados duros misturados na crosta dos peito de frango seco diário queimado criam radicais inflamatórios e citocinas extremas pesadas agressoras do endotélio geral, entupidores ardilosos micro-vasculares que inflamam silenciosamente todo arcabouço cerebral sem aviso prévio. É inflamação crônica imperceptível dolorosa diária sutil, criando a exaustiva famosa dor enxaquecosa do estresse forte do cérebro afogado limpo intoxicado exausto nublado crônico das massas populacionais cansadas na mesa de escritório moderno cinza sem vitaminas livres oxigenadas sadias frescas ricas oxidadoras naturais fortes plenas felizes de amor das roças das alfaces vivinhas e orgânicas puras. Retire na fonte do fogo os neuro-destrutores mortíferos das reativas toxinas lixiviantes e observe os nevoeiros da sua bela mente sadia brilhante desaparecer milagres nos meses adiante de você radiante feliz vivo livre em luz plenas brilhante genial foco agudo forte alegre pura limpa perfeita!</p>
+      <p>Uma vez dentro, o alumínio tende a se depositar no tecido gordo do cérebro — que é, em grande parte, composto de gordura. Pesquisas como as publicadas no <em>Journal of Alzheimer's Disease</em> (Exley, 2014) encontraram concentrações elevadas de alumínio no tecido cerebral de pacientes com Alzheimer, comparado a indivíduos sem a doença. A ciência ainda debate o peso desse fator, mas o princípio da precaução sugere que faz sentido reduzir essa exposição.</p>
+
+      <div class="sabia-que">
+        <h4>E os Compostos dos Antiaderentes?</h4>
+        <p>Os PFAS (compostos presentes em panelas antiaderentes) também são investigados como potenciais agentes inflamatórios crônicos. Estudos apontam que a exposição continuada a esses compostos está associada a disfunções na tireoide, no sistema imunológico e a processos inflamatórios de baixo grau — que podem acelerar danos neurológicos ao longo do tempo. Ainda há muito a estudar, mas o padrão é preocupante o suficiente para merecer atenção.</p>
+      </div>
+
+      <h2>O Que Você Pode Fazer Hoje?</h2>
+      <p>Nenhuma mudança de panela vai garantir que você ou sua família nunca desenvolva uma doença neurológica — fatores genéticos, estilo de vida geral e outros elementos também contam muito. Mas reduzir a exposição diária a metais tóxicos é uma ação preventiva concreta, dentro do seu controle, que você pode começar hoje. Troque as panelas de alumínio e antiaderente desgastadas por opções inertes como o aço inox cirúrgico 316L ou o vidro borossilicato (atento ao disclaimer de fragilidade e baixa praticidade). São mudanças simples que, ao longo de anos, fazem diferença real.</p>
     `,
   },
   {
@@ -978,31 +1037,38 @@ export const defaultArticles: Article[] = [
     readTime: 14,
     status: 'Publicado',
     excerpt: 'O comparativo final para você decidir qual material entrará na sua casa.',
-    coverImage: 'https://images.unsplash.com/photo-1584990379282-3590247513df?q=80&w=1200',
-    coverAlt: 'Diversas panelas de diferentes materiais',
+    coverImage: '/images/panelas_comparativo.png',
+    coverAlt: 'Comparativo entre diferentes tipos de panelas',
     categoryLabel: 'Panelas e Saúde',
-    ogImage: 'https://images.unsplash.com/photo-1584990379282-3590247513df?q=80&w=1200',
+    ogImage: '/images/panelas_comparativo.png',
     metaTitle: 'Comparativo Honesto de Materiais de Panela',
     metaDescription: 'Análise técnica de todos os materiais do mercado: prós, contras e riscos.',
+    didYouKnow: {
+      text: 'O Aço Cirúrgico 316L é o mesmo material usado em implantes e centros cirúrgicos.',
+      linkSlug: 'cozinha-consciente-guia-decisao'
+    },
     content: `
-      <p>Se as verdades absolutas duras pesadas assustam, o antídoto puro limpo real factível acessível está nas mãos abertas livres das decisões felizes. Mas afinal limpo: Qual panela compro, qual queimo no lixo, qual guardo?</p>
+      <p>Quando você pesquisa "qual panela comprar", provavelmente encontra respostas vagas e sem comprometimento. Isso acontece porque a maioria dos sites tem medo de contrariar fabricantes. Aqui no Cozinha Mais Consciente, nosso compromisso é com você e com a ciência — sem patrocínio de marcas. Veja o que a evidência técnica diz sobre cada material.</p>
 
-      <h2>A Lixeira Definitiva de Risco</h2>
+      <h2>Panelas que Você Deve Trocar o Quanto Antes</h2>
       <ul>
-        <li><strong>Qualquer Panela de Alumínio (Nua, lixada, polida grossa).</strong> Lixiviação ácida/alcalina monumental. Não recicle, jogue nas triagens puras de lixo. Não vale a miséria. É crime biológico na saúde.</li>
-        <li><strong>Materiais Antiaderentes com Substâncias Nocivas (Esfolados, trincados ou baratinhos de mercado):</strong> Off-gassing fluorado (PFAS), engolimento em massa micro-plástico agressivo, contaminação hídrica pesada mundial. Inaceitável nos dias modernos sadios. Cefaleia em caixa.</li>
+        <li><strong>Alumínio (simples, sem revestimento):</strong> Reage com alimentos ácidos (tomate, limão, vinagre) e libera partículas metálicas na comida. Risco comprovado por múltiplos estudos. Quanto mais riscos e desgaste, maior o problema.</li>
+        <li><strong>Antiaderentes com revestimento sintético (esfolados ou velhos):</strong> O revestimento se degrada com o calor e libera compostos fluorados (PFAS) no ar e na comida. Panelas riscadas apresentam duplo risco: PFAS + alumínio da base exposta.</li>
       </ul>
 
-      <h2>A Zona "Atenção Tensa Moderada Cautelar Cuidadosa Extraordinária"</h2>
+      <h2>Opções que Pedem Atenção</h2>
       <ul>
-        <li><strong>Ferro Puro Fundido Natural Pesado:</strong> Ótimo para anemias raras esporádicas indicadas controladas com rigor férrico extremo acompanhado laboratoriais nutricionais de sangue anuais estritas pontuais felizes com nutricionistas feras em dia; Terrível horroroso agressivo nocivo pesadíssimo perigoso grave violento diário continuo matinal infinito sem trégua, porque bio-acumula ferro pesado toxicológico no baço e miocárdio limpo cardíaco veloz em machos, mulheres sem fluxo do ciclo sangrando fortes mensais livres fáceis na jovial purgação uterinas belas jovens de descargas vitais férricas diárias intensas reprodutoras mensais soltas lindas saudáveis; Não é pro dia a dia da vida, reserve ela só pra um domingão ocasionalzão esporádico festivo na chapa gostosa.</li>
-        <li><strong>Cerâmicas Antigas Coloridas Esmaltadas Cegas Berrantes Belíssimas:</strong> Risco absoluto fortíssimo perigosíssimo criminoso e fétido do horror negro e vermelho mortal maciço dos sais minerais sujadíssimos industriais dos Chumbos colossais letais ou das imensidades brutais venenosas amaldiçoadas cádmicas da vida coloridinha feliz enganadoras nas feiras dos artesão puros simplórios ilegais ignorados coitadinhos rincões dos povões distantes pátrio pobre desinformado. Esconder lixo nuclear radiativo na sua beleza. Não, fuja longe para todo e longo para todo e qualquer sempre. Nem enfeite mesa se soltar farelos do óxido na flor pura sadia.</li>
+        <li><strong>Ferro fundido:</strong> Libera ferro inorgânico na comida. Para quem tem anemia, pode parecer um benefício — mas o ferro liberado não é o mesmo que o ferro dos alimentos e pode causar sobrecarga em quem não precisa dele. Ótimo para uso ocasional, não diário.</li>
+        <li><strong>Cerâmicas coloridas artesanais:</strong> Muitas usam esmaltes com chumbo ou cádmio para dar brilho e cor. Sem certificação de origem, são um risco real — especialmente para cozinhar alimentos ácidos em alta temperatura.</li>
       </ul>
 
       <div class="sabia-que">
-        <h4>O Pódio Dourado Puro Supremo Divinal dos Milagres da Paz Limpa Vital e Abençoada Segura </h4>
-        <p>A sua escolha certeira da paz absoluta: <strong>Vidro 100% Temperado Extra (Zero chumbo, transparência inalterada inerte pra vida eternas das purezas absolutas químicas), A Cerâmica Cermet Original Pura Branca Imaculada Atóxica Testadíssima Forte Nobreza, Tritãns Nobres caros abençoados perfeitos isolantes do fogo ou a majestade total soberana de Ouro Rei das Reis Rainhas Supremas Poderosíssimas das donas chiques inteligentes de luxo feliz: O AÇO CIRÚRGICO FORTE INOXIDÁVEL EXTREMO PURO TIPO 316 L COM MOLIBDÊNIO FORTÍSSIMO ABSOLUTO EXTREMO PURO NO FUNDO FINO DE TRILHA GROSSA TRIPLA DIFOZORA DOCE ENVELOPADORA MANSA CARINHOSA RICA AQUECEDORA PERFEITA INQUEBRÁVEL DA LONGEVIDADE PURA DA PANELA DE CASAMENTO ETERNO PRA SUA COMIDA VIVA VERDADEIRA DO PRATO ORGÂNICO FORTE FELIZ!!</strong></p>
+        <h4>O Material Mais Seguro para a Sua Família</h4>
+        <p>A escolha mais segura é o <strong>Aço Inox Cirúrgico 316L</strong> — o mesmo material usado em implantes ortopédicos e instrumentos cirúrgicos. Ele não reage com nenhum tipo de alimento, não enferruja, não libera metais e dura décadas. O vidro borossilicato certificado e a cerâmica pura branca (sem esmaltes coloridos) também são opções seguras, embora com as ressalvas de praticidade e riscos físicos já mencionadas.</p>
       </div>
+
+      <h2>A Regra Prática</h2>
+      <p>Em dúvida sobre um material? Pesquise o que acontece biologicamente quando o ser humano ingere o que aquela panela libera — não se a "panela em si é segura". Pesquise "efeitos do alumínio no organismo", "riscos do PFAS no corpo", "toxicidade do chumbo". As respostas da toxicologia são muito mais claras do que as respostas do marketing.</p>
     `,
   },
   {
@@ -1015,25 +1081,35 @@ export const defaultArticles: Article[] = [
     type: 'CLUSTER',
     publishedAt: '2026-06-22',
     readTime: 8,
-    status: 'A Publicar',
+    status: 'Publicado',
     excerpt: 'Pequenas atitudes que geram grandes resultados na carga tóxica diária.',
-    coverImage: 'https://images.unsplash.com/photo-1466633364843-559bb3607951?q=80&w=1200',
+    coverImage: '/images/mudancas_cozinha.png',
     coverAlt: 'Cozinha organizada e limpa',
     categoryLabel: 'Dicas da Cozinha',
-    ogImage: 'https://images.unsplash.com/photo-1466633364843-559bb3607951?q=80&w=1200',
+    ogImage: '/images/mudancas_cozinha.png',
     metaTitle: '5 Passos para uma Cozinha Mais Segura Hoje',
     metaDescription: 'Mudanças simples e eficazes para reduzir a contaminação alimentar em casa.',
+    didYouKnow: {
+      text: 'Substituir o papel alumínio por papel manteiga reduz a ingestão desnecessária de metais.',
+      linkSlug: 'cozinha-consciente-guia-decisao'
+    },
     content: `
-      <p>A transição de uma cozinha tóxica convencional para um ambiente de preservação da longevidade não precisa (e nem deve) ser num ataque impulsivo onde você deita no chão e limpa os cofres furiosamente atordoante choramingante falido sem dó das contas e finanças da casa com ansiedades agressivas mal educadas desesperadoras na web; Faça suave fluir feliz forte organizado tático militar e inteligente feliz contínuo de forma mansa focada com 5 diretrizes fortíssimas essenciais blindadas iniciais limpas perfeitas puras agora para ontem do despertar ameno livre maravilhoso do cozinhero leal sadio limpo forte novo abençoadinho de bem sereno de amor tranquilo de paz forte viva consciente e plena feliz saudável:</p>
+      <p>Você não precisa reformar a cozinha nem gastar uma fortuna para começar a proteger sua família. Pequenas mudanças feitas de forma gradual e planejada já fazem uma diferença real. Aqui estão as 5 ações de maior impacto, em ordem de prioridade:</p>
 
-      <h2>1. Intervenção Bruta no PIOR Agressor</h2>
-      <p>Apenas pare o que estiver envenenando imediato severão com raiva veloz agressividade venenosa total crônica letal do sangue limpo: Se a panela lixada arranhada cheia de esfolada do material antiaderente e amassada grossa tortinha soltando pinto de prata brilhante cinza fumaça tá fedendo as jantas, não doure mais amanhã as carnes ali no frito de revestimentos sintéticos podres velhos nela; Ela vai para calçada nos recicláveis dos catadores do plástico das garrafões do lixo duro forte sem volta nunca; Jogue imediatamente para longes dos males. Isso já bloqueia os estilhaços de metais de cara instantânea pura em mais das belas metades do veneno massivo das tuas crianças belas quietas santas ali. Só esse ato estanca as hemorragias plenas toxicológicas sujas tristes amargas nas madrugadinhas infelizes doídas nobres do seu filhinho lindo dorminhoco lá no berço doce limpo sadio dele!</p>
+      <h2>1. Descarte Imediatamente Panelas Antiaderentes Riscadas</h2>
+      <p>Se a sua panela antiaderente está com o revestimento arranhado, descascando ou com pontos escuros desgastados, ela precisa ir para o lixo. <strong>É vital ressaltar que mesmo uma panela antiaderente nova oferece riscos</strong>, pois o aquecimento do polímero libera gases tóxicos mesmo antes do primeiro risco. Uma panela riscada apresenta dupla contaminação: os fragmentos do revestimento sintético (PFAS) E o alumínio da base exposta. Não há conserto — o ideal é evitar o uso de antiaderentes de qualquer tipo.</p>
 
-      <h2>2. Troca Base Fina Útil Básica - O Fervor D'Água Frequente Constante Diário</h2>
-      <p>Água ácida ferver forte suco sopa com tomate com azeite ou massinhas, chás chiques medicinais gostosões do domingo abençoado quentinhos milagrosos na lata fuleira pálida solta do calvo pobre é lixo tóxico engolidos. Um simples caldeirãzinho altinho magro forte de Aço Inox Cirúrgico Puro Inox 316 (que te custa tão somentes poucos duzentões amados úteis baratinhos feliz reais justos valiosíssimos eternos abençoados suados felizes) limpa do mapa sujo venenoso todo aquele caldo farto verde ralo e abençoados dos sopões maravilho puros e chás santos limpos sem cinzas pra sempre da tua casa rica farta plena alegre. Dezenas infindos de aninhos vivos puros de uso ali limpinho por vintenzinhos de ouro puros em economia barata da pílulas farmáceuticas podres das clínicas lúgubres da frente longínquos tristes velhos.</p>
+      <h2>2. Troque as Panelas para Preparos Ácidos</h2>
+      <p>Molho de tomate, limão, vinagre, vinho: esses ingredientes aceleram dramaticamente a liberação de alumínio e metais. Se você usa panela de alumínio para esses preparos, esta é a troca de maior impacto imediato. Uma panela de inox 316L ou vidro temperado para esses cozimentos elimina a principal fonte de contaminação da sua cozinha.</p>
 
-      <h2>3. As Técnicas Geniais do Envelope Frio Manso Gentil da Sabedoria</h2>
-      <p>Aprenda fortemente calmo a abafar puros o fogo, diminuir fogareiro bruto apressado, usar fundo de peso pra amornar lentinho gostosinhos suculentos. <strong>Sua batata da horta e pimentão vermelho orgânico da casinha não pede as torturas fumaçantes esturricantes barulhentas da labareda grossa das pizzarias velhas no fundo das velhas frigideiras horrorosas secas do bife torrado frito duro sem vergonha feio! O envelope úmido cozinhando docemente ali nas vedação do casulo limpinho com duas ou treixinhas curtas pinguinhos d'água purificada da jarra linda filtrada tua seladinhos trancados num fogareizinho brando morto de calor quentinho amoroso gostoso calmo livre perfumados limpos! Vida pura divina eterna no paladar forte, suculência magnifíca explosão foda de sabor vivo molhado gostosão e texturozão maravilhoso nos crocantes amados das cenourinhas santas docinhas na pura panela sã da glória!</strong></p>
+      <h2>3. Diminua o Fogo e Tampe a Panela</h2>
+      <p>Cozinhar em fogo alto com panelas abertas desperdiça vitaminas, resseca os alimentos e acelera a degradação dos utensílios. Cozinhar em fogo baixo com a panela tampada preserva a umidade, os nutrientes e o sabor — sem custo extra. É uma mudança de hábito com retorno imediato na qualidade da comida.</p>
+
+      <h2>4. Pare de Armazenar Comida na Panela</h2>
+      <p>Deixar comida guardada dentro de panelas de alumínio ou antiaderente — especialmente quando a comida está quente ou tem ingredientes ácidos — é uma das formas mais eficientes de aumentar a contaminação. Transfira os alimentos para recipientes de vidro com tampa assim que terminar de cozinhar.</p>
+
+      <h2>5. Substitua o Papel Alumínio por Papel Manteiga no Forno</h2>
+      <p>O papel alumínio em alta temperatura com alimentos ácidos (como frango com limão ou peixe) é uma fonte concentrada de contamiação — porque a folha é muito fina e a superfície de contato é grande. O papel manteiga vegetal é uma substituição simples, barata e segura para qualquer preparo no forno.</p>
     `,
   },
   {
@@ -1046,24 +1122,36 @@ export const defaultArticles: Article[] = [
     type: 'CLUSTER',
     publishedAt: '2026-06-22',
     readTime: 10,
-    status: 'A Publicar',
+    status: 'Publicado',
     excerpt: 'Entenda os números por trás da durabilidade e da prevenção.',
-    coverImage: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200',
-    coverAlt: 'Calculadora e moedas sobre a mesa',
+    coverImage: '/images/custo_saude.png',
+    coverAlt: 'Custo da saúde e investimento em utensílios seguros',
     categoryLabel: 'Alimentação Consciente',
-    ogImage: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200',
+    ogImage: '/images/custo_saude.png',
     metaTitle: 'O Custo da Saúde na Cozinha: Vale o Investimento?',
     metaDescription: 'Uma análise financeira e de saúde sobre os utensílios de alta performance.',
+    didYouKnow: {
+      text: 'Utensílios de alta qualidade podem durar décadas, tornando-se mais baratos a longo prazo.',
+      linkSlug: 'cozinha-consciente-guia-decisao'
+    },
     content: `
-      <p>Muitas pessoas olham as tecnologias de pureza do mercado superior Premium Inoxidável das famílias mais fortes, observam as etiquetas dos precificadores da loja de shopping frio, viram os olhinhos assustadas pro teto fugindo e se benzem soltando palavreado grosso frouxo nos vendedores exaustos de plantão ali coitadinhos calmos educados da revendedora pura bela: "Treze mil reais no kit gigante com tampa de botão inteligente?? Tão malucos! Vou passar pra nunca em cem primaveras, fujam ricos". E do lado oposto alegre feliz contentes as marqueteiras tristes fuleiras dos atacadistas rasinhos velozes do plástico frágil anunciam feliz e sorridentes: "Panelinhas lindinhas lisinhas floridinhas anti-grude fácil frouxo preta roxinha fininhas leve de peso barato, duzentões redondinhos na caixa frágil de papelão liso no combo completo das tampinhas de plásticos que entorta feliz! Compre feliz correndo sorrindo e fritando veloz!". Mas no cômputo gigantesco magno da contabilidade secular das matemáticas exatas lógicas blindadas clínicas severas pesadas onológicas brutas na fria caderneta do papel cru triste pesado realista adulto: <strong>a panela mais perigosa caríssima obscenamente impiedosa milionária cruel das despesas sombrias infernais na vida inteira pura triste, foi daquela preta barata fosca fininha fuleirinha inútil perigosíssima veloz feiosa lá das promoções de prateleiras fuleiras que lasca a bunda fina e espirra a ponta das fumaças toda errada asquerosa ardida!</strong></p>
+      <p>Uma das principais objeções a utensílios de qualidade é o preço. "É muito caro para uma panela." Essa afirmação faz sentido quando comparamos uma panela isolada com outra. Mas quando analisamos o ciclo completo — saúde, durabilidade, rendimento dos alimentos e consumo de energia — o cálculo muda completamente.</p>
 
-      <h2>As Metades Invisíveis Fantasmas da Conta (Durabilidade)</h2>
-      <p>O joguinho das floridinhas murchas rasos arranha lixa e destrói num único aninho corrido triste arrastado das pressas sujas felizes. Para dez anos longos, você comprou exatos doloridíssimos dez kits novos baratinhos infinitos nas contas jogadas piores, superando nos valores já um baita carrão na compra dos mesmos dezenas milhares conjuntos velhos lixões amontoadas rasos esquisitos estropiados das panelada escura suja da sucata fútil consumista podre frouxa e amuada lá das calçadas do lixeiro vizinho e coitado amontoado pra o lixo global do plástico fluorado tóxico fétido enterrar rios! O investimento pontual cravado inteligente na pesadas blindadas duras e maciças panelonas reluzentes brilhantes inócuas extremas puros inoxidáveis do nível superior premium cirúrgico ou titânico não duraram exatos dez. Eles seguem perfeitamente inabaláveis divinos ilesos novinhos lustrados inteiraços lindos imaculados intocados santuzinhos ali radiando brilhanças plenas como espelhos mágicos fortes pra ti nos cinqüentenas plenos e gloriosos tempos, indo na nobre herança riquíssima orgulhosas abençoadas brilhantes e divinais sagradas ali dadas livres no porta-malas chiques nos presentes fofos cheirosos chorosos do casório dos felizardíssimos herdeiros ricos jovens puros fortes limpos sadíssimos! Foi incrivelmente grotescamente milhentas incalculáveis vezes ridiculamente barata na unha do papel a inox fina!</p>
+      <h2>O Paradoxo da Cozinha Planejada</h2>
+      <p>É comum ver famílias que investem R$ 30.000 em uma cozinha planejada — granito, armários sob medida, eletrodomésticos de ponta — e depois colocam dentro desse ambiente uma panela de R$ 30 que vai para o lixo em 8 meses. Investimos na estética da cozinha, mas raramente pensamos na qualidade do único instrumento que entra em contato direto com a comida dos nossos filhos. É a inversão de prioridades que a indústria alimenta.</p>
 
-      <h2>O Balanço Geriátrico e Farmácia Assustador das Moedas Frias</h2>
-      <p>Quantifique em dinheiro contante real forte pesado trágico de boletos gigantesco das longas décadas doídas o custo vil letal sujo desequilibrantes orgânicos químicos das enxaquecas estressantes diárias, letargias mortes inflamatórias velhas articulares cheias artrites, exames neurológicos chatos desesperantes complexos pra caçar fumaças esquisitas nos rins filtrantes estourados ou nos alzheimers doentios nas avós? Se a panela esfolada limpinha ali da lixeira reativa for a micro propulsora constante forte daquele veneninho nas jantas gostosas amadas em cinquenta anos sombrios, você pagará (ou já arcou ali esvaziado triste de saúdes plenas limpas e bolsos murchos lisos cheios arruinados dolorosos chororos calados caladinhos na clínica) as piores extorsões farmacéuticas bilionárias infinitas infindas dos hospitais suarentos brancos cinzentos lúgubres ali! O Aço forte brilhante inox seguro ou das pedras puras atóxicas limpas maciças extremas isolantes limpinhas inertinhas abençoadonas é o SEGURO CUSTO SAÚDE MÁGICO CLÍNICO MUNDIAL PRÁTICO BARATO PERFEITO ABSOLUTO ÚTIL INFINITO INABALÁVEL INTELIGENTE PIONEIRO SÃO EFICIENTE LIVRE LEVE NOBRE FELIZ PURO DO TEU SANGUE BOM VIVO RICO FELIZ SÃO QUERIDO MARAVILHOSO FORTE LIMPO E ETERNO PLENO DOS ANJINHOS DOS CHÁS QUENTINHOS NAS TARDES FELIZES DAS SERRAS FRESCAS NO BEM MAIOR DO MUNDO DA PAZ, DA TUA FAMÍLIA LINDA E RICA FELIZ TODA REUNIDA SAUDÁVEL COMENDO OS ABENÇOADOS RICAÇOS GORDO DOCES REPOLHOS BONS DAS FESTANÇAS FELIZ!! A Cozinha Mais Consciente não se gasta atoa ali da carteira furada vazia com medinho liso boboca triste avarento das panelas: <strong>ELES DOAM, PROTEGEM FIRMES SEGURAS O OURO NOBRE INQUEBRANTÁVEL DIVINO SUADO MAIOR TESOURO ETERNO MAIS RICO ÚNICO MARAVILHO MÁGICO DO UNIVERSO TODO LIVRE INABALÁVEL PURO E ÚNICO FORTE DO ENORME MUNDÃO FELIZ INFINITO DE DEUS PAI TODO VIVO AMADO PODEROSO CELESTIAL MAIOR DO HOMEM SADIO: AS ABENÇOADAS CORRENTES SAUDÁVEIS MÁGICAS VITORIOSAS DAS SUAS LONGEVAS SAÚDES ATIVAS FELIZES DAS CASAS NOBRES DA RAÇA FORTE HUMANA BONITA VITORIOSA LIVRE DAS ENFERMIDADES LIXIVIANTES MORTAIS ESCRAVIZANTES PESADAS!!! Despertai e seja liberto puro, na cozinha e além das constelações amadas eternas! </strong></p>
+      <h2>O Desperdício Invisível nas Carnes</h2>
+      <p>Estudos de tecnologia alimentar mostram que carnes cozidas em frigideiras abertas em fogo alto perdem entre <strong>30% e 40% do seu peso</strong> em líquidos e gorduras — que evaporam ou ficam grudados na panela. Isso significa que de cada 1 kg de carne premiun que você compra, você descarta 300g a 400g de volume e nutrientes no calor.</p>
+      <p>Em um sistema de cozimento fechado (panelas com tampa vedante e fundo difusor), a carne cozinha na sua própria umidade, em temperatura mais baixa, sem perder esses líquidos. O mesmo quilo de carne rende mais, fica mais macio e preserva mais nutrientes.</p>
+
+      <h2>A Economia no Gás</h2>
+      <p>O <strong>sistema de cozinha inteligente</strong>, com sua tecnologia de 5 camadas integradas e empilháveis, permite cozinhar três recipientes ao mesmo tempo em uma única boca de fogão, em fogo mínimo. A homogeneização do calor em toda a estrutura da panela torna o preparo muito mais eficiente usando menos energia. Ao contrário do hábito comum de ligar várias bocas do fogão em chama alta, essa tecnologia gera uma economia expressiva no consumo de gás ao longo do ano.</p>
+
+      <h2>A Conta Final</h2>
+      <p>Uma boa panela de alumínio ou antiaderente dura, em média, de 6 meses a 2 anos. Um conjunto de qualidade em aço inox cirúrgico pode durar 30 anos ou mais. Faça a conta: R$ 300 de três em três anos, por 30 anos, equivale a R$ 3.000 gastos em panelas descartáveis. Um conjunto de qualidade pelo mesmo valor dura toda a vida, com melhor rendimento de alimentos, menor gasto de gás e zero preocupação com contaminação. O investimento inteligente fica mais barato com o tempo.</p>
     `,
   },
+
 
   // --- NOVOS ARTIGOS: INTRODUÇÃO ALIMENTAR + GUIA COMPLETO DE PANELAS ---
   {
@@ -1085,6 +1173,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/introducao-alimentar-bebe.png',
     metaTitle: 'Introdução Alimentar Segura: Como o Preparo Impacta a Saúde do Bebê',
     metaDescription: 'Descubra por que o utensílio, a temperatura e o método de cocção na introdução alimentar são decisivos para a imunidade e o paladar do seu bebê. Fontes científicas.',
+    didYouKnow: {
+      text: 'Bebês absorvem até 50% mais alumínio pelo trato gastrointestinal do que adultos.',
+      linkSlug: 'criancas-metais-pesados-vulnerabilidade'
+    },
     content: `
       <p>A introdução alimentar é, sem exagero, uma das fases mais decisivas na vida de um ser humano. Entre os 6 e os 24 meses de idade, o bebê está construindo simultaneamente três pilares que o acompanharão por toda a vida: o <strong>sistema imunológico</strong>, o <strong>paladar</strong> e a <strong>microbiota intestinal</strong>. Cada colherada oferecida nessa janela carrega consigo não apenas nutrientes, mas também informações que o organismo usará para programar suas defesas, suas preferências e sua capacidade de absorção para as próximas décadas.</p>
 
@@ -1205,6 +1297,10 @@ export const defaultArticles: Article[] = [
     ogImage: '/images/riscos-panelas-tipos.png',
     metaTitle: 'Riscos de Cada Tipo de Panela: Guia Completo e Honesto',
     metaDescription: 'Alumínio, ferro, cerâmica, vidro, inox, barro, pedra, cobre, antiaderentes e esmaltadas: os riscos científicos de cada material e qual é o único realmente seguro.',
+    didYouKnow: {
+      text: 'Muitas panelas vendidas como "cerâmicas" são apenas alumínio com tintas pigmentadas.',
+      linkSlug: 'cozinha-consciente-guia-decisao'
+    },
     content: `
       <p>Quando você pesquisa "qual a melhor panela" na internet, encontra dezenas de artigos superficiais que terminam com respostas vagas como "todas têm prós e contras" ou "depende do uso". E há uma razão para essa resposta morna: <strong>o medo de problemas jurídicos com fabricantes</strong> impede a maioria dos portais de dizer a verdade técnica com todas as letras.</p>
 
@@ -1247,12 +1343,7 @@ export const defaultArticles: Article[] = [
 
       <p>Muitas panelas de cobre possuem revestimento interno de estanho, que se desgasta com o uso e precisa ser renovado periodicamente — revelando o cobre reativo abaixo. <strong>Veredicto: risco alto sem revestimento. Uso decorativo é seguro, uso culinário diário não é recomendado.</strong></p>
 
-      <h2>6. Panelas de Vidro</h2>
-      <p><strong>Risco principal:</strong> Baixo risco químico, mas limitações práticas e fragilidade física.</p>
-
-      <p>O vidro borossilicato de boa procedência é, quimicamente, um dos materiais mais inertes disponíveis. Ele não reage com ácidos, alcalinos ou calor dentro das faixas normais de cozimento. No entanto, apresenta limitações práticas importantes: condução de calor desigual, fragilidade a choques térmicos e impossibilidade de uso em fogões de indução.</p>
-
-      <p>O alerta aqui recai sobre <strong>vidros de baixa qualidade</strong> que podem conter impurezas ou aditivos em sua composição. <strong>Veredicto: risco baixo para vidro borossilicato certificado. Seguro, mas com limitações práticas para uso como utensílio primário.</strong></p>
+      <p>O vidro borossilicato de boa procedência é, quimicamente, um dos materiais mais inertes disponíveis. Ele não reage com ácidos, alcalinos ou calor dentro das faixas normais de cozimento. No entanto, apresenta limitações práticas importantes: condução de calor desigual, fragilidade a choques térmicos e impossibilidade de uso em fogões de indução. <strong>Disclaimer importante:</strong> apesar de ter menos risco químico, não é isento de resíduos; outra questão é a falta de praticidade na cozinha, o que o torna menos ideal para o uso diário, além do risco de quebra e produção de cacos.</p>
 
       <h2>7. Panelas com Revestimento Antiaderente (PTFE / "Não Gruda")</h2>
       <p><strong>Risco principal:</strong> Emissão de gases tóxicos (off-gassing), ingestão de micropartículas de polímeros fluorados e exposição a PFAS.</p>
@@ -1377,4 +1468,64 @@ export const defaultArticles: Article[] = [
       </ul>
     `,
   },
+  {
+    id: 'n3',
+    slug: 'oleos-gorduras-mitos-verdades-oleo-canola',
+    title: 'Óleos e Gorduras: Mitos, Verdades e o Perigo do Óleo de Canola',
+    subtitle: 'A importância das gorduras boas e por que os óleos refinados vegetais merecem atenção redobrada.',
+    category: 'alimentacao-consciente',
+    universe: 'nutricao',
+    type: 'CLUSTER',
+    publishedAt: '2026-03-24',
+    readTime: 10,
+    status: 'Publicado',
+    excerpt: 'Da temida gordura saturada aos perigos dos óleos vegetais refinados: o que você realmente deve usar para cozinhar com segurança.',
+    coverImage: '/images/oleos-gorduras-guia.png',
+    coverAlt: 'Azeite de oliva extra virgem sendo servido sobre vegetais frescos',
+    categoryLabel: 'Alimentação Consciente',
+    ogImage: '/images/oleos-gorduras-guia.png',
+    metaTitle: 'Guia de Óleos e Gorduras na Cozinha: Saúde e Escolhas',
+    metaDescription: 'Entenda quais gorduras são realmente saudáveis, os riscos do óleo de canola e como cozinhar sem oxidar os alimentos.',
+    didYouKnow: {
+      text: 'O azeite de oliva extra virgem é rico em antioxidantes que o protegem de oxidação moderada.',
+      linkSlug: 'cozinhar-sem-destruir-nutrientes-guia'
+    },
+    content: `
+      <p>Por décadas, a mensagem principal da nutrição foi simples e direta: "Gordura faz mal". Fomos incentivados a trocar manteiga e banha por óleos vegetais "puros" e margarinas. No entanto, o aumento das doenças inflamatórias e cardiovasculares nas últimas décadas mostra que essa troca pode não ter sido tão benéfica quanto se pensava. Hoje, a ciência moderna nos convida a redescobrir o valor das gorduras naturais e a questionar o processo industrial por trás dos óleos de sementes.</p>
+
+      <h2>A Importância das Gorduras para o Organismo</h2>
+      <p>O corpo humano depende de gorduras para funcionar. O cérebro, por exemplo, é composto por cerca de 60% de gordura. As membranas de nossas células e a produção de hormônios vitais dependem de lipídios de qualidade. Além disso, vitaminas essenciais como A, D, E e K são lipossolúveis — ou seja, elas só são absorvidas na presença de gordura.</p>
+      
+      <p>O problema não é a gordura em si, mas a <strong>qualidade</strong> e o <strong>estado de oxidação</strong> do óleo que você usa. Óleos que passam por processos químicos agressivos ou que se degradam facilmente no calor podem se tornar fontes de inflamação silenciosa no corpo.</p>
+
+      <h2>O Caso do Óleo de Canola: Marketing vs. Realidade</h2>
+      <p>O óleo de canola é frequentemente vendido como uma opção "saudável para o coração". No entanto, é importante conhecer sua origem. O nome "Canola" é um acrônimo para <em>Canadian Oil Low Acid</em>. Ele foi criado através do melhoramento genético da planta de Colza, que originalmente produzia um óleo impróprio para consumo humano devido ao alto teor de ácido erúcico (tóxico).</p>
+      
+      <p>O processo de produção da canola é altamente industrializado:</p>
+      <ul>
+        <li><strong>Extração Química:</strong> Utiliza solventes como hexano para retirar o óleo das sementes.</li>
+        <li><strong>Refino em Alta Temperatura:</strong> O óleo é submetido a calor intenso, o que pode causar a oxidação de seus ácidos graxos ômega-3.</li>
+        <li><strong>Desodorização:</strong> Como o processo industrial deixa um odor desagradável, o óleo precisa ser quimicamente desodorizado antes de ir para a prateleira.</li>
+      </ul>
+
+      <div class="sabia-que">
+        <h4>Atenção Técnica</h4>
+        <p>Óleos vegetais de sementes (como canola, soja e milho) são ricos em gorduras poli-insaturadas, que são muito instáveis. Quando aquecidos repetidamente, eles liberam compostos chamados aldeídos poliméricos, que estão ligados a estresse oxidativo e processos inflamatórios.</p>
+      </div>
+
+      <h2>Oxidação no Fogão: O Ponto de Fumaça</h2>
+      <p>Muitas cozinhas familiares ainda utilizam o fogo alto e "fritas rápidas" em panelas comuns. Quando um óleo vegetal atinge seu <strong>ponto de fumaça</strong>, ele começa a se decompor, perdendo propriedades nutricionais e gerando substâncias nocivas. Usar óleos refinados em panelas que esquentam demais ou que reagem quimicamente com o metal (como o alumínio) acentua esse risco.</p>
+
+      <h2>Dicas para uma Escolha Consciente</h2>
+      <p>Substituir os óleos industriais por opções mais estáveis e naturais é um passo fundamental para a saúde da família:</p>
+      <ul>
+        <li><strong>Azeite de Oliva Extra Virgem:</strong> Ideal para finalização e cozimentos em temperatura baixa a média (brando). É rico em antioxidantes que protegem o óleo do calor.</li>
+        <li><strong>Gorduras Naturais:</strong> Óleo de coco e manteiga ghee possuem maior estabilidade térmica devido à sua estrutura saturada.</li>
+        <li><strong>Técnica de Cozimento:</strong> Priorize o uso do <strong>sistema de cozinha inteligente</strong> com 5 camadas, que homogeniza o calor e permite cozinhar em temperaturas mais baixas. Isso evita a oxidação das gorduras, permite selar alimentos com o mínimo de óleo e garante que os nutrientes não sejam destruídos pelo calor excessivo.</li>
+      </ul>
+
+      <p>Ao escolher gorduras integrais e métodos de preparo que respeitem a integridade dos alimentos, você garante que as bochechas dos seus filhos e a saúde de toda a família sejam nutridas com o que a natureza realmente pretendia.</p>
+    `,
+  },
 ];
+

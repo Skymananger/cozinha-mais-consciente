@@ -44,15 +44,15 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav — hidden on mobile via CSS class */}
-        <nav className="header-desktop-nav">
+        <nav className="header-desktop-nav" style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               style={{
-                padding: "0.5rem 0.85rem",
+                padding: "0.5rem 0.6rem",
                 borderRadius: "var(--radius-sm)",
-                fontSize: "0.875rem",
+                fontSize: "0.85rem",
                 fontWeight: 500,
                 color: hoveredLink === link.href ? "var(--sage-dark)" : "var(--text-muted)",
                 background: hoveredLink === link.href ? "var(--sage-pale)" : "transparent",
@@ -65,18 +65,61 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          
+          {/* Search Bar Desktop */}
+          <form 
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const q = formData.get("q");
+              if (q) window.location.href = `/busca?q=${encodeURIComponent(q.toString())}`;
+            }}
+            style={{ position: "relative", marginLeft: "1rem" }}
+          >
+            <input 
+              name="q"
+              type="text" 
+              placeholder="Pesquisar..." 
+              style={{
+                padding: "0.5rem 1rem 0.5rem 2.2rem",
+                borderRadius: "var(--radius-pill)",
+                border: "1px solid var(--border)",
+                fontSize: "0.85rem",
+                width: "180px",
+                transition: "width 0.3s ease",
+                outline: "none",
+                background: "var(--cream-light)",
+              }}
+              onFocus={(e) => e.target.style.width = "240px"}
+              onBlur={(e) => e.target.style.width = "180px"}
+            />
+            <SearchIcon style={{ position: "absolute", left: "0.8rem", top: "50%", transform: "translateY(-50%)", width: "14px", height: "14px", opacity: 0.5 }} />
+          </form>
         </nav>
 
-        {/* Hamburger — visible only on mobile via CSS class */}
-        <button
-          className="header-hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-        >
-          <div style={{ width: 24, height: 2, background: "var(--gray-800)", marginBottom: 5, transition: "all 0.2s", transform: menuOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
-          <div style={{ width: 24, height: 2, background: "var(--gray-800)", marginBottom: 5, opacity: menuOpen ? 0 : 1, transition: "opacity 0.2s" }} />
-          <div style={{ width: 24, height: 2, background: "var(--gray-800)", transition: "all 0.2s", transform: menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none" }} />
-        </button>
+        {/* Hamburger & Search Mobile */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }} className="header-mobile-actions">
+           <button 
+             onClick={() => {
+               const q = prompt("O que você procura?");
+               if (q) window.location.href = `/busca?q=${encodeURIComponent(q)}`;
+             }}
+             style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center" }}
+             aria-label="Pesquisar"
+           >
+             <SearchIcon style={{ width: "20px", height: "20px", color: "var(--text-muted)" }} />
+           </button>
+
+          <button
+            className="header-hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            <div style={{ width: 24, height: 2, background: "var(--gray-800)", marginBottom: 5, transition: "all 0.2s", transform: menuOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
+            <div style={{ width: 24, height: 2, background: "var(--gray-800)", marginBottom: 5, opacity: menuOpen ? 0 : 1, transition: "opacity 0.2s" }} />
+            <div style={{ width: 24, height: 2, background: "var(--gray-800)", transition: "all 0.2s", transform: menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none" }} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -120,6 +163,25 @@ function LogoIcon() {
       <rect x="30" y="17" width="5" height="3" rx="1.5" fill="#3D5C35"/>
       <path d="M20 10 C20 10 14 14 14 20 C14 22 16 24 20 23 C24 24 26 22 26 20 C26 14 20 10 20 10 Z" fill="white" opacity="0.9"/>
       <path d="M20 10 L20 22" stroke="#7C9A6E" strokeWidth="1.2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function SearchIcon({ style }: { style?: React.CSSProperties }) {
+  return (
+    <svg 
+      width="20" 
+      height="20" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      style={style}
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
     </svg>
   );
 }

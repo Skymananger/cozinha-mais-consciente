@@ -3,6 +3,8 @@ import { Article, defaultArticles, categoryLabels, universeIcons } from "@/lib/a
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ShareButtons from "@/components/ShareButtons";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
+import ArticleFeedback from "@/components/ArticleFeedback";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CONTACT_INFO } from "@/lib/constants";
@@ -162,20 +164,45 @@ export default async function ArticlePage({ params }: { params: { slug: string }
               {/* This is a placeholder for the actual content rendering */}
               <p>{article.excerpt}</p>
               
-              <div style={{ 
-                background: "var(--sage-pale)", 
-                padding: "2rem", 
-                borderRadius: "var(--radius-sm)", 
-                margin: "2.5rem 0",
-                borderLeft: "4px solid var(--sage)"
-              }}>
-                <h4 style={{ color: "var(--sage-dark)", marginBottom: "0.5rem", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Sabia que?</h4>
-                <p style={{ margin: 0, fontSize: "1rem", color: "var(--sage-dark)" }}>
-                  As gorduras superaquecidas em materiais reativos podem sofrer oxidação acelerada, gerando compostos que interferem no equilíbrio celular.
-                </p>
-              </div>
+              {article.didYouKnow && (
+                <Link 
+                  href={`/artigo/${article.didYouKnow.linkSlug}`}
+                  style={{ textDecoration: "none", color: "inherit", display: "block" }}
+                >
+                  <div style={{ 
+                    background: "var(--sage-pale)", 
+                    padding: "2rem", 
+                    borderRadius: "var(--radius-sm)", 
+                    margin: "2.5rem 0",
+                    borderLeft: "4px solid var(--sage)",
+                    transition: "all 0.3s ease",
+                    cursor: "pointer",
+                    boxShadow: "var(--shadow-sm)"
+                  }} className="hover-lift">
+                    <h4 style={{ color: "var(--sage-dark)", marginBottom: "0.5rem", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Sabia que?</h4>
+                    <p style={{ margin: 0, fontSize: "1.1rem", color: "var(--sage-dark)", lineHeight: 1.4 }}>
+                      {article.didYouKnow.text}
+                    </p>
+                    <div style={{ 
+                      marginTop: "1rem", 
+                      fontSize: "0.85rem", 
+                      fontWeight: 600, 
+                      color: "var(--sage)", 
+                      display: "flex", 
+                      alignItems: "center", 
+                      gap: "0.5rem" 
+                    }}>
+                      Saiba mais neste artigo →
+                    </div>
+                  </div>
+                </Link>
+              )}
 
               <div dangerouslySetInnerHTML={{ __html: article.content }} />
+
+              {/* Feedback / NPS */}
+              <ArticleFeedback articleSlug={article.slug} articleTitle={article.title} />
+
 
               {/* CTA-2: Inline Contextual */}
               <div style={{ 
@@ -243,8 +270,14 @@ export default async function ArticlePage({ params }: { params: { slug: string }
               </Link>
             </div>
 
+            {/* Captura de Lead — fim do artigo */}
+            <div style={{ marginTop: '4rem' }}>
+              <LeadCaptureForm variant="section" />
+            </div>
+
             {/* Share Buttons */}
             <ShareButtons articleTitle={article.title} articleSlug={article.slug} />
+
 
             {/* Disclaimer no rodapé do artigo */}
             <p style={{ 

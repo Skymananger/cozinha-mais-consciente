@@ -7,7 +7,22 @@ import Footer from "@/components/Footer";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 
 export default function Home() {
-  const articles = defaultArticles.filter(a => a.status === 'Publicado').slice(0, 6);
+  const published = defaultArticles.filter(a => a.status === 'Publicado');
+  // Intercala um artigo de cada universo para mostrar diversidade de temas na home
+  const universeOrder: Array<typeof published[0]['universe']> = ['aluminio', 'pfas', 'nutricao', 'metais-pesados', 'consciencia'];
+  const seen = new Set<string>();
+  const interleaved: typeof published = [];
+  for (const u of universeOrder) {
+    const pick = published.find(a => a.universe === u && !seen.has(a.id));
+    if (pick) { interleaved.push(pick); seen.add(pick.id); }
+  }
+  // Completa com os restantes até 6
+  for (const a of published) {
+    if (interleaved.length >= 6) break;
+    if (!seen.has(a.id)) { interleaved.push(a); seen.add(a.id); }
+  }
+  const articles = interleaved;
+
   const featured = defaultArticles.find(a => a.featured) || articles[0];
 
   return (
@@ -18,10 +33,35 @@ export default function Home() {
       <section style={{
         position: "relative",
         overflow: "hidden",
-        background: "var(--gradient-hero)",
+        backgroundColor: "#2C3E2D", // Fallback sage dark
         padding: "8rem 0 7rem",
         textAlign: "center"
       }}>
+        {/* Hero Background Image */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage: "url('/images/home-hero.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.4,
+          zIndex: 0
+        }} />
+        
+        {/* Gradient Overlay for Readability */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "linear-gradient(to bottom, rgba(44, 62, 45, 0.8), rgba(44, 62, 45, 0.6))",
+          zIndex: 0
+        }} />
+
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div style={{
             display: "inline-block",
@@ -44,7 +84,8 @@ export default function Home() {
             fontSize: "clamp(2.5rem, 6vw, 4rem)",
             maxWidth: "900px",
             margin: "0 auto 1.5rem",
-            lineHeight: 1.1
+            lineHeight: 1.1,
+            textShadow: "0 2px 10px rgba(0,0,0,0.3)"
           }}>
             Você controla o que compra, mas controla o que sua panela <em style={{ fontStyle: "italic", opacity: 0.9 }}>adiciona à comida?</em>
           </h1>
@@ -53,15 +94,21 @@ export default function Home() {
             color: "rgba(255,255,255,0.9)",
             fontSize: "1.25rem",
             maxWidth: "600px",
-            margin: "0 auto 3rem",
-            fontWeight: 400
+            margin: "0 auto 2rem",
+            fontWeight: 400,
+            textShadow: "0 1px 5px rgba(0,0,0,0.2)"
           }}>
             Informação técnica sobre saúde e utensílios para quem leva o bem-estar a sério.
           </p>
-        </div>
 
-        {/* Decorative elements */}
-        <div className="blob" style={{ width: "400px", height: "400px", background: "white", top: "-100px", right: "-100px" }} />
+          {/* Lead Capture no Hero */}
+          <div style={{ marginBottom: "1rem" }}>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1rem", marginBottom: "1rem" }}>
+              📥 Receba grátis: <strong style={{ color: "white" }}>"7 Sinais de que Sua Panela Está Contaminando Sua Comida"</strong>
+            </p>
+            <LeadCaptureForm variant="hero" />
+          </div>
+        </div>
       </section>
 
       {/* Latest Articles */}
@@ -131,15 +178,9 @@ export default function Home() {
       </section>
 
       {/* Newsletter / Lead Capture */}
-      <section className="section" style={{ background: "white", padding: "4rem 0" }}>
+      <section className="section" style={{ background: "var(--sage-pale)", padding: "5rem 0" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <h2 style={{ fontSize: "2rem" }}>Faça parte da nossa comunidade</h2>
-            <p style={{ color: "var(--text-light)", marginTop: "0.5rem" }}>
-              Receba dicas sobre alimentação saudável, escolha de utensílios e muito mais.
-            </p>
-          </div>
-          <LeadCaptureForm />
+          <LeadCaptureForm variant="section" />
         </div>
       </section>
 
